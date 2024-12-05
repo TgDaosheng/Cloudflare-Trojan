@@ -1,5 +1,5 @@
 tgds.eu.org:2087#TGDS(tgds.eu.org)-🇭🇰
-2606:4700:20::681a:d2a:443#IPV6-🇺🇸美国
+[2606:4700:20::681a:d2a]:443#IPV6-🇺🇸美国
 104.26.13.42:443#IPV4-🇭🇰香港
 hk.tgds.eu.org:2096#hk.tgds.eu.org-🇭🇰
 jp.tgds.eu.org:2096#jp.tgds.eu.org-🇯🇵
