@@ -1,1809 +1,1528 @@
-const _0x2b3298 = _0x1cdd;
-(function (_0x3c360e, _0x52968a) {
-    const _0x19f844 = _0x1cdd;
-    const _0x30dac2 = _0x3c360e();
-    while (!![]) {
-        try {
-            const _0xd94331 = parseInt(_0x19f844(0x19d)) / 0x1 + parseInt(_0x19f844(0x1f7)) / 0x2 + -parseInt(_0x19f844(0x207)) / 0x3 + -parseInt(_0x19f844(0x100)) / 0x4 + -parseInt(_0x19f844(0x29a)) / 0x5 * (-parseInt(_0x19f844(0x14b)) / 0x6) + -parseInt(_0x19f844(0x12c)) / 0x7 * (parseInt(_0x19f844(0x272)) / 0x8) + parseInt(_0x19f844(0x26c)) / 0x9;
-            if (_0xd94331 === _0x52968a) {
-                break;
-            } else {
-                _0x30dac2['push'](_0x30dac2['shift']());
-            }
-        } catch (_0x3a038b) {
-            _0x30dac2['push'](_0x30dac2['shift']());
-        }
-    }
-}(_0x5553, 0x88972));
-import { connect } from '\x63\x6c\x6f\x75\x64\x66\x6c\x61\x72\x65\x3a\x73\x6f\x63\x6b\x65\x74\x73';
+import { connect } from "cloudflare:sockets";
+
 let password = '';
 let proxyIP = '';
-let sub = '';
-let subConverter = _0x2b3298(0x117) + '\x6b\x2e\x64\x65\x64\x79\x6e\x2e\x69\x6f';
-let subConfig = _0x2b3298(0x139) + '\x77\x2e\x67\x69\x74\x68\x75\x62\x75\x73' + _0x2b3298(0x16a) + _0x2b3298(0x1dd) + _0x2b3298(0x173) + _0x2b3298(0x27c) + '\x73\x68\x2f\x63\x6f\x6e\x66\x69\x67\x2f' + _0x2b3298(0x1b1) + _0x2b3298(0x21e) + _0x2b3298(0x22b) + '\x69\x6e\x69';
-let subProtocol = _0x2b3298(0x1c6);
-let subEmoji = _0x2b3298(0x24c);
+let sub = ''; 
+let subConverter = 'SUBAPI.fxxk.dedyn.io';// clash订阅转换后端，目前使用CM的订阅转换功能。自带虚假节点信息防泄露
+let subConfig = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online_Mini_MultiMode.ini"; //订阅配置文件
+let subProtocol = 'https';
+let subEmoji = 'true';
 let socks5Address = '';
-let parsedSocks5Address = {};
-let enableSocks = ![];
-let fakeUserID;
-let fakeHostName;
-const expire = 0xf4849500;
-let proxyIPs;
+let parsedSocks5Address = {}; 
+let enableSocks = false;
+let fakeUserID ;
+let fakeHostName ;
+const expire = 4102329600;//2099-12-31
+let proxyIPs ;
 let socks5s;
 let go2Socks5s = [
-    _0x2b3298(0x226),
-    '\x2a\x74\x61\x70\x65\x63\x6f\x6e\x74\x65' + _0x2b3298(0x188),
-    '\x2a\x63\x6c\x6f\x75\x64\x61\x74\x61\x63' + _0x2b3298(0x1bf),
-    _0x2b3298(0x145) + _0x2b3298(0x1dc)
+	'*ttvnw.net',
+	'*tapecontent.net',
+	'*cloudatacdn.com',
+	'*.loadshare.org',
 ];
 let addresses = [];
 let addressesapi = [];
 let addressescsv = [];
-let DLS = 0x8;
-let remarkIndex = 0x1;
-let FileName = '\x65\x70\x65\x69\x75\x73';
-let BotToken = '';
-let ChatID = '';
+let DLS = 8;
+let remarkIndex = 1;//CSV备注所在列偏移量
+let FileName = 'epeius';
+let BotToken ='';
+let ChatID =''; 
 let proxyhosts = [];
 let proxyhostsURL = '';
-let RproxyIP = _0x2b3298(0x177);
-let httpsPorts = [
-    _0x2b3298(0x295),
-    _0x2b3298(0x280),
-    _0x2b3298(0x1f9),
-    _0x2b3298(0x12b),
-    _0x2b3298(0x1ee)
-];
-let sha224Password;
+let RproxyIP = 'false';
+let httpsPorts = ["2053","2083","2087","2096","8443"];
+let sha224Password ;
 const regex = /^(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}|\[.*\]):?(\d+)?#?(.*)?$/;
 let proxyIPPool = [];
-let path = '\x2f\x3f\x65\x64\x3d\x32\x35\x36\x30';
+let path = '/?ed=2560';
+
 export default {
-    async '\x66\x65\x74\x63\x68'(_0x10e1a3, _0x312357, _0x470fac) {
-        const _0x206763 = _0x2b3298;
+    async fetch(request, env, ctx) {
         try {
-            const _0x14bb66 = _0x10e1a3['\x68\x65\x61\x64\x65\x72\x73']['\x67\x65\x74'](_0x206763(0x269)) || _0x206763(0x1ff);
-            const _0x39cedc = _0x14bb66[_0x206763(0x227) + '\x65']();
-            let _0x499c4c = _0x312357['\x50\x41\x53\x53\x57\x4f\x52\x44'] || _0x312357[_0x206763(0x146)] || _0x312357['\x55\x55\x49\x44'] || _0x312357['\x75\x75\x69\x64'] || _0x499c4c;
-            if (!_0x499c4c) {
-                return new Response(_0x206763(0x12a) + _0x206763(0x1d3) + _0x206763(0x19c) + _0x206763(0x28a), {
-                    '\x73\x74\x61\x74\x75\x73': 0x194,
-                    '\x68\x65\x61\x64\x65\x72\x73': { '\x43\x6f\x6e\x74\x65\x6e\x74\x2d\x54\x79\x70\x65': _0x206763(0xfe) + _0x206763(0x1fd) + _0x206763(0x26f) }
+            // 获取User-Agent并转换为小写
+            const UA = request.headers.get('User-Agent') || 'null';
+            const userAgent = UA.toLowerCase();
+
+            // 确定密码
+            let password = env.PASSWORD || env.pswd || env.UUID || env.uuid || password;
+            if (!password) {
+                return new Response('请设置你的PASSWORD变量，或尝试重试部署，检查变量是否生效？', { 
+                    status: 404,
+                    headers: {
+                        "Content-Type": "text/plain;charset=utf-8",
+                    }
                 });
             }
-            const _0x3808a0 = _0x312357['\x53\x48\x41\x32\x32\x34'] || _0x312357['\x53\x48\x41\x32\x32\x34\x50\x41\x53\x53'] || sha224(_0x499c4c);
-            const _0x11cf7c = new Date();
-            _0x11cf7c[_0x206763(0x1b4)](0x0, 0x0, 0x0, 0x0);
-            const _0x1f8814 = Math[_0x206763(0x124)](_0x11cf7c[_0x206763(0x284)]() / 0x3e8);
-            const _0x4b1e1a = await MD5MD5('' + _0x499c4c + _0x1f8814);
-            const _0x54d8fe = [
-                _0x4b1e1a['\x73\x6c\x69\x63\x65'](0x0, 0x8),
-                _0x4b1e1a[_0x206763(0x20c)](0x8, 0xc),
-                _0x4b1e1a[_0x206763(0x20c)](0xc, 0x10),
-                _0x4b1e1a[_0x206763(0x20c)](0x10, 0x14),
-                _0x4b1e1a[_0x206763(0x20c)](0x14)
-            ]['\x6a\x6f\x69\x6e']('\x2d');
-            const _0x530775 = _0x4b1e1a[_0x206763(0x20c)](0x6, 0x9) + '\x2e' + _0x4b1e1a[_0x206763(0x20c)](0xd, 0x13);
-            let _0x5469a2 = _0x312357[_0x206763(0x263)] || _0x312357['\x70\x72\x6f\x78\x79\x69\x70'] || _0x5469a2;
-            const _0x4d8280 = await ADD(_0x5469a2);
-            _0x5469a2 = _0x4d8280[Math[_0x206763(0x2ae)](Math[_0x206763(0x1c1)]() * _0x4d8280['\x6c\x65\x6e\x67\x74\x68'])];
-            let _0x2dff16 = _0x312357[_0x206763(0x1f4)] || _0x2dff16;
-            const _0xf855b0 = await ADD(_0x2dff16);
-            _0x2dff16 = _0xf855b0[Math[_0x206763(0x2ae)](Math['\x72\x61\x6e\x64\x6f\x6d']() * _0xf855b0[_0x206763(0x256)])];
-            _0x2dff16 = _0x2dff16[_0x206763(0x1fe)]('\x2f\x2f')[0x1] || _0x2dff16;
-            if (_0x312357[_0x206763(0xf6)])
-                go2Socks5s = await ADD(_0x312357[_0x206763(0xf6)]);
-            if (_0x312357['\x43\x46\x50\x4f\x52\x54\x53'])
-                httpsPorts = await ADD(_0x312357[_0x206763(0x10d)]);
-            let _0x2a14b4, _0x326472, _0x4fa0fa;
-            if (_0x2dff16) {
+
+            // 计算SHA-224哈希值
+            const sha224Password = env.SHA224 || env.SHA224PASS || sha224(password);
+
+            // 获取当前日期的时间戳
+            const currentDate = new Date();
+            currentDate.setHours(0, 0, 0, 0); // 设置时间为当天
+            const timestamp = Math.ceil(currentDate.getTime() / 1000);
+
+            // 生成fakeUserIDMD5
+            const fakeUserIDMD5 = await MD5MD5(`${password}${timestamp}`);
+            const fakeUserID = [
+                fakeUserIDMD5.slice(0, 8),
+                fakeUserIDMD5.slice(8, 12),
+                fakeUserIDMD5.slice(12, 16),
+                fakeUserIDMD5.slice(16, 20),
+                fakeUserIDMD5.slice(20)
+            ].join('-');
+
+            // 生成fakeHostName
+            const fakeHostName = `${fakeUserIDMD5.slice(6, 9)}.${fakeUserIDMD5.slice(13, 19)}`;
+
+            // 处理代理IP
+            let proxyIP = env.PROXYIP || env.proxyip || proxyIP;
+            const proxyIPs = await ADD(proxyIP);
+            proxyIP = proxyIPs[Math.floor(Math.random() * proxyIPs.length)];
+
+            // 处理SOCKS5地址
+            let socks5Address = env.SOCKS5 || socks5Address;
+            const socks5s = await ADD(socks5Address);
+            socks5Address = socks5s[Math.floor(Math.random() * socks5s.length)];
+            socks5Address = socks5Address.split('//')[1] || socks5Address;
+
+            // 处理GO2SOCKS5和CFPORTS
+            if (env.GO2SOCKS5) go2Socks5s = await ADD(env.GO2SOCKS5);
+            if (env.CFPORTS) httpsPorts = await ADD(env.CFPORTS);
+
+            // 解析SOCKS5地址
+            let parsedSocks5Address, enableSocks, RproxyIP;
+            if (socks5Address) {
                 try {
-                    _0x2a14b4 = socks5AddressParser(_0x2dff16);
-                    _0x4fa0fa = _0x312357['\x52\x50\x52\x4f\x58\x59\x49\x50'] || _0x206763(0x177);
-                    _0x326472 = !![];
-                } catch (_0x7953ea) {
-                    console[_0x206763(0x106)](_0x7953ea[_0x206763(0x1d7)]());
-                    _0x4fa0fa = _0x312357[_0x206763(0x286)] || !_0x5469a2 ? '\x74\x72\x75\x65' : _0x206763(0x177);
-                    _0x326472 = ![];
+                    parsedSocks5Address = socks5AddressParser(socks5Address);
+                    RproxyIP = env.RPROXYIP || 'false';
+                    enableSocks = true;
+                } catch (err) {
+                    console.log(err.toString());
+                    RproxyIP = env.RPROXYIP || !proxyIP ? 'true' : 'false';
+                    enableSocks = false;
                 }
             } else {
-                _0x4fa0fa = _0x312357[_0x206763(0x286)] || !_0x5469a2 ? '\x74\x72\x75\x65' : '\x66\x61\x6c\x73\x65';
+                RproxyIP = env.RPROXYIP || !proxyIP ? 'true' : 'false';
             }
-            const _0x56afe6 = _0x10e1a3[_0x206763(0x125)][_0x206763(0x240)](_0x206763(0x202));
-            const _0x37b076 = new URL(_0x10e1a3['\x75\x72\x6c']);
-            if (!_0x56afe6 || _0x56afe6 !== _0x206763(0x11b)) {
-                if (_0x312357[_0x206763(0x19e)])
-                    addresses = await ADD(_0x312357[_0x206763(0x19e)]);
-                if (_0x312357[_0x206763(0x17f)])
-                    addressesapi = await ADD(_0x312357[_0x206763(0x17f)]);
-                if (_0x312357['\x41\x44\x44\x43\x53\x56'])
-                    addressescsv = await ADD(_0x312357['\x41\x44\x44\x43\x53\x56']);
-                DLS = Number(_0x312357[_0x206763(0x1cd)]) || DLS;
-                remarkIndex = Number(_0x312357['\x43\x53\x56\x52\x45\x4d\x41\x52\x4b']) || remarkIndex;
-                BotToken = _0x312357['\x54\x47\x54\x4f\x4b\x45\x4e'] || BotToken;
-                ChatID = _0x312357['\x54\x47\x49\x44'] || ChatID;
-                FileName = _0x312357['\x53\x55\x42\x4e\x41\x4d\x45'] || FileName;
-                subEmoji = _0x312357[_0x206763(0x15e)] || _0x312357[_0x206763(0x167)] || subEmoji;
-                if (subEmoji == '\x30')
-                    subEmoji = '\x66\x61\x6c\x73\x65';
-                sub = _0x312357[_0x206763(0x2a7)] || sub;
-                subConverter = _0x312357[_0x206763(0x23d)] || subConverter;
-                if (subConverter[_0x206763(0x21b)](_0x206763(0x18d))) {
-                    subConverter = subConverter[_0x206763(0x1fe)]('\x2f\x2f')[0x1];
-                    subProtocol = _0x206763(0x1c8);
+
+            // 处理WebSocket升级请求
+            const upgradeHeader = request.headers.get("Upgrade");
+            const url = new URL(request.url);
+            if (!upgradeHeader || upgradeHeader !== "websocket") {
+                // 处理非WebSocket请求
+                if (env.ADD) addresses = await ADD(env.ADD);
+                if (env.ADDAPI) addressesapi = await ADD(env.ADDAPI);
+                if (env.ADDCSV) addressescsv = await ADD(env.ADDCSV);
+                DLS = Number(env.DLS) || DLS;
+                remarkIndex = Number(env.CSVREMARK) || remarkIndex;
+                BotToken = env.TGTOKEN || BotToken;
+                ChatID = env.TGID || ChatID; 
+                FileName = env.SUBNAME || FileName;
+                subEmoji = env.SUBEMOJI || env.EMOJI || subEmoji;
+                if(subEmoji == '0') subEmoji = 'false';
+
+                sub = env.SUB || sub;
+                subConverter = env.SUBAPI || subConverter;
+                if (subConverter.includes("http://")) {
+                    subConverter = subConverter.split("//")[1];
+                    subProtocol = 'http';
                 } else {
-                    subConverter = subConverter[_0x206763(0x1fe)]('\x2f\x2f')[0x1] || subConverter;
+                    subConverter = subConverter.split("//")[1] || subConverter;
                 }
-                subConfig = _0x312357[_0x206763(0x10f)] || subConfig;
-                if (_0x37b076[_0x206763(0x131) + '\x6d\x73']['\x68\x61\x73'](_0x206763(0x24e)) && _0x37b076[_0x206763(0x131) + '\x6d\x73']['\x67\x65\x74']('\x73\x75\x62') !== '')
-                    sub = _0x37b076[_0x206763(0x131) + '\x6d\x73']['\x67\x65\x74']('\x73\x75\x62');
-                if (_0x37b076['\x73\x65\x61\x72\x63\x68\x50\x61\x72\x61' + '\x6d\x73'][_0x206763(0x1e5)](_0x206763(0x158))) {
-                    path = _0x206763(0x22a) + '\x70\x72\x6f\x78\x79\x69\x70\x3d' + _0x37b076[_0x206763(0x131) + '\x6d\x73']['\x67\x65\x74'](_0x206763(0x158));
-                    _0x4fa0fa = _0x206763(0x177);
-                } else if (_0x37b076[_0x206763(0x131) + '\x6d\x73']['\x68\x61\x73'](_0x206763(0x14f))) {
-                    path = _0x206763(0x22a) + _0x206763(0x23b) + _0x37b076['\x73\x65\x61\x72\x63\x68\x50\x61\x72\x61' + '\x6d\x73'][_0x206763(0x240)](_0x206763(0x14f));
-                    _0x4fa0fa = _0x206763(0x177);
-                } else if (_0x37b076[_0x206763(0x131) + '\x6d\x73'][_0x206763(0x1e5)](_0x206763(0x234))) {
-                    path = _0x206763(0x22a) + _0x206763(0x23b) + _0x37b076[_0x206763(0x131) + '\x6d\x73']['\x67\x65\x74']('\x73\x6f\x63\x6b\x73');
-                    _0x4fa0fa = _0x206763(0x177);
+                subConfig = env.SUBCONFIG || subConfig;
+                if (url.searchParams.has('sub') && url.searchParams.get('sub') !== '') sub = url.searchParams.get('sub');
+
+                if (url.searchParams.has('proxyip')) {
+                    path = `/?ed=2560&proxyip=${url.searchParams.get('proxyip')}`;
+                    RproxyIP = 'false';
+                } else if (url.searchParams.has('socks5')) {
+                    path = `/?ed=2560&socks5=${url.searchParams.get('socks5')}`;
+                    RproxyIP = 'false';
+                } else if (url.searchParams.has('socks')) {
+                    path = `/?ed=2560&socks5=${url.searchParams.get('socks')}`;
+                    RproxyIP = 'false';
                 }
-                switch (_0x37b076[_0x206763(0x218)]) {
-                case '\x2f':
-                    if (_0x312357[_0x206763(0x25f)])
-                        return Response[_0x206763(0x1b9)](_0x312357[_0x206763(0x25f)], 0x12e);
-                    else if (_0x312357[_0x206763(0xf7)])
-                        return await proxyURL(_0x312357[_0x206763(0xf7)], _0x37b076);
-                    else
-                        return new Response(JSON[_0x206763(0x152)](_0x10e1a3['\x63\x66'], null, 0x4), {
-                            '\x73\x74\x61\x74\x75\x73': 0xc8,
-                            '\x68\x65\x61\x64\x65\x72\x73': { '\x63\x6f\x6e\x74\x65\x6e\x74\x2d\x74\x79\x70\x65': '\x61\x70\x70\x6c\x69\x63\x61\x74\x69\x6f' + _0x206763(0xfb) }
+
+                switch (url.pathname) {
+                    case '/':
+                        if (env.URL302) return Response.redirect(env.URL302, 302);
+                        else if (env.URL) return await proxyURL(env.URL, url);
+                        else return new Response(JSON.stringify(request.cf, null, 4), {
+                            status: 200,
+                            headers: {
+                                'content-type': 'application/json',
+                            },
                         });
-                case '\x2f' + _0x54d8fe:
-                    const _0xe3224c = await get特洛伊Config(_0x499c4c, _0x10e1a3['\x68\x65\x61\x64\x65\x72\x73'][_0x206763(0x240)](_0x206763(0x265)), sub, _0x206763(0x14c) + _0x206763(0x1a5), _0x4fa0fa, _0x37b076);
-                    return new Response(_0xe3224c, { '\x73\x74\x61\x74\x75\x73': 0xc8 });
-                case '\x2f' + _0x499c4c:
-                    await sendMessage('\x23\u83b7\u53d6\u8ba2\u9605\x20' + FileName, _0x10e1a3[_0x206763(0x125)]['\x67\x65\x74'](_0x206763(0x21f) + '\x69\x6e\x67\x2d\x49\x50'), _0x206763(0x204) + _0x14bb66 + (_0x206763(0x27a) + '\x65\x72\x3e\x0a\u57df\u540d\x3a\x20') + _0x37b076[_0x206763(0x246)] + ('\x0a\x3c\x74\x67\x2d\x73\x70\x6f\x69\x6c' + _0x206763(0x123)) + (_0x37b076[_0x206763(0x218)] + _0x37b076['\x73\x65\x61\x72\x63\x68']) + (_0x206763(0x27a) + _0x206763(0x21d)));
-                    const _0x3f9725 = await get特洛伊Config(_0x499c4c, _0x10e1a3['\x68\x65\x61\x64\x65\x72\x73']['\x67\x65\x74'](_0x206763(0x265)), sub, _0x14bb66, _0x4fa0fa, _0x37b076);
-                    const _0x1be035 = Date[_0x206763(0x274)]();
-                    const _0x5bba95 = new Date(_0x1be035);
-                    _0x5bba95['\x73\x65\x74\x48\x6f\x75\x72\x73'](0x0, 0x0, 0x0, 0x0);
-                    const _0x9f39c3 = Math[_0x206763(0x2ae)]((_0x1be035 - _0x5bba95[_0x206763(0x284)]()) / 0x5265c00 * 0x18 * 0x10000000000 / 0x2);
-                    let _0x5383b6 = _0x9f39c3;
-                    let _0x32c594 = _0x9f39c3;
-                    let _0x350274 = 0x18 * 0x10000000000;
-                    if (_0x39cedc && (_0x39cedc['\x69\x6e\x63\x6c\x75\x64\x65\x73']('\x6d\x6f\x7a\x69\x6c\x6c\x61') || _0x39cedc['\x69\x6e\x63\x6c\x75\x64\x65\x73'](_0x206763(0x20f) + '\x65\x72'))) {
-                        return new Response(_0x3f9725, {
-                            '\x73\x74\x61\x74\x75\x73': 0xc8,
-                            '\x68\x65\x61\x64\x65\x72\x73': {
-                                '\x43\x6f\x6e\x74\x65\x6e\x74\x2d\x54\x79\x70\x65': _0x206763(0xfe) + _0x206763(0x1fd) + '\x74\x66\x2d\x38',
-                                '\x50\x72\x6f\x66\x69\x6c\x65\x2d\x55\x70\x64\x61\x74\x65\x2d\x49\x6e\x74\x65\x72\x76\x61\x6c': '\x36',
-                                '\x53\x75\x62\x73\x63\x72\x69\x70\x74\x69\x6f\x6e\x2d\x55\x73\x65\x72\x69\x6e\x66\x6f': _0x206763(0x1f1) + _0x5383b6 + (_0x206763(0xf5) + '\x3d') + _0x32c594 + _0x206763(0x25e) + _0x350274 + _0x206763(0x254) + expire
-                            }
-                        });
-                    } else {
-                        return new Response(_0x3f9725, {
-                            '\x73\x74\x61\x74\x75\x73': 0xc8,
-                            '\x68\x65\x61\x64\x65\x72\x73': {
-                                '\x43\x6f\x6e\x74\x65\x6e\x74\x2d\x44\x69\x73\x70\x6f\x73\x69\x74\x69\x6f\x6e': '\x61\x74\x74\x61\x63\x68\x6d\x65\x6e\x74' + '\x3b\x20\x66\x69\x6c\x65\x6e\x61\x6d\x65' + '\x3d' + FileName + ('\x3b\x20\x66\x69\x6c\x65\x6e\x61\x6d\x65' + _0x206763(0x1eb)) + encodeURIComponent(FileName),
-                                '\x43\x6f\x6e\x74\x65\x6e\x74\x2d\x54\x79\x70\x65': _0x206763(0xfe) + _0x206763(0x1fd) + _0x206763(0x26f),
-                                '\x50\x72\x6f\x66\x69\x6c\x65\x2d\x55\x70\x64\x61\x74\x65\x2d\x49\x6e\x74\x65\x72\x76\x61\x6c': '\x36',
-                                '\x53\x75\x62\x73\x63\x72\x69\x70\x74\x69\x6f\x6e\x2d\x55\x73\x65\x72\x69\x6e\x66\x6f': _0x206763(0x1f1) + _0x5383b6 + ('\x3b\x20\x64\x6f\x77\x6e\x6c\x6f\x61\x64' + '\x3d') + _0x32c594 + '\x3b\x20\x74\x6f\x74\x61\x6c\x3d' + _0x350274 + _0x206763(0x254) + expire
-                            }
-                        });
-                    }
-                default:
-                    if (_0x312357[_0x206763(0x25f)])
-                        return Response[_0x206763(0x1b9)](_0x312357[_0x206763(0x25f)], 0x12e);
-                    else if (_0x312357['\x55\x52\x4c'])
-                        return await proxyURL(_0x312357['\x55\x52\x4c'], _0x37b076);
-                    else
-                        return new Response('\u4e0d\u7528\u6000\u7591\uff01\u4f60\x50\x41\x53\x53' + _0x206763(0x2a0) + '\uff01', { '\x73\x74\x61\x74\x75\x73': 0x194 });
+                    case `/${fakeUserID}`:
+                        const fakeConfig = await get特洛伊Config(password, request.headers.get('Host'), sub, 'CF-Workers-SUB', RproxyIP, url);
+                        return new Response(fakeConfig, { status: 200 });
+                    case `/${password}`:
+                        await sendMessage(`#获取订阅 ${FileName}`, request.headers.get('CF-Connecting-IP'), `UA: ${UA}</tg-spoiler>\n域名: ${url.hostname}\n<tg-spoiler>入口: ${url.pathname + url.search}</tg-spoiler>`);
+                        const 特洛伊Config = await get特洛伊Config(password, request.headers.get('Host'), sub, UA, RproxyIP, url);
+                        const now = Date.now();
+                        const today = new Date(now);
+                        today.setHours(0, 0, 0, 0);
+                        const UD = Math.floor(((now - today.getTime()) / 86400000) * 24 * 1099511627776 / 2);
+                        let pagesSum = UD;
+                        let workersSum = UD;
+                        let total = 24 * 1099511627776;
+
+                        if (userAgent && (userAgent.includes('mozilla') || userAgent.includes('subconverter'))) {
+                            return new Response(特洛伊Config, {
+                                status: 200,
+                                headers: {
+                                    "Content-Type": "text/plain;charset=utf-8",
+                                    "Profile-Update-Interval": "6",
+                                    "Subscription-Userinfo": `upload=${pagesSum}; download=${workersSum}; total=${total}; expire=${expire}`,
+                                }
+                            });
+                        } else {
+                            return new Response(特洛伊Config, {
+                                status: 200,
+                                headers: {
+                                    "Content-Disposition": `attachment; filename=${FileName}; filename*=utf-8''${encodeURIComponent(FileName)}`,
+                                    "Content-Type": "text/plain;charset=utf-8",
+                                    "Profile-Update-Interval": "6",
+                                    "Subscription-Userinfo": `upload=${pagesSum}; download=${workersSum}; total=${total}; expire=${expire}`,
+                                }
+                            });
+                        }
+                    default:
+                        if (env.URL302) return Response.redirect(env.URL302, 302);
+                        else if (env.URL) return await proxyURL(env.URL, url);
+                        else return new Response('不用怀疑！你PASSWORD就是错的！！！', { status: 404 });
                 }
             } else {
-                _0x2dff16 = _0x37b076[_0x206763(0x131) + '\x6d\x73'][_0x206763(0x240)](_0x206763(0x14f)) || _0x2dff16;
-                if (new RegExp(_0x206763(0x116), '\x69')['\x74\x65\x73\x74'](_0x37b076['\x70\x61\x74\x68\x6e\x61\x6d\x65']))
-                    _0x2dff16 = _0x37b076[_0x206763(0x218)][_0x206763(0x1fe)]('\x35\x3d')[0x1];
-                else if (new RegExp(_0x206763(0x13d), '\x69')[_0x206763(0x2b0)](_0x37b076['\x70\x61\x74\x68\x6e\x61\x6d\x65']) || new RegExp(_0x206763(0x20a), '\x69')[_0x206763(0x2b0)](_0x37b076['\x70\x61\x74\x68\x6e\x61\x6d\x65'])) {
-                    _0x2dff16 = _0x37b076[_0x206763(0x218)][_0x206763(0x1fe)](_0x206763(0x247))[0x1]['\x73\x70\x6c\x69\x74']('\x23')[0x0];
-                    if (_0x2dff16['\x69\x6e\x63\x6c\x75\x64\x65\x73']('\x40')) {
-                        let _0x54aad3 = _0x2dff16['\x73\x70\x6c\x69\x74']('\x40')[0x0];
-                        const _0x3bce8b = /^(?:[A-Z0-9+/]{4})*(?:[A-Z0-9+/]{2}==|[A-Z0-9+/]{3}=)?$/i;
-                        if (_0x3bce8b[_0x206763(0x2b0)](_0x54aad3) && !_0x54aad3[_0x206763(0x21b)]('\x3a'))
-                            _0x54aad3 = atob(_0x54aad3);
-                        _0x2dff16 = _0x54aad3 + '\x40' + _0x2dff16[_0x206763(0x1fe)]('\x40')[0x1];
+                // 处理WebSocket请求
+                socks5Address = url.searchParams.get('socks5') || socks5Address;
+                if (new RegExp('/socks5=', 'i').test(url.pathname)) socks5Address = url.pathname.split('5=')[1];
+                else if (new RegExp('/socks://', 'i').test(url.pathname) || new RegExp('/socks5://', 'i').test(url.pathname)) {
+                    socks5Address = url.pathname.split('://')[1].split('#')[0];
+                    if (socks5Address.includes('@')) {
+                        let userPassword = socks5Address.split('@')[0];
+                        const base64Regex = /^(?:[A-Z0-9+/]{4})*(?:[A-Z0-9+/]{2}==|[A-Z0-9+/]{3}=)?$/i;
+                        if (base64Regex.test(userPassword) && !userPassword.includes(':')) userPassword = atob(userPassword);
+                        socks5Address = `${userPassword}@${socks5Address.split('@')[1]}`;
                     }
                 }
-                if (_0x2dff16) {
+
+                if (socks5Address) {
                     try {
-                        _0x2a14b4 = socks5AddressParser(_0x2dff16);
-                        _0x326472 = !![];
-                    } catch (_0x257754) {
-                        console[_0x206763(0x106)](_0x257754[_0x206763(0x1d7)]());
-                        _0x326472 = ![];
+                        parsedSocks5Address = socks5AddressParser(socks5Address);
+                        enableSocks = true;
+                    } catch (err) {
+                        console.log(err.toString());
+                        enableSocks = false;
                     }
                 } else {
-                    _0x326472 = ![];
+                    enableSocks = false;
                 }
-                if (_0x37b076[_0x206763(0x131) + '\x6d\x73'][_0x206763(0x1e5)](_0x206763(0x158))) {
-                    _0x5469a2 = _0x37b076['\x73\x65\x61\x72\x63\x68\x50\x61\x72\x61' + '\x6d\x73']['\x67\x65\x74'](_0x206763(0x158));
-                    _0x326472 = ![];
-                } else if (new RegExp(_0x206763(0x24a), '\x69')[_0x206763(0x2b0)](_0x37b076[_0x206763(0x218)])) {
-                    _0x5469a2 = _0x37b076[_0x206763(0x218)]['\x74\x6f\x4c\x6f\x77\x65\x72\x43\x61\x73' + '\x65']()[_0x206763(0x1fe)](_0x206763(0x24a))[0x1];
-                    _0x326472 = ![];
-                } else if (new RegExp(_0x206763(0x1c4), '\x69')[_0x206763(0x2b0)](_0x37b076['\x70\x61\x74\x68\x6e\x61\x6d\x65'])) {
-                    _0x5469a2 = _0x206763(0x28c) + _0x37b076[_0x206763(0x218)][_0x206763(0x227) + '\x65']()[_0x206763(0x1fe)](_0x206763(0x1c4))[0x1];
-                    _0x326472 = ![];
+
+                if (url.searchParams.has('proxyip')) {
+                    proxyIP = url.searchParams.get('proxyip');
+                    enableSocks = false;
+                } else if (new RegExp('/proxyip=', 'i').test(url.pathname)) {
+                    proxyIP = url.pathname.toLowerCase().split('/proxyip=')[1];
+                    enableSocks = false;
+                } else if (new RegExp('/proxyip.', 'i').test(url.pathname)) {
+                    proxyIP = `proxyip.${url.pathname.toLowerCase().split("/proxyip.")[1]}`;
+                    enableSocks = false;
                 }
-                return await 特洛伊OverWSHandler(_0x10e1a3);
+
+                return await 特洛伊OverWSHandler(request);
             }
-        } catch (_0x4ca3a9) {
-            console[_0x206763(0x10a)](_0x4ca3a9[_0x206763(0x1d7)]());
-            return new Response(_0x4ca3a9['\x74\x6f\x53\x74\x72\x69\x6e\x67'](), { '\x73\x74\x61\x74\x75\x73': 0x1f4 });
+        } catch (err) {
+            console.error(err.toString());
+            return new Response(err.toString(), { status: 500 });
         }
     }
 };
-async function 特洛伊OverWSHandler(_0x23143) {
-    const _0x400a9a = _0x2b3298;
-    const _0xac7b3 = new WebSocketPair();
-    const [_0x2eb3db, _0xcc0e1e] = Object['\x76\x61\x6c\x75\x65\x73'](_0xac7b3);
-    _0xcc0e1e[_0x400a9a(0x17d)]();
-    let _0x2f19a4 = '';
-    let _0x4b0879 = '';
-    const _0x242b1d = (_0x28978b, _0x53d636) => {
-        const _0x3c5955 = _0x400a9a;
-        console[_0x3c5955(0x106)]('\x5b' + _0x2f19a4 + '\x3a' + _0x4b0879 + '\x5d\x20' + _0x28978b, _0x53d636 || '');
+
+// 特洛伊OverWSHandler 函数处理 WebSocket 请求
+async function 特洛伊OverWSHandler(request) {
+    // 创建一个 WebSocket 对，包含客户端和服务器端的 WebSocket 实例
+    const webSocketPair = new WebSocketPair();
+    const [client, webSocket] = Object.values(webSocketPair);
+    // 服务器端的 WebSocket 接受连接
+    webSocket.accept();
+
+    // 存储地址和端口信息，初始化为空
+    let address = "";
+    let portWithRandomLog = "";
+
+    // 日志记录函数，打印带有地址和端口信息的日志
+    const log = (info, event) => {
+        console.log(`[${address}:${portWithRandomLog}] ${info}`, event || "");
     };
-    const _0x444217 = _0x23143[_0x400a9a(0x125)][_0x400a9a(0x240)](_0x400a9a(0x28d) + _0x400a9a(0x1e9) + '\x6f\x6c') || '';
-    const _0x46f109 = makeReadableWebSocketStream(_0xcc0e1e, _0x444217, _0x242b1d);
-    let _0x3f4c1f = { '\x76\x61\x6c\x75\x65': null };
-    let _0x141eb7 = null;
-    _0x46f109[_0x400a9a(0x1e7)](new WritableStream({
-        async '\x77\x72\x69\x74\x65'(_0x4b3924, _0x52d4a7) {
-            const _0x145926 = _0x400a9a;
-            if (_0x141eb7)
-                return _0x141eb7(_0x4b3924);
-            if (_0x3f4c1f['\x76\x61\x6c\x75\x65']) {
-                await writeToRemoteSocket(_0x3f4c1f[_0x145926(0x237)], _0x4b3924);
+
+    // 从请求头中获取 sec-websocket-protocol 的值作为早期数据头
+    const earlyDataHeader = request.headers.get("sec-websocket-protocol") || "";
+    // 创建一个可读的 WebSocket 流
+    const readableWebSocketStream = makeReadableWebSocketStream(webSocket, earlyDataHeader, log);
+
+    // 存储远程套接字的包装对象和 UDP 流的写入函数
+    let remoteSocketWrapper = { value: null };
+    let udpStreamWrite = null;
+
+    // 将可读的 WebSocket 流传输到可写流中
+    readableWebSocketStream.pipeTo(new WritableStream({
+        // 写入数据的处理函数
+        async write(chunk, controller) {
+            if (udpStreamWrite) return udpStreamWrite(chunk);
+
+            if (remoteSocketWrapper.value) {
+                await writeToRemoteSocket(remoteSocketWrapper.value, chunk);
                 return;
             }
-            const _0xcc530a = await parse特洛伊Header(_0x4b3924);
-            if (_0xcc530a['\x68\x61\x73\x45\x72\x72\x6f\x72'])
-                throw new Error(_0xcc530a[_0x145926(0x142)]);
-            ({
-                address: _0x2f19a4,
-                portWithRandomLog: _0x4b0879
-            } = setupConnectionParameters(_0xcc530a));
-            handleTCPOutBound(_0x3f4c1f, _0xcc530a, rawClientData, _0xcc0e1e, _0x242b1d, _0xcc530a[_0x145926(0x183) + '\x65']);
+
+            // 解析特洛伊头信息
+            const parsedHeader = await parse特洛伊Header(chunk);
+            if (parsedHeader.hasError) throw new Error(parsedHeader.message);
+
+            // 设置连接参数
+            ({ address, portWithRandomLog } = setupConnectionParameters(parsedHeader));
+            // 处理 TCP 出站连接
+            handleTCPOutBound(remoteSocketWrapper, parsedHeader, rawClientData, webSocket, log, parsedHeader.addressType);
         },
-        '\x63\x6c\x6f\x73\x65'() {
-            const _0x84f753 = _0x400a9a;
-            _0x242b1d('\x72\x65\x61\x64\x61\x62\x6c\x65\x57\x65' + _0x84f753(0x141) + '\x65\x61\x6d\x20\x69\x73\x20\x63\x6c\x6f' + _0x84f753(0x23f));
+        // 关闭流时的处理函数
+        close() {
+            log("readableWebSocketStream is closed");
         },
-        '\x61\x62\x6f\x72\x74'(_0x520498) {
-            const _0x1e3a86 = _0x400a9a;
-            _0x242b1d('\x72\x65\x61\x64\x61\x62\x6c\x65\x57\x65' + _0x1e3a86(0x141) + _0x1e3a86(0x260) + _0x1e3a86(0x2ac), JSON[_0x1e3a86(0x152)](_0x520498));
+        // 终止流时的处理函数
+        abort(reason) {
+            log("readableWebSocketStream is aborted", JSON.stringify(reason));
         }
-    }))[_0x400a9a(0x1f3)](_0x3c8f39 => {
-        const _0x17d620 = _0x400a9a;
-        _0x242b1d(_0x17d620(0x179) + '\x62\x53\x6f\x63\x6b\x65\x74\x53\x74\x72' + _0x17d620(0x111) + _0x17d620(0x229), _0x3c8f39);
+    })).catch((err) => {
+        log("readableWebSocketStream pipeTo error", err);
     });
+
+    // 返回一个 HTTP 101 响应，建立 WebSocket 连接
     return new Response(null, {
-        '\x73\x74\x61\x74\x75\x73': 0x65,
-        '\x77\x65\x62\x53\x6f\x63\x6b\x65\x74': _0x2eb3db
+        status: 101,
+        // @ts-ignore
+        webSocket: client
     });
 }
-async function parse特洛伊Header(_0xcd434c) {
-    const _0x15e640 = _0x2b3298;
-    if (_0xcd434c[_0x15e640(0x252)] < 0x38)
-        return {
-            '\x68\x61\x73\x45\x72\x72\x6f\x72': !![],
-            '\x6d\x65\x73\x73\x61\x67\x65': _0x15e640(0x27d) + '\x74\x61'
-        };
-    const _0x36c75e = findCrLfIndex(_0xcd434c);
-    if (_0x36c75e === -0x1)
-        return {
-            '\x68\x61\x73\x45\x72\x72\x6f\x72': !![],
-            '\x6d\x65\x73\x73\x61\x67\x65': _0x15e640(0x12f) + _0x15e640(0x182) + _0x15e640(0x25c) + '\x20\x43\x52\x20\x4c\x46\x29'
-        };
-    const _0x422d50 = new TextDecoder()['\x64\x65\x63\x6f\x64\x65'](_0xcd434c['\x73\x6c\x69\x63\x65'](0x0, _0x36c75e));
-    if (_0x422d50 !== sha224Password)
-        return {
-            '\x68\x61\x73\x45\x72\x72\x6f\x72': !![],
-            '\x6d\x65\x73\x73\x61\x67\x65': _0x15e640(0x205) + _0x15e640(0x279)
-        };
-    const _0x3001ff = _0xcd434c[_0x15e640(0x20c)](_0x36c75e + 0x2);
-    if (_0x3001ff[_0x15e640(0x252)] < 0x6)
-        return {
-            '\x68\x61\x73\x45\x72\x72\x6f\x72': !![],
-            '\x6d\x65\x73\x73\x61\x67\x65': _0x15e640(0x113) + '\x43\x4b\x53\x35\x20\x72\x65\x71\x75\x65' + '\x73\x74\x20\x64\x61\x74\x61'
-        };
-    const _0x2a14a5 = new DataView(_0x3001ff);
-    const _0x2fe747 = _0x2a14a5[_0x15e640(0x1ec)](0x0);
-    if (_0x2fe747 !== 0x1)
-        return {
-            '\x68\x61\x73\x45\x72\x72\x6f\x72': !![],
-            '\x6d\x65\x73\x73\x61\x67\x65': _0x15e640(0x15c) + _0x15e640(0x1d0) + _0x15e640(0x144) + _0x15e640(0x1c9) + _0x15e640(0x21c)
-        };
-    const _0x5712a7 = _0x2a14a5['\x67\x65\x74\x55\x69\x6e\x74\x38'](0x1);
-    const _0x1b7eb0 = getAddressFromAtype(_0x5712a7, _0x3001ff);
-    if (!_0x1b7eb0['\x73\x75\x63\x63\x65\x73\x73'])
-        return _0x1b7eb0;
-    const _0x526c9a = _0x1b7eb0[_0x15e640(0x26a)] + _0x1b7eb0[_0x15e640(0x256)];
-    const _0x5e4664 = _0x2a14a5[_0x15e640(0x122)](_0x526c9a);
+
+// 解析特洛伊头信息的函数
+async function parse特洛伊Header(buffer) {
+    // 检查缓冲区长度是否足够
+    if (buffer.byteLength < 56) return { hasError: true, message: "invalid data" };
+
+    // 查找 CR LF 标记的索引
+    const crLfIndex = findCrLfIndex(buffer);
+    if (crLfIndex === -1) return { hasError: true, message: "invalid header format (missing CR LF)" };
+
+    // 提取密码
+    const password = new TextDecoder().decode(buffer.slice(0, crLfIndex));
+    if (password!== sha224Password) return { hasError: true, message: "invalid password" };
+
+    // 提取 SOCKS5 数据缓冲区
+    const socks5DataBuffer = buffer.slice(crLfIndex + 2);
+    if (socks5DataBuffer.byteLength < 6) return { hasError: true, message: "invalid SOCKS5 request data" };
+
+    // 从视图中读取命令和地址类型等信息
+    const view = new DataView(socks5DataBuffer);
+    const cmd = view.getUint8(0);
+    if (cmd!== 1) return { hasError: true, message: "unsupported command, only TCP (CONNECT) is allowed" };
+
+    const atype = view.getUint8(1);
+    const addressInfo = getAddressFromAtype(atype, socks5DataBuffer);
+    if (!addressInfo.success) return addressInfo;
+
+    const portIndex = addressInfo.index + addressInfo.length;
+    const portRemote = view.getUint16(portIndex);
+
+    // 返回解析结果
     return {
-        '\x68\x61\x73\x45\x72\x72\x6f\x72': ![],
-        '\x61\x64\x64\x72\x65\x73\x73\x52\x65\x6d\x6f\x74\x65': _0x1b7eb0[_0x15e640(0x1d2)],
-        '\x70\x6f\x72\x74\x52\x65\x6d\x6f\x74\x65': _0x5e4664,
-        '\x72\x61\x77\x43\x6c\x69\x65\x6e\x74\x44\x61\x74\x61': _0x3001ff[_0x15e640(0x20c)](_0x526c9a + 0x2),
-        '\x61\x64\x64\x72\x65\x73\x73\x54\x79\x70\x65': _0x5712a7
+        hasError: false,
+        addressRemote: addressInfo.address,
+        portRemote,
+        rawClientData: socks5DataBuffer.slice(portIndex + 2),
+        addressType: atype
     };
 }
-function setupConnectionParameters(_0x4f6778) {
-    const _0x324afe = _0x2b3298;
-    const _0x1f0e64 = _0x4f6778[_0x324afe(0x1ed)] + '\x2d\x2d' + Math['\x72\x61\x6e\x64\x6f\x6d']() + _0x324afe(0x26e);
-    return {
-        '\x61\x64\x64\x72\x65\x73\x73': _0x4f6778[_0x324afe(0x1ea) + _0x324afe(0x283)],
-        '\x70\x6f\x72\x74\x57\x69\x74\x68\x52\x61\x6e\x64\x6f\x6d\x4c\x6f\x67': _0x1f0e64
-    };
+
+// 设置连接参数的函数
+function setupConnectionParameters(parsedHeader) {
+    // 生成带有随机后缀的端口日志信息
+    const portWithRandomLog = `${parsedHeader.portRemote}--${Math.random()} tcp`;
+    return { address: parsedHeader.addressRemote, portWithRandomLog };
 }
-async function handleTCPOutBound(_0x260181, _0x43f6cc, _0x2374ab, _0x34926e, _0x37e400, _0x1f4172) {
-    const _0x4b6d1c = _0x2b3298;
-    const _0x33af7a = await shouldUseSocks5(_0x43f6cc['\x61\x64\x64\x72\x65\x73\x73\x52\x65\x6d' + _0x4b6d1c(0x283)]);
-    const _0x347053 = await connectAndWrite(_0x43f6cc[_0x4b6d1c(0x1ea) + '\x6f\x74\x65'], _0x43f6cc[_0x4b6d1c(0x1ed)], _0x2374ab, _0x33af7a, _0x37e400, _0x1f4172);
-    _0x260181[_0x4b6d1c(0x237)] = _0x347053;
-    remoteSocketToWS(_0x347053, _0x34926e, retryConnection['\x62\x69\x6e\x64'](null, _0x260181, _0x43f6cc, _0x2374ab, _0x34926e, _0x37e400, _0x1f4172), _0x37e400);
+
+// 处理 TCP 出站连接的函数
+async function handleTCPOutBound(remoteSocket, parsedHeader, rawClientData, webSocket, log, addressType) {
+    // 判断是否使用 SOCKS5 协议
+    const useSocks = await shouldUseSocks5(parsedHeader.addressRemote);
+    // 建立并写入连接
+    const tcpSocket = await connectAndWrite(parsedHeader.addressRemote, parsedHeader.portRemote, rawClientData, useSocks, log, addressType);
+
+    remoteSocket.value = tcpSocket;
+    // 将远程套接字连接到 WebSocket
+    remoteSocketToWS(tcpSocket, webSocket, retryConnection.bind(null, remoteSocket, parsedHeader, rawClientData, webSocket, log, addressType), log);
 }
-async function shouldUseSocks5(_0x11434d) {
-    const _0x5c9c03 = _0x2b3298;
-    if (go2Socks5s[_0x5c9c03(0x21b)](_0x5c9c03(0x201)) || go2Socks5s[_0x5c9c03(0x21b)]('\x2a'))
-        return !![];
-    return go2Socks5s['\x73\x6f\x6d\x65'](_0x5ce09f => new RegExp('\x5e' + _0x5ce09f['\x72\x65\x70\x6c\x61\x63\x65'](/\*/g, '\x2e\x2a') + '\x24', '\x69')[_0x5c9c03(0x2b0)](_0x11434d));
+
+// 判断是否使用 SOCKS5 协议的函数
+async function shouldUseSocks5(address) {
+    if (go2Socks5s.includes('all in') || go2Socks5s.includes('*')) return true;
+    return go2Socks5s.some(pattern => new RegExp(`^${pattern.replace(/\*/g, '.*')}$`, 'i').test(address));
 }
-async function connectAndWrite(_0x4b3a57, _0x4d51f1, _0x37a8fb, _0x5f139f, _0xf093e0, _0x442c40) {
-    const _0x461225 = _0x2b3298;
-    _0xf093e0(_0x461225(0x115) + '\x74\x6f\x20' + _0x4b3a57 + '\x3a' + _0x4d51f1);
-    const _0x53af47 = _0x5f139f ? await socks5Connect(_0x442c40, _0x4b3a57, _0x4d51f1, _0xf093e0) : connect({
-        '\x68\x6f\x73\x74\x6e\x61\x6d\x65': _0x4b3a57,
-        '\x70\x6f\x72\x74': _0x4d51f1
-    });
-    const _0x3f1c22 = _0x53af47['\x77\x72\x69\x74\x61\x62\x6c\x65'][_0x461225(0x12e)]();
-    await _0x3f1c22[_0x461225(0x19a)](_0x37a8fb);
-    _0x3f1c22[_0x461225(0x1b2) + '\x6b']();
-    return _0x53af47;
+
+// 建立并写入连接的函数
+async function connectAndWrite(address, port, rawClientData, useSocks, log, addressType) {
+    log(`connected to ${address}:${port}`);
+    // 建立 TCP 连接，根据是否使用 SOCKS5 协议选择不同的连接方式
+    const tcpSocket = useSocks? await socks5Connect(addressType, address, port, log) : connect({ hostname: address, port });
+    const writer = tcpSocket.writable.getWriter();
+    // 写入原始客户端数据
+    await writer.write(rawClientData);
+    writer.releaseLock();
+    return tcpSocket;
 }
-async function retryConnection(_0x454cea, _0x3d0f3e, _0x31cd1d, _0x4f478c, _0x522e3f, _0xf1ad6) {
-    const _0x1f906c = _0x2b3298;
+
+// 重试连接的函数
+async function retryConnection(remoteSocket, parsedHeader, rawClientData, webSocket, log, addressType) {
     try {
-        const _0x5d3f8b = await shouldUseSocks5(_0x3d0f3e['\x61\x64\x64\x72\x65\x73\x73\x52\x65\x6d' + '\x6f\x74\x65']);
-        const _0x3d623a = await connectAndWrite(_0x3d0f3e['\x61\x64\x64\x72\x65\x73\x73\x52\x65\x6d' + _0x1f906c(0x283)], _0x3d0f3e[_0x1f906c(0x1ed)], _0x31cd1d, _0x5d3f8b, _0x522e3f, _0xf1ad6);
-        _0x454cea['\x76\x61\x6c\x75\x65'] = _0x3d623a;
-        remoteSocketToWS(_0x3d623a, _0x4f478c, null, _0x522e3f);
-    } catch (_0xc0f7c0) {
-        safeCloseWebSocket(_0x4f478c);
-        console[_0x1f906c(0x10a)]('\x72\x65\x74\x72\x79\x20\x74\x63\x70\x53' + _0x1f906c(0x1d9) + _0x1f906c(0x1a7), _0xc0f7c0);
+        // 重新判断是否使用 SOCKS5 协议
+        const useSocks = await shouldUseSocks5(parsedHeader.addressRemote);
+        // 重新建立并写入连接
+        const tcpSocket = await connectAndWrite(parsedHeader.addressRemote, parsedHeader.portRemote, rawClientData, useSocks, log, addressType);
+        remoteSocket.value = tcpSocket;
+        // 将远程套接字连接到 WebSocket
+        remoteSocketToWS(tcpSocket, webSocket, null, log);
+    } catch (error) {
+        // 关闭 WebSocket 并打印错误
+        safeCloseWebSocket(webSocket);
+        console.error("retry tcpSocket closed error", error);
     }
 }
-async function remoteSocketToWS(_0x4c42e8, _0x1f0813, _0xb84fc9, _0x599c28) {
-    const _0x1f7912 = _0x2b3298;
-    let _0x4fddb7 = ![];
-    await _0x4c42e8[_0x1f7912(0x258)][_0x1f7912(0x1e7)](new WritableStream({
-        '\x73\x74\x61\x72\x74'() {
-        },
-        async '\x77\x72\x69\x74\x65'(_0xe0e556, _0x40468e) {
-            const _0x190f9a = _0x1f7912;
-            _0x4fddb7 = !![];
-            if (_0x1f0813[_0x190f9a(0x103)] !== WS_READY_STATE_OPEN) {
-                _0x40468e[_0x190f9a(0x10a)](_0x190f9a(0x2ab) + _0x190f9a(0x22d) + _0x190f9a(0x163) + '\x65\x6e');
+
+// 将远程套接字连接到 WebSocket 的函数
+async function remoteSocketToWS(remoteSocket, webSocket, retry, log) {
+    let hasIncomingData = false;
+
+    // 将远程套接字的可读流传输到可写流中
+    await remoteSocket.readable.pipeTo(new WritableStream({
+        start() {},
+        async write(chunk, controller) {
+            hasIncomingData = true;
+            if (webSocket.readyState!== WS_READY_STATE_OPEN) {
+                controller.error("webSocket connection is not open");
             }
-            _0x1f0813[_0x190f9a(0x166)](_0xe0e556);
+            // 将数据发送到 WebSocket
+            webSocket.send(chunk);
         },
-        '\x63\x6c\x6f\x73\x65'() {
-            const _0x24b61f = _0x1f7912;
-            _0x599c28(_0x24b61f(0x14e) + _0x24b61f(0x1bb) + _0x24b61f(0x200) + '\x64\x2c\x20\x68\x61\x73\x49\x6e\x63\x6f' + _0x24b61f(0x1ad) + _0x4fddb7);
+        close() {
+            log(`remoteSocket.readable is closed, hasIncomingData: ${hasIncomingData}`);
         },
-        '\x61\x62\x6f\x72\x74'(_0xff2107) {
-            const _0x27e0ea = _0x1f7912;
-            console[_0x27e0ea(0x10a)](_0x27e0ea(0x14e) + _0x27e0ea(0x1bb) + _0x27e0ea(0x102), _0xff2107);
+        abort(reason) {
+            console.error("remoteSocket.readable abort", reason);
         }
-    }))[_0x1f7912(0x1f3)](_0xca733d => {
-        const _0x547cfa = _0x1f7912;
-        console['\x65\x72\x72\x6f\x72'](_0x547cfa(0x14e) + _0x547cfa(0x105) + _0x547cfa(0x23e), _0xca733d[_0x547cfa(0x221)] || _0xca733d);
-        safeCloseWebSocket(_0x1f0813);
+    })).catch((error) => {
+        console.error(`remoteSocketToWS error:`, error.stack || error);
+        safeCloseWebSocket(webSocket);
     });
-    if (!_0x4fddb7 && _0xb84fc9) {
-        _0x599c28(_0x1f7912(0x1b0));
-        _0xb84fc9();
+
+    if (!hasIncomingData && retry) {
+        log(`retry`);
+        retry();
     }
 }
-function makeReadableWebSocketStream(_0x41d825, _0x20647a, _0x1c25d7) {
-    let _0x4851b2 = ![];
-    const _0x17fc9b = new ReadableStream({
-        '\x73\x74\x61\x72\x74'(_0x5dbf55) {
-            const _0x12fcf1 = _0x1cdd;
-            _0x41d825[_0x12fcf1(0x262) + _0x12fcf1(0x15f)](_0x12fcf1(0x142), _0x41b5e5 => {
-                const _0x487ecb = _0x12fcf1;
-                if (_0x4851b2)
-                    return;
-                _0x5dbf55['\x65\x6e\x71\x75\x65\x75\x65'](_0x41b5e5[_0x487ecb(0x1b7)]);
+
+// 创建可读的 WebSocket 流的函数
+function makeReadableWebSocketStream(webSocketServer, earlyDataHeader, log) {
+    let readableStreamCancel = false;
+
+    const stream = new ReadableStream({
+        start(controller) {
+            // 监听 WebSocket 的消息事件，将数据添加到控制器队列
+            webSocketServer.addEventListener("message", (event) => {
+                if (readableStreamCancel) return;
+                controller.enqueue(event.data);
             });
-            _0x41d825[_0x12fcf1(0x262) + _0x12fcf1(0x15f)]('\x63\x6c\x6f\x73\x65', () => {
-                const _0x2e144f = _0x12fcf1;
-                safeCloseWebSocket(_0x41d825);
-                if (_0x4851b2)
-                    return;
-                _0x5dbf55[_0x2e144f(0x129)]();
+
+            // 监听 WebSocket 的关闭事件
+            webSocketServer.addEventListener("close", () => {
+                safeCloseWebSocket(webSocketServer);
+                if (readableStreamCancel) return;
+                controller.close();
             });
-            _0x41d825[_0x12fcf1(0x262) + _0x12fcf1(0x15f)](_0x12fcf1(0x10a), _0x3b203d => {
-                const _0x56e8ef = _0x12fcf1;
-                _0x1c25d7('\x77\x65\x62\x53\x6f\x63\x6b\x65\x74\x53' + _0x56e8ef(0x171) + '\x72');
-                _0x5dbf55[_0x56e8ef(0x10a)](_0x3b203d);
+
+            // 监听 WebSocket 的错误事件
+            webSocketServer.addEventListener("error", (err) => {
+                log("webSocketServer error");
+                controller.error(err);
             });
-            const {
-                earlyData: _0x430d90,
-                error: _0x3e0f20
-            } = base64ToArrayBuffer(_0x20647a);
-            if (_0x3e0f20)
-                _0x5dbf55[_0x12fcf1(0x10a)](_0x3e0f20);
-            else if (_0x430d90)
-                _0x5dbf55[_0x12fcf1(0x273)](_0x430d90);
+
+            // 处理早期数据
+            const { earlyData, error } = base64ToArrayBuffer(earlyDataHeader);
+            if (error) controller.error(error);
+            else if (earlyData) controller.enqueue(earlyData);
         },
-        '\x70\x75\x6c\x6c'(_0x45a5b7) {
-        },
-        '\x63\x61\x6e\x63\x65\x6c'(_0x496819) {
-            const _0x6a321b = _0x1cdd;
-            if (_0x4851b2)
-                return;
-            _0x1c25d7('\x72\x65\x61\x64\x61\x62\x6c\x65\x53\x74' + '\x72\x65\x61\x6d\x20\x77\x61\x73\x20\x63' + '\x61\x6e\x63\x65\x6c\x65\x64\x2c\x20\x64' + _0x6a321b(0x208) + _0x496819);
-            _0x4851b2 = !![];
-            safeCloseWebSocket(_0x41d825);
+        pull(controller) {},
+        // 取消流的处理函数
+        cancel(reason) {
+            if (readableStreamCancel) return;
+            log(`readableStream was canceled, due to ${reason}`);
+            readableStreamCancel = true;
+            safeCloseWebSocket(webSocketServer);
         }
     });
-    return _0x17fc9b;
+
+    return stream;
 }
-function findCrLfIndex(_0x487ad5) {
-    const _0x328e0d = _0x2b3298;
-    for (let _0x92a9a0 = 0x38; _0x92a9a0 < _0x487ad5[_0x328e0d(0x252)] - 0x1; _0x92a9a0++) {
-        if (new Uint8Array(_0x487ad5['\x73\x6c\x69\x63\x65'](_0x92a9a0, _0x92a9a0 + 0x2))[_0x328e0d(0x219)](_0x2e7ec3 => _0x2e7ec3 === 0xd || _0x2e7ec3 === 0xa))
-            return _0x92a9a0;
+
+// 查找 CR LF 标记索引的函数
+function findCrLfIndex(buffer) {
+    for (let i = 56; i < buffer.byteLength - 1; i++) {
+        if (new Uint8Array(buffer.slice(i, i + 2)).every(byte => byte === 0x0d || byte === 0x0a)) return i;
     }
-    return -0x1;
+    return -1;
 }
-function getAddressFromAtype(_0x2787f1, _0xe9d593) {
-    const _0x4dad3e = _0x2b3298;
-    const _0xb174a0 = new DataView(_0xe9d593);
-    switch (_0x2787f1) {
-    case 0x1:
-        return getIPv4Address(_0xb174a0, 0x2);
-    case 0x3:
-        return getDomainName(_0xb174a0, 0x2);
-    case 0x4:
-        return getIPv6Address(_0xb174a0, 0x2);
-    default:
-        return {
-            '\x73\x75\x63\x63\x65\x73\x73': ![],
-            '\x6d\x65\x73\x73\x61\x67\x65': _0x4dad3e(0x1e4) + _0x4dad3e(0x1a1) + _0x4dad3e(0x1ab) + _0x2787f1
-        };
+
+// 根据地址类型获取地址信息的函数
+function getAddressFromAtype(atype, buffer) {
+    const view = new DataView(buffer);
+    switch (atype) {
+        // IPv4 地址
+        case 1:
+            return getIPv4Address(view, 2);
+        // 域名
+        case 3:
+            return getDomainName(view, 2);
+        // IPv6 地址
+        case 4:
+            return getIPv6Address(view, 2);
+        default:
+            return { success: false, message: `invalid addressType is ${atype}` };
     }
 }
-function getIPv4Address(_0x10ca12, _0x59d0d7) {
-    const _0x442a9e = _0x2b3298;
-    const _0x3b91f2 = Array['\x66\x72\x6f\x6d']({ '\x6c\x65\x6e\x67\x74\x68': 0x4 }, (_0x25292f, _0x42510a) => _0x10ca12[_0x442a9e(0x1ec)](_0x59d0d7 + _0x42510a))[_0x442a9e(0x119)]('\x2e');
-    return {
-        '\x73\x75\x63\x63\x65\x73\x73': !![],
-        '\x61\x64\x64\x72\x65\x73\x73': _0x3b91f2,
-        '\x69\x6e\x64\x65\x78': _0x59d0d7,
-        '\x6c\x65\x6e\x67\x74\x68': 0x4
-    };
+
+// 获取 IPv4 地址的函数
+function getIPv4Address(view, index) {
+    const addressBytes = Array.from({ length: 4 }, (_, i) => view.getUint8(index + i)).join('.');
+    return { success: true, address: addressBytes, index, length: 4 };
 }
-function getDomainName(_0x534d1b, _0x5efe49) {
-    const _0x339563 = _0x2b3298;
-    const _0x52560b = _0x534d1b[_0x339563(0x1ec)](_0x5efe49);
-    const _0x483372 = new TextDecoder()[_0x339563(0x27f)](buffer[_0x339563(0x20c)](_0x5efe49 + 0x1, _0x5efe49 + 0x1 + _0x52560b));
-    return {
-        '\x73\x75\x63\x63\x65\x73\x73': !![],
-        '\x61\x64\x64\x72\x65\x73\x73': _0x483372,
-        '\x69\x6e\x64\x65\x78': _0x5efe49 + 0x1,
-        '\x6c\x65\x6e\x67\x74\x68': _0x52560b
-    };
+
+// 获取域名的函数
+function getDomainName(view, index) {
+    const domainLength = view.getUint8(index);
+    const domain = new TextDecoder().decode(buffer.slice(index + 1, index + 1 + domainLength));
+    return { success: true, address: domain, index: index + 1, length: domainLength };
 }
-function getIPv6Address(_0x51befe, _0x11a3ca) {
-    const _0x26fe9c = _0x2b3298;
-    const _0xbc4291 = Array[_0x26fe9c(0x136)]({ '\x6c\x65\x6e\x67\x74\x68': 0x8 }, (_0x19df95, _0x192912) => _0x51befe['\x67\x65\x74\x55\x69\x6e\x74\x31\x36'](_0x11a3ca + _0x192912 * 0x2)['\x74\x6f\x53\x74\x72\x69\x6e\x67'](0x10))['\x6a\x6f\x69\x6e']('\x3a');
-    return {
-        '\x73\x75\x63\x63\x65\x73\x73': !![],
-        '\x61\x64\x64\x72\x65\x73\x73': _0xbc4291,
-        '\x69\x6e\x64\x65\x78': _0x11a3ca,
-        '\x6c\x65\x6e\x67\x74\x68': 0x10
-    };
+
+// 获取 IPv6 地址的函数
+function getIPv6Address(view, index) {
+    const ipv6Parts = Array.from({ length: 8 }, (_, i) => view.getUint16(index + i * 2).toString(16)).join(':');
+    return { success: true, address: ipv6Parts, index, length: 16 };
 }
-function base64ToArrayBuffer(_0xa58948) {
-    const _0x313cde = _0x2b3298;
-    if (!_0xa58948)
-        return { '\x65\x72\x72\x6f\x72': null };
+
+// 将 Base64 字符串转换为 ArrayBuffer 的函数
+function base64ToArrayBuffer(base64Str) {
+    if (!base64Str) return { error: null };
+
     try {
-        _0xa58948 = _0xa58948[_0x313cde(0x289)](/-/g, '\x2b')[_0x313cde(0x289)](/_/g, '\x2f');
-        const _0x263668 = atob(_0xa58948);
-        const _0x3cef23 = Uint8Array[_0x313cde(0x136)](_0x263668, _0x5b9b69 => _0x5b9b69[_0x313cde(0x250)](0x0))['\x62\x75\x66\x66\x65\x72'];
-        return {
-            '\x65\x61\x72\x6c\x79\x44\x61\x74\x61': _0x3cef23,
-            '\x65\x72\x72\x6f\x72': null
-        };
-    } catch (_0x3b1a0a) {
-        return { '\x65\x72\x72\x6f\x72': _0x3b1a0a };
+        base64Str = base64Str.replace(/-/g, '+').replace(/_/g, '/');
+        const decodedString = atob(base64Str);
+        const arrayBuffer = Uint8Array.from(decodedString, char => char.charCodeAt(0)).buffer;
+        return { earlyData: arrayBuffer, error: null };
+    } catch (error) {
+        return { error };
     }
 }
-async function writeToRemoteSocket(_0x1af163, _0x59ef6b) {
-    const _0x1cd7e7 = _0x2b3298;
-    const _0x264588 = _0x1af163['\x77\x72\x69\x74\x61\x62\x6c\x65'][_0x1cd7e7(0x12e)]();
-    await _0x264588['\x77\x72\x69\x74\x65'](_0x59ef6b);
-    _0x264588['\x72\x65\x6c\x65\x61\x73\x65\x4c\x6f\x63' + '\x6b']();
+
+// 向远程套接字写入数据的函数
+async function writeToRemoteSocket(socket, chunk) {
+    const writer = socket.writable.getWriter();
+    await writer.write(chunk);
+    writer.releaseLock();
 }
-let WS_READY_STATE_OPEN = 0x1;
-let WS_READY_STATE_CLOSING = 0x2;
-function safeCloseWebSocket(_0x4600fc) {
-    const _0x294a1f = _0x2b3298;
+
+// WebSocket 的打开状态常量
+let WS_READY_STATE_OPEN = 1;
+// WebSocket 的关闭状态常量
+let WS_READY_STATE_CLOSING = 2;
+
+function safeCloseWebSocket(socket) {
     try {
-        if (_0x4600fc[_0x294a1f(0x103)] === WS_READY_STATE_OPEN || _0x4600fc[_0x294a1f(0x103)] === WS_READY_STATE_CLOSING) {
-            _0x4600fc[_0x294a1f(0x129)]();
+        // 检查WebSocket是否处于打开或正在关闭的状态
+        if (socket.readyState === WS_READY_STATE_OPEN || socket.readyState === WS_READY_STATE_CLOSING) {
+            socket.close(); // 关闭WebSocket
         }
-    } catch (_0x3d41d4) {
-        console['\x65\x72\x72\x6f\x72']('\x73\x61\x66\x65\x43\x6c\x6f\x73\x65\x57' + _0x294a1f(0x29f) + _0x294a1f(0x241), _0x3d41d4);
+    } catch (error) {
+        console.error("safeCloseWebSocket error", error); // 记录关闭错误
     }
 }
-function revertFakeInfo(_0x4df970, _0x51376e, _0x484c83, _0x575f4d) {
-    const _0x3bd154 = _0x2b3298;
-    if (_0x575f4d)
-        _0x4df970 = atob(_0x4df970);
-    _0x4df970 = _0x4df970[_0x3bd154(0x289)](new RegExp(fakeUserID, '\x67'), _0x51376e)[_0x3bd154(0x289)](new RegExp(fakeHostName, '\x67'), _0x484c83);
-    if (_0x575f4d)
-        _0x4df970 = btoa(_0x4df970);
-    return _0x4df970;
+
+// 函数用于还原假信息
+function revertFakeInfo(content, userID, hostName, isBase64) {
+    if (isBase64) content = atob(content); // 如果内容是Base64编码，则解码
+    // 替换假用户ID和主机名为真实值
+    content = content.replace(new RegExp(fakeUserID, 'g'), userID).replace(new RegExp(fakeHostName, 'g'), hostName);
+    if (isBase64) content = btoa(content); // 如果需要，重新编码为Base64
+    return content; // 返回处理后的内容
 }
-async function MD5MD5(_0x3ad0cd) {
-    const _0x9ed86d = _0x2b3298;
-    const _0x1e5a9d = new TextEncoder();
-    const _0xbfa82f = await crypto[_0x9ed86d(0x249)][_0x9ed86d(0x2a5)](_0x9ed86d(0x281), _0x1e5a9d[_0x9ed86d(0x1be)](_0x3ad0cd));
-    const _0x3aa0ef = Array[_0x9ed86d(0x136)](new Uint8Array(_0xbfa82f));
-    const _0x15d7a5 = _0x3aa0ef[_0x9ed86d(0x10b)](_0x3ab6bd => _0x3ab6bd[_0x9ed86d(0x1d7)](0x10)[_0x9ed86d(0x282)](0x2, '\x30'))['\x6a\x6f\x69\x6e']('');
-    const _0x443df0 = await crypto[_0x9ed86d(0x249)][_0x9ed86d(0x2a5)](_0x9ed86d(0x281), _0x1e5a9d[_0x9ed86d(0x1be)](_0x15d7a5[_0x9ed86d(0x20c)](0x7, 0x1b)));
-    const _0x3a2992 = Array[_0x9ed86d(0x136)](new Uint8Array(_0x443df0));
-    const _0x32e063 = _0x3a2992[_0x9ed86d(0x10b)](_0x1c9f44 => _0x1c9f44['\x74\x6f\x53\x74\x72\x69\x6e\x67'](0x10)['\x70\x61\x64\x53\x74\x61\x72\x74'](0x2, '\x30'))[_0x9ed86d(0x119)]('');
-    return _0x32e063['\x74\x6f\x4c\x6f\x77\x65\x72\x43\x61\x73' + '\x65']();
+
+// 函数用于计算两次MD5哈希值
+async function MD5MD5(text) {
+    const encoder = new TextEncoder(); // 创建TextEncoder实例
+
+    // 第一次MD5哈希
+    const firstPass = await crypto.subtle.digest('MD5', encoder.encode(text));
+    const firstPassArray = Array.from(new Uint8Array(firstPass)); // 将结果转换为数组
+    const firstHex = firstPassArray.map(b => b.toString(16).padStart(2, '0')).join(''); // 转换为十六进制字符串
+
+    // 第二次MD5哈希
+    const secondPass = await crypto.subtle.digest('MD5', encoder.encode(firstHex.slice(7, 27))); // 使用第一次哈希的一部分作为输入
+    const secondPassArray = Array.from(new Uint8Array(secondPass)); // 将结果转换为数组
+    const secondHex = secondPassArray.map(b => b.toString(16).padStart(2, '0')).join(''); // 转换为十六进制字符串
+
+    return secondHex.toLowerCase(); // 返回最终的十六进制字符串并转为小写
 }
-async function ADD(_0x32dcf3) {
-    const _0x746104 = _0x2b3298;
-    let _0x1ed955 = _0x32dcf3['\x72\x65\x70\x6c\x61\x63\x65'](/[	|"'\r\n]+/g, '\x2c')['\x72\x65\x70\x6c\x61\x63\x65'](/,+/g, '\x2c');
-    if (_0x1ed955[_0x746104(0x266)](0x0) === '\x2c')
-        _0x1ed955 = _0x1ed955['\x73\x6c\x69\x63\x65'](0x1);
-    if (_0x1ed955[_0x746104(0x266)](_0x1ed955[_0x746104(0x256)] - 0x1) === '\x2c')
-        _0x1ed955 = _0x1ed955['\x73\x6c\x69\x63\x65'](0x0, _0x1ed955[_0x746104(0x256)] - 0x1);
-    const _0x40a41a = _0x1ed955[_0x746104(0x1fe)]('\x2c');
-    return _0x40a41a;
+
+// 函数用于处理和格式化输入内容
+async function ADD(内容) {
+    // 将制表符、双引号、单引号和换行符替换为逗号
+    let 替换后的内容 = 内容.replace(/[	|"'\r\n]+/g, ',').replace(/,+/g, ',');
+    
+    // 删除开头和结尾的逗号（如果有的话）
+    if (替换后的内容.charAt(0) === ',') 替换后的内容 = 替换后的内容.slice(1);
+    if (替换后的内容.charAt(替换后的内容.length - 1) === ',') 替换后的内容 = 替换后的内容.slice(0, 替换后的内容.length - 1);
+    
+    // 使用逗号分割字符串，得到地址数组
+    const 地址数组 = 替换后的内容.split(',');
+    
+    return 地址数组;
 }
-async function proxyURL(_0x8b5be4, _0x4d0cdc) {
-    const _0x12a36c = _0x2b3298;
-    const _0x5287c2 = await ADD(_0x8b5be4);
-    const _0x35617b = _0x5287c2[Math[_0x12a36c(0x2ae)](Math[_0x12a36c(0x1c1)]() * _0x5287c2[_0x12a36c(0x256)])];
-    let _0x5e4b89 = new URL(_0x35617b);
-    console[_0x12a36c(0x106)](_0x5e4b89);
-    let _0x5025bc = _0x5e4b89[_0x12a36c(0x21a)][_0x12a36c(0x20c)](0x0, -0x1) || '\x68\x74\x74\x70\x73';
-    let _0x9097e1 = _0x5e4b89['\x68\x6f\x73\x74\x6e\x61\x6d\x65'];
-    let _0x547eae = _0x5e4b89[_0x12a36c(0x218)];
-    let _0x1ace24 = _0x5e4b89[_0x12a36c(0x1d4)];
-    if (_0x547eae[_0x12a36c(0x266)](_0x547eae[_0x12a36c(0x256)] - 0x1) === '\x2f') {
-        _0x547eae = _0x547eae[_0x12a36c(0x20c)](0x0, -0x1);
+
+// 函数用于代理URL请求
+async function proxyURL(proxyURL, url) {
+    const URLs = await ADD(proxyURL); // 处理代理URL列表
+    const fullURL = URLs[Math.floor(Math.random() * URLs.length)]; // 随机选择一个代理URL
+    
+    // 解析目标URL
+    let parsedURL = new URL(fullURL);
+    console.log(parsedURL);
+    
+    // 提取并可能修改URL组件
+    let URLProtocol = parsedURL.protocol.slice(0, -1) || 'https'; // 获取协议类型
+    let URLHostname = parsedURL.hostname; // 获取主机名
+    let URLPathname = parsedURL.pathname; // 获取路径
+    let URLSearch = parsedURL.search; // 获取查询参数
+    
+    // 处理路径
+    if (URLPathname.charAt(URLPathname.length - 1) === '/') {
+        URLPathname = URLPathname.slice(0, -1); // 去掉末尾的斜杠
     }
-    _0x547eae += _0x4d0cdc['\x70\x61\x74\x68\x6e\x61\x6d\x65'];
-    let _0x49ecf3 = _0x5025bc + _0x12a36c(0x247) + _0x9097e1 + _0x547eae + _0x1ace24;
-    let _0x1c0bc7 = await fetch(_0x49ecf3);
-    let _0x7b46be = new Response(_0x1c0bc7[_0x12a36c(0x1f6)], {
-        '\x73\x74\x61\x74\x75\x73': _0x1c0bc7['\x73\x74\x61\x74\x75\x73'],
-        '\x73\x74\x61\x74\x75\x73\x54\x65\x78\x74': _0x1c0bc7['\x73\x74\x61\x74\x75\x73\x54\x65\x78\x74'],
-        '\x68\x65\x61\x64\x65\x72\x73': _0x1c0bc7['\x68\x65\x61\x64\x65\x72\x73']
+    URLPathname += url.pathname; // 追加原始URL的路径
+    
+    // 构建新的URL
+    let newURL = `${URLProtocol}://${URLHostname}${URLPathname}${URLSearch}`;
+    
+    // 反向代理请求
+    let response = await fetch(newURL);
+    
+    // 创建新的响应
+    let newResponse = new Response(response.body, {
+        status: response.status,
+        statusText: response.statusText,
+        headers: response.headers
     });
-    _0x7b46be[_0x12a36c(0x125)]['\x73\x65\x74'](_0x12a36c(0x18b), _0x49ecf3);
-    return _0x7b46be;
+    
+    // 添加自定义头部，包含URL信息
+    newResponse.headers.set('X-New-URL', newURL);
+    
+    return newResponse;
 }
-function 配置信息(_0x4a2b3e, _0x3f214d) {
-    const _0x36cb21 = _0x2b3298;
-    const _0x39eff3 = _0x36cb21(0x16d);
-    const _0x1251c8 = atob(啥啥啥_写的这是啥あ);
-    const _0x128d35 = FileName;
-    let _0x23ea4e = _0x3f214d;
-    let _0x46dfb2 = 0x1bb;
-    const _0x468545 = '\x77\x73';
-    const _0x266c42 = _0x3f214d;
-    const _0xdc2b51 = path;
-    let _0x4fe555 = [
-        _0x36cb21(0x143),
-        !![]
-    ];
-    const _0x1ba3ed = _0x3f214d;
-    const _0x3a38fa = '\x72\x61\x6e\x64\x6f\x6d\x69\x7a\x65\x64';
-    const _0x54a8a2 = _0x1251c8 + _0x36cb21(0x247) + encodeURIComponent(_0x4a2b3e) + '\x40' + _0x23ea4e + '\x3a' + _0x46dfb2 + '\x3f\x73\x65\x63\x75\x72\x69\x74\x79\x3d' + _0x4fe555[0x0] + _0x36cb21(0x22c) + _0x1ba3ed + (_0x36cb21(0x17a) + '\x70\x3d') + _0x3a38fa + (_0x36cb21(0x288) + _0x36cb21(0x199) + '\x65\x3d') + _0x468545 + _0x36cb21(0x29b) + _0x266c42 + _0x36cb21(0x1ba) + encodeURIComponent(_0xdc2b51) + '\x23' + encodeURIComponent(_0x128d35);
-    const _0x193d07 = _0x36cb21(0x1d5) + _0x128d35 + _0x36cb21(0x23c) + _0x23ea4e + _0x36cb21(0x108) + _0x46dfb2 + (_0x36cb21(0x1a0) + _0x36cb21(0x112) + _0x36cb21(0x1da) + _0x36cb21(0x195)) + _0x3a38fa + '\x2c\x20\x74\x79\x70\x65\x3a\x20' + _0x1251c8 + (_0x36cb21(0x164) + '\x3a\x20') + _0x4a2b3e + _0x36cb21(0x28e) + _0x1ba3ed + ('\x2c\x20\x61\x6c\x70\x6e\x3a\x20\x5b\x68' + _0x36cb21(0x1df) + _0x36cb21(0x16e) + _0x36cb21(0x161) + '\x74\x77\x6f\x72\x6b\x3a\x20') + _0x468545 + (_0x36cb21(0x172) + '\x20\x7b\x70\x61\x74\x68\x3a\x20\x22') + _0xdc2b51 + ('\x22\x2c\x20\x68\x65\x61\x64\x65\x72\x73' + _0x36cb21(0x159)) + _0x266c42 + _0x36cb21(0x271);
-    return [
-        _0x54a8a2,
-        _0x193d07
-    ];
+
+// 函数用于生成配置信息
+function 配置信息(密码, 域名地址) {
+    const 啥啥啥_写的这是啥啊 = 'dHJvamFu';
+    const 协议类型 = atob(啥啥啥_写的这是啥あ); // 解码协议类型
+    
+    const 别名 = FileName; // 获取别名
+    let 地址 = 域名地址; // 设置域名地址
+    let 端口 = 443; // 默认端口
+    
+    const 传输层协议 = 'ws'; // 传输层协议
+    const 伪装域名 = 域名地址; // 伪装域名
+    const 路径 = path; // 获取路径
+    
+    let 传输层安全 = ['tls', true]; // 传输层安全性设置
+    const SNI = 域名地址; // SNI设置
+    const 指纹 = 'randomized'; // 客户端指纹
+    
+    // 构建V2Ray配置字符串
+    const v2ray = `${协议类型}://${encodeURIComponent(密码)}@${地址}:${端口}?security=${传输层安全[0]}&sni=${SNI}&alpn=h3&fp=${指纹}&allowInsecure=1&type=${传输层协议}&host=${伪装域名}&path=${encodeURIComponent(路径)}#${encodeURIComponent(别名)}`;
+    
+    // 构建Clash配置字符串
+    const clash = `- {name: ${别名}, server: ${地址}, port: ${端口}, udp: false, client-fingerprint: ${指纹}, type: ${协议类型}, password: ${密码}, sni: ${SNI}, alpn: [h3], skip-cert-verify: true, network: ${传输层协议}, ws-opts: {path: "${路径}", headers: {Host: ${伪装域名}}}}`;
+
+    return [v2ray, clash]; // 返回V2Ray和Clash配置字符串
 }
-let subParams = [
-    _0x2b3298(0x24e),
-    '\x62\x61\x73\x65\x36\x34',
-    _0x2b3298(0x276),
-    _0x2b3298(0x132),
-    _0x2b3298(0xf4),
-    '\x73\x62',
-    '\x73\x75\x72\x67\x65'
-];
-async function get特洛伊Config(_0x4cb59d, _0xb6caaf, _0x2bebe7, _0x37464d, _0x2fc85e, _0x504c54) {
-    const _0x95ea41 = _0x2b3298;
-    if (_0x2bebe7) {
-        const _0x5c1efc = _0x2bebe7[_0x95ea41(0xfc)](/^(?:https?:\/\/)?([^\/]+)/);
-        if (_0x5c1efc) {
-            _0x2bebe7 = _0x5c1efc[0x1];
+
+let subParams = ['sub', 'base64', 'b64', 'clash', 'singbox', 'sb', 'surge'];
+
+async function get特洛伊Config(password, hostName, sub, UA, RproxyIP, _url) {
+    if (sub) {
+        const match = sub.match(/^(?:https?:\/\/)?([^\/]+)/);
+        if (match) {
+            sub = match[1];
         }
-        const _0x25bcaa = await ADD(_0x2bebe7);
-        if (_0x25bcaa[_0x95ea41(0x256)] > 0x1)
-            _0x2bebe7 = _0x25bcaa[0x0];
-    } else if (addresses[_0x95ea41(0x256)] + addressesapi[_0x95ea41(0x256)] + addressescsv[_0x95ea41(0x256)] === 0x0) {
-        let _0x56eaea = [
-            _0x95ea41(0x160) + '\x2e\x30\x2f\x32\x33',
-            '\x31\x30\x34\x2e\x31\x36\x2e\x30\x2e\x30' + '\x2f\x31\x33',
-            _0x95ea41(0x127) + _0x95ea41(0x206),
-            _0x95ea41(0x2a6) + _0x95ea41(0x206),
-            '\x31\x38\x38\x2e\x31\x31\x34\x2e\x39\x36' + _0x95ea41(0x157),
-            '\x31\x39\x30\x2e\x39\x33\x2e\x32\x34\x30' + _0x95ea41(0x157)
+        const subs = await ADD(sub);
+        if (subs.length > 1) sub = subs[0];
+    } else if ((addresses.length + addressesapi.length + addressescsv.length) === 0) {
+        // 定义 Cloudflare IP 范围的 CIDR 列表
+        let cfips = [
+            '103.21.244.0/23',
+            '104.16.0.0/13',
+            '104.24.0.0/14',
+            '172.64.0.0/14',
+            '188.114.96.0/21',
+            '190.93.240.0/21',
         ];
-        function _0x56d036(_0x1a65d3) {
-            const _0x4bbe4d = _0x95ea41;
-            const [_0x46a4eb, _0x65df60] = _0x1a65d3[_0x4bbe4d(0x1fe)]('\x2f');
-            const _0x318fee = _0x46a4eb[_0x4bbe4d(0x1fe)]('\x2e')[_0x4bbe4d(0x10b)](Number);
-            const _0x3cfb4f = 0x20 - parseInt(_0x65df60, 0xa);
-            const _0x232275 = Math[_0x4bbe4d(0x257)](0x2, _0x3cfb4f) - 0x1;
-            const _0x8c7736 = Math[_0x4bbe4d(0x2ae)](Math[_0x4bbe4d(0x1c1)]() * _0x232275);
-            const _0x2d2963 = _0x318fee[_0x4bbe4d(0x10b)]((_0x3cd19b, _0x28e04d) => {
-                if (_0x28e04d < 0x2)
-                    return _0x3cd19b;
-                if (_0x28e04d === 0x2)
-                    return (_0x3cd19b & 0xff << _0x3cfb4f - 0x8) + (_0x8c7736 >> 0x8 & 0xff);
-                return (_0x3cd19b & 0xff << _0x3cfb4f) + (_0x8c7736 & 0xff);
+
+        // 生成符合给定 CIDR 范围的随机 IP 地址
+        function generateRandomIPFromCIDR(cidr) {
+            const [base, mask] = cidr.split('/');
+            const baseIP = base.split('.').map(Number);
+            const subnetMask = 32 - parseInt(mask, 10);
+            const maxHosts = Math.pow(2, subnetMask) - 1;
+            const randomHost = Math.floor(Math.random() * maxHosts);
+
+            const randomIP = baseIP.map((octet, index) => {
+                if (index < 2) return octet;
+                if (index === 2) return (octet & (255 << (subnetMask - 8))) + ((randomHost >> 8) & 255);
+                return (octet & (255 << subnetMask)) + (randomHost & 255);
             });
-            return _0x2d2963[_0x4bbe4d(0x119)]('\x2e');
+
+            return randomIP.join('.');
         }
-        addresses = addresses['\x63\x6f\x6e\x63\x61\x74']('\x31\x32\x37\x2e\x30\x2e\x30\x2e\x31\x3a' + '\x31\x32\x33\x34\x23\x43\x46\x6e\x61\x74');
-        addresses = addresses[_0x95ea41(0x162)](_0x56eaea[_0x95ea41(0x10b)](_0x3321d8 => _0x56d036(_0x3321d8) + _0x95ea41(0x290)));
+
+        addresses = addresses.concat('127.0.0.1:1234#CFnat');
+        addresses = addresses.concat(cfips.map(cidr => generateRandomIPFromCIDR(cidr) + '#CF随机节点'));
     }
-    const _0x32f8a4 = _0x37464d['\x74\x6f\x4c\x6f\x77\x65\x72\x43\x61\x73' + '\x65']();
-    const _0xd6b18c = 配置信息(_0x4cb59d, _0xb6caaf);
-    const _0x30e6e6 = _0xd6b18c[0x0];
-    const _0x1ec03c = _0xd6b18c[0x1];
-    let _0xd1649f = '';
-    if (_0xb6caaf['\x69\x6e\x63\x6c\x75\x64\x65\x73']('\x2e\x77\x6f\x72\x6b\x65\x72\x73\x2e\x64' + '\x65\x76')) {
-        if (proxyhostsURL && (!proxyhosts || proxyhosts[_0x95ea41(0x256)] === 0x0)) {
+
+    const userAgent = UA.toLowerCase();
+    const Config = 配置信息(password, hostName);
+    const v2ray = Config[0];
+    const clash = Config[1];
+    let proxyhost = "";
+
+    if (hostName.includes(".workers.dev")) {
+        if (proxyhostsURL && (!proxyhosts || proxyhosts.length === 0)) {
             try {
-                const _0x10d62a = await fetch(proxyhostsURL);
-                if (!_0x10d62a['\x6f\x6b']) {
-                    console[_0x95ea41(0x10a)](_0x95ea41(0x181), _0x10d62a[_0x95ea41(0x2a4)], _0x10d62a[_0x95ea41(0x1a6)]);
-                    return;
+                const response = await fetch(proxyhostsURL);
+
+                if (!response.ok) {
+                    console.error('获取地址时出错:', response.status, response.statusText);
+                    return; // 如果有错误，直接返回
                 }
-                const _0x18b6f5 = await _0x10d62a['\x74\x65\x78\x74']();
-                const _0x50348c = _0x18b6f5[_0x95ea41(0x1fe)]('\x0a');
-                const _0xd34f73 = _0x50348c[_0x95ea41(0x248)](_0x181e1b => _0x181e1b[_0x95ea41(0x233)]() !== '');
-                proxyhosts = proxyhosts['\x63\x6f\x6e\x63\x61\x74'](_0xd34f73);
-            } catch (_0x3380d4) {
-                console[_0x95ea41(0x10a)](_0x95ea41(0x181), _0x3380d4);
+
+                const text = await response.text();
+                const lines = text.split('\n');
+                // 过滤掉空行或只包含空白字符的行
+                const nonEmptyLines = lines.filter(line => line.trim() !== '');
+
+                proxyhosts = proxyhosts.concat(nonEmptyLines);
+            } catch (error) {
+                console.error('获取地址时出错:', error);
             }
         }
-        if (proxyhosts[_0x95ea41(0x256)] !== 0x0)
-            _0xd1649f = proxyhosts[Math['\x66\x6c\x6f\x6f\x72'](Math[_0x95ea41(0x1c1)]() * proxyhosts['\x6c\x65\x6e\x67\x74\x68'])] + '\x2f';
+        if (proxyhosts.length !== 0) proxyhost = proxyhosts[Math.floor(Math.random() * proxyhosts.length)] + "/";
     }
-    if (_0x32f8a4[_0x95ea41(0x21b)](_0x95ea41(0x25a)) && !subParams['\x73\x6f\x6d\x65'](_0x4aafe0 => _0x504c54[_0x95ea41(0x131) + '\x6d\x73'][_0x95ea41(0x1e5)](_0x4aafe0))) {
-        let _0x22671e = '\x53\x75\x72\x67\x65\u8ba2\u9605\u5730\u5740\x3a' + _0x95ea41(0x24d) + _0xd1649f + _0xb6caaf + '\x2f' + _0x4cb59d + '\x3f\x73\x75\x72\x67\x65';
-        if (_0xb6caaf[_0x95ea41(0x21b)](_0x95ea41(0x114) + '\x65\x76'))
-            _0x22671e = _0x95ea41(0x165) + _0x95ea41(0x203);
-        const _0x531624 = socks5s['\x6d\x61\x70'](_0x5f2db3 => {
-            const _0x32d894 = _0x95ea41;
-            if (_0x5f2db3[_0x32d894(0x21b)]('\x40'))
-                return _0x5f2db3[_0x32d894(0x1fe)]('\x40')[0x1];
-            else if (_0x5f2db3[_0x32d894(0x21b)]('\x2f\x2f'))
-                return _0x5f2db3[_0x32d894(0x1fe)]('\x2f\x2f')[0x1];
-            else
-                return _0x5f2db3;
+
+    if (userAgent.includes('mozilla') && !subParams.some(_searchParams => _url.searchParams.has(_searchParams))) {
+        let surge = `Surge订阅地址:\nhttps://${proxyhost}${hostName}/${password}?surge`;
+        if (hostName.includes(".workers.dev")) surge = "Surge订阅必须绑定自定义域";
+
+        const newSocks5s = socks5s.map(socks5Address => {
+            if (socks5Address.includes('@')) return socks5Address.split('@')[1];
+            else if (socks5Address.includes('//')) return socks5Address.split('//')[1];
+            else return socks5Address;
         });
-        let _0x443920 = '';
-        if (go2Socks5s[_0x95ea41(0x256)] > 0x0 && enableSocks) {
-            _0x443920 = '' + decodeURIComponent(_0x95ea41(0x245) + _0x95ea41(0x137) + _0x95ea41(0x176) + _0x95ea41(0x299) + _0x95ea41(0xfd) + _0x95ea41(0x20b));
-            if (go2Socks5s['\x69\x6e\x63\x6c\x75\x64\x65\x73'](atob(_0x95ea41(0x214))) || go2Socks5s[_0x95ea41(0x21b)](atob(_0x95ea41(0x1f8))))
-                _0x443920 += decodeURIComponent(_0x95ea41(0x24f) + '\x45\x36\x25\x39\x43\x25\x38\x39\x25\x45' + '\x36\x25\x42\x35\x25\x38\x31\x25\x45\x39' + _0x95ea41(0x175)) + '\x0a';
-            else
-                _0x443920 += _0x95ea41(0x121) + go2Socks5s[_0x95ea41(0x119)](_0x95ea41(0x121)) + '\x0a';
+
+        let socks5List = '';
+        if (go2Socks5s.length > 0 && enableSocks) {
+            socks5List = `${decodeURIComponent('SOCKS5%EF%BC%88%E7%99%BD%E5%90%8D%E5%8D%95%EF%BC%89%3A%20')}`;
+            if (go2Socks5s.includes(atob('YWxsIGlu')) || go2Socks5s.includes(atob('Kg=='))) socks5List += `${decodeURIComponent('%E6%89%80%E6%9C%89%E6%B5%81%E9%87%8F')}\n`;
+            else socks5List += `\n  ${go2Socks5s.join('\n  ')}\n`;
         }
-        let _0x597987 = '';
-        if (_0x2bebe7) {
-            if (enableSocks)
-                _0x597987 += _0x95ea41(0x1fb) + _0x95ea41(0x10c) + '\x20\x20' + _0x531624[_0x95ea41(0x119)]('\x0a\x20\x20') + '\x0a' + _0x443920;
-            else if (proxyIP && proxyIP !== '')
-                _0x597987 += '\x43\x46\x43\x44\x4e\uff08\u8bbf\u95ee\u65b9\u5f0f' + '\uff09\x3a\x20\x50\x72\x6f\x78\x79\x49\x50' + _0x95ea41(0x121) + proxyIPs[_0x95ea41(0x119)](_0x95ea41(0x121)) + '\x0a';
-            else if (_0x2fc85e === _0x95ea41(0x24c))
-                _0x597987 += _0x95ea41(0x1fb) + _0x95ea41(0x187) + _0x95ea41(0x244);
-            else
-                _0x597987 += _0x95ea41(0x1fb) + _0x95ea41(0x20e) + _0x95ea41(0x25b) + _0x95ea41(0x1c3) + '\x20\uff01\uff01\uff01\x0a';
-            _0x597987 += _0x95ea41(0x1f5) + _0x95ea41(0x1af) + _0x2bebe7;
+
+        let 订阅器 = '';
+        if (sub) {
+            if (enableSocks) 订阅器 += `CFCDN（访问方式）: Socks5\n  ${newSocks5s.join('\n  ')}\n${socks5List}`;
+            else if (proxyIP && proxyIP !== '') 订阅器 += `CFCDN（访问方式）: ProxyIP\n  ${proxyIPs.join('\n  ')}\n`;
+            else if (RproxyIP === 'true') 订阅器 += `CFCDN（访问方式）: 自动获取ProxyIP\n`;
+            else 订阅器 += `CFCDN（访问方式）: 无法访问, 需要您设置 proxyIP/PROXYIP ！！！\n`;
+            订阅器 += `\nSUB（优选订阅生成器）: ${sub}`;
         } else {
-            if (enableSocks)
-                _0x597987 += '\x43\x46\x43\x44\x4e\uff08\u8bbf\u95ee\u65b9\u5f0f' + _0x95ea41(0x10c) + '\x20\x20' + _0x531624['\x6a\x6f\x69\x6e'](_0x95ea41(0x121)) + '\x0a' + _0x443920;
-            else if (proxyIP && proxyIP !== '')
-                _0x597987 += '\x43\x46\x43\x44\x4e\uff08\u8bbf\u95ee\u65b9\u5f0f' + _0x95ea41(0x155) + '\x0a\x20\x20' + proxyIPs['\x6a\x6f\x69\x6e'](_0x95ea41(0x121)) + '\x0a';
-            else
-                _0x597987 += '\x43\x46\x43\x44\x4e\uff08\u8bbf\u95ee\u65b9\u5f0f' + _0x95ea41(0x20e) + '\u8981\u60a8\u8bbe\u7f6e\x20\x70\x72\x6f\x78\x79' + _0x95ea41(0x1c3) + _0x95ea41(0x28f);
-            _0x597987 += _0x95ea41(0x261) + '\u7f6e\x20\x61\x64\x64\x72\x65\x73\x73\x65' + _0x95ea41(0x255) + '\u91cf\u63d0\u4f9b\x0a';
-            if (addresses[_0x95ea41(0x256)] > 0x0)
-                _0x597987 += '\x41\x44\x44\uff08\x54\x4c\x53\u4f18\u9009\u57df' + '\u540d\x26\x49\x50\uff09\x3a\x20\x0a\x20\x20' + addresses[_0x95ea41(0x119)](_0x95ea41(0x121)) + '\x0a';
-            if (addressesapi['\x6c\x65\x6e\x67\x74\x68'] > 0x0)
-                _0x597987 += '\x41\x44\x44\x41\x50\x49\uff08\x54\x4c\x53' + _0x95ea41(0x13f) + _0x95ea41(0x192) + addressesapi[_0x95ea41(0x119)]('\x0a\x20\x20') + '\x0a';
-            if (addressescsv[_0x95ea41(0x256)] > 0x0)
-                _0x597987 += _0x95ea41(0x1fa) + '\x65\x73\x74\u6d4b\u901f\x63\x73\x76\u6587\u4ef6' + _0x95ea41(0x1db) + DLS + _0x95ea41(0x147) + addressescsv[_0x95ea41(0x119)]('\x0a\x20\x20') + '\x0a';
+            if (enableSocks) 订阅器 += `CFCDN（访问方式）: Socks5\n  ${newSocks5s.join('\n  ')}\n${socks5List}`;
+            else if (proxyIP && proxyIP !== '') 订阅器 += `CFCDN（访问方式）: ProxyIP\n  ${proxyIPs.join('\n  ')}\n`;
+            else 订阅器 += `CFCDN（访问方式）: 无法访问, 需要您设置 proxyIP/PROXYIP ！！！\n`;
+            订阅器 += `\n您的订阅内容由 内置 addresses/ADD* 参数变量提供\n`;
+            if (addresses.length > 0) 订阅器 += `ADD（TLS优选域名&IP）: \n  ${addresses.join('\n  ')}\n`;
+            if (addressesapi.length > 0) 订阅器 += `ADDAPI（TLS优选域名&IP 的 API）: \n  ${addressesapi.join('\n  ')}\n`;
+            if (addressescsv.length > 0) 订阅器 += `ADDCSV（IPTest测速csv文件 限速 ${DLS} ）: \n  ${addressescsv.join('\n  ')}\n`;
         }
-        return _0x95ea41(0x168) + '\x23\x23\x23\x23\x23\x23\x23\x23\x23\x23' + '\x23\x23\x23\x23\x23\x23\x23\x23\x23\x23' + _0x95ea41(0x1ef) + '\x23\x23\x23\x23\x23\x23\x23\x23\x23\x23' + _0x95ea41(0x1ef) + _0x95ea41(0x24b) + _0x95ea41(0x18c) + _0x95ea41(0x156) + _0x95ea41(0x1bd) + _0x95ea41(0x1ac) + _0x95ea41(0x11d) + _0x95ea41(0x110) + _0x95ea41(0x209) + _0x95ea41(0x209) + _0x95ea41(0x209) + '\x2d\x2d\x2d\x2d\x2d\x2d\x2d\x2d\x2d\x2d' + '\x2d\x2d\x2d\x2d\x2d\x2d\x2d\x2d\x2d\x2d' + _0x95ea41(0x16f) + _0x95ea41(0x126) + _0x95ea41(0x1b5) + _0xd1649f + _0xb6caaf + '\x2f' + _0x4cb59d + '\x0a\x68\x74\x74\x70\x73\x3a\x2f\x2f' + _0xd1649f + _0xb6caaf + '\x2f' + _0x4cb59d + (_0x95ea41(0x1cf) + '\x36\x34\u8ba2\u9605\u5730\u5740\x3a\x0a\x68\x74' + '\x74\x70\x73\x3a\x2f\x2f') + _0xd1649f + _0xb6caaf + '\x2f' + _0x4cb59d + (_0x95ea41(0x140) + _0x95ea41(0x247)) + _0xd1649f + _0xb6caaf + '\x2f' + _0x4cb59d + ('\x3f\x62\x61\x73\x65\x36\x34\x0a\x0a\x63' + _0x95ea41(0x1a2) + _0x95ea41(0x1b6)) + _0xd1649f + _0xb6caaf + '\x2f' + _0x4cb59d + (_0x95ea41(0x298) + _0x95ea41(0x22e) + _0x95ea41(0x24d)) + _0xd1649f + _0xb6caaf + '\x2f' + _0x4cb59d + (_0x95ea41(0x13a) + '\x2f\x2f') + _0xd1649f + _0xb6caaf + '\x2f' + _0x4cb59d + _0x95ea41(0x16c) + _0x22671e + ('\x0a\x2d\x2d\x2d\x2d\x2d\x2d\x2d\x2d\x2d' + _0x95ea41(0x209) + _0x95ea41(0x209) + _0x95ea41(0x209) + _0x95ea41(0x209) + _0x95ea41(0x209) + _0x95ea41(0x259) + '\x23\x23\x23\x23\x23\x23\x23\x23\x23\x23' + '\x23\x23\x23\x23\x23\x23\x23\x23\x23\x23' + _0x95ea41(0x1ef) + '\x23\x23\x23\x23\x23\x23\x23\x23\x23\x23' + _0x95ea41(0x1ef) + '\x23\x23\x23\x23\x23\x23\x23\x23\x23\x0a') + FileName + (_0x95ea41(0x2af) + '\x2d\x2d\x2d\x2d\x2d\x2d\x2d\x2d\x2d\x2d' + '\x2d\x2d\x2d\x2d\x2d\x2d\x2d\x2d\x2d\x2d' + '\x2d\x2d\x2d\x2d\x2d\x2d\x2d\x2d\x2d\x2d' + _0x95ea41(0x209) + _0x95ea41(0x209) + '\x2d\x2d\x2d\x2d\x2d\x2d\x2d\x2d\x2d\x0a' + _0x95ea41(0x268)) + _0xb6caaf + ('\x0a\x50\x41\x53\x53\x57\x4f\x52\x44\x3a' + '\x20') + _0x4cb59d + _0x95ea41(0x277) + sha224Password + (_0x95ea41(0x15d) + '\x20') + fakeUserID + _0x95ea41(0x287) + _0x37464d + '\x0a\x0a' + _0x597987 + (_0x95ea41(0x193) + _0x95ea41(0x1b8)) + subProtocol + _0x95ea41(0x247) + subConverter + (_0x95ea41(0x243) + _0x95ea41(0x2ad) + '\x3a\x20') + subConfig + (_0x95ea41(0x1bc) + _0x95ea41(0x209) + '\x2d\x2d\x2d\x2d\x2d\x2d\x2d\x2d\x2d\x2d' + _0x95ea41(0x209) + _0x95ea41(0x209) + _0x95ea41(0x209) + _0x95ea41(0x259) + '\x23\x23\x23\x23\x23\x23\x23\x23\x23\x23' + _0x95ea41(0x1ef) + _0x95ea41(0x1ef) + _0x95ea41(0x1ef) + _0x95ea41(0x1ef) + '\x23\x23\x23\x23\x23\x23\x23\x23\x23\x0a' + _0x95ea41(0x128) + _0x95ea41(0x209) + _0x95ea41(0x209) + '\x2d\x2d\x2d\x2d\x2d\x2d\x2d\x2d\x2d\x2d' + _0x95ea41(0x209) + _0x95ea41(0x209) + _0x95ea41(0x292)) + _0x30e6e6 + ('\x0a\x2d\x2d\x2d\x2d\x2d\x2d\x2d\x2d\x2d' + '\x2d\x2d\x2d\x2d\x2d\x2d\x2d\x2d\x2d\x2d' + _0x95ea41(0x209) + _0x95ea41(0x209) + '\x2d\x2d\x2d\x2d\x2d\x2d\x2d\x2d\x2d\x2d' + _0x95ea41(0x209) + _0x95ea41(0x259) + '\x23\x23\x23\x23\x23\x23\x23\x23\x23\x23' + _0x95ea41(0x1ef) + _0x95ea41(0x1ef) + _0x95ea41(0x1ef) + _0x95ea41(0x1ef) + '\x23\x23\x23\x23\x23\x23\x23\x23\x23\x0a' + '\x63\x6c\x61\x73\x68\x2d\x6d\x65\x74\x61' + _0x95ea41(0x1bc) + '\x2d\x2d\x2d\x2d\x2d\x2d\x2d\x2d\x2d\x2d' + _0x95ea41(0x209) + _0x95ea41(0x209) + _0x95ea41(0x209) + _0x95ea41(0x209) + _0x95ea41(0x18f)) + _0x1ec03c + (_0x95ea41(0x1bc) + _0x95ea41(0x209) + _0x95ea41(0x209) + _0x95ea41(0x209) + _0x95ea41(0x209) + '\x2d\x2d\x2d\x2d\x2d\x2d\x2d\x2d\x2d\x2d' + _0x95ea41(0x259) + '\x23\x23\x23\x23\x23\x23\x23\x23\x23\x23' + '\x23\x23\x23\x23\x23\x23\x23\x23\x23\x23' + '\x23\x23\x23\x23\x23\x23\x23\x23\x23\x23' + _0x95ea41(0x1ef) + '\x23\x23\x23\x23\x23\x23\x23\x23\x23\x23' + _0x95ea41(0x215)) + decodeURIComponent(atob(_0x95ea41(0x29e) + _0x95ea41(0x19b) + '\x4a\x54\x49\x7a\x4a\x54\x49\x7a\x4a\x54' + _0x95ea41(0x19b) + _0x95ea41(0x29e) + '\x49\x7a\x4a\x54\x49\x7a\x4a\x54\x49\x7a' + '\x4a\x54\x49\x7a\x4a\x54\x49\x7a\x4a\x54' + _0x95ea41(0x19b) + '\x4a\x54\x49\x7a\x4a\x54\x49\x7a\x4a\x54' + '\x49\x7a\x4a\x54\x49\x7a\x4a\x54\x49\x7a' + _0x95ea41(0x29e) + _0x95ea41(0x19b) + _0x95ea41(0x29e) + '\x49\x7a\x4a\x54\x49\x7a\x4a\x54\x49\x7a' + _0x95ea41(0x170) + _0x95ea41(0x101) + _0x95ea41(0x228) + _0x95ea41(0x1d1) + _0x95ea41(0x11c) + '\x56\x46\x4e\x53\x55\x35\x51\x79\x56\x42' + _0x95ea41(0x1a4) + _0x95ea41(0x120) + '\x4d\x79\x55\x79\x4d\x79\x55\x79\x4d\x79' + '\x55\x79\x4d\x79\x55\x79\x4d\x79\x55\x79' + _0x95ea41(0x198) + _0x95ea41(0x120) + _0x95ea41(0x198) + '\x55\x79\x4d\x79\x55\x79\x4d\x79\x55\x79' + _0x95ea41(0x198) + '\x55\x79\x4d\x79\x55\x79\x4d\x79\x55\x79' + _0x95ea41(0x198) + _0x95ea41(0x120) + _0x95ea41(0x198) + _0x95ea41(0x120) + '\x4d\x79\x55\x79\x4d\x79\x55\x79\x4d\x77' + '\x3d\x3d')) + '\x0a';
+
+        return `
+################################################################
+Subscribe / sub 订阅地址, 支持 Base64、clash-meta、sing-box 订阅格式
+---------------------------------------------------------------
+快速自适应订阅地址:
+https://${proxyhost}${hostName}/${password}
+https://${proxyhost}${hostName}/${password}?sub
+
+Base64订阅地址:
+https://${proxyhost}${hostName}/${password}?b64
+https://${proxyhost}${hostName}/${password}?base64
+
+clash订阅地址:
+https://${proxyhost}${hostName}/${password}?clash
+
+singbox订阅地址:
+https://${proxyhost}${hostName}/${password}?sb
+https://${proxyhost}${hostName}/${password}?singbox
+
+${surge}
+---------------------------------------------------------------
+################################################################
+${FileName} 配置信息
+---------------------------------------------------------------
+HOST: ${hostName}
+PASSWORD: ${password}
+SHA224: ${sha224Password}
+FAKEPASS: ${fakeUserID}
+UA: ${UA}
+
+${订阅器}
+SUBAPI（订阅转换后端）: ${subProtocol}://${subConverter}
+SUBCONFIG（订阅转换配置文件）: ${subConfig}
+---------------------------------------------------------------
+################################################################
+v2ray
+---------------------------------------------------------------
+${v2ray}
+---------------------------------------------------------------
+################################################################
+clash-meta
+---------------------------------------------------------------
+${clash}
+---------------------------------------------------------------
+################################################################
+${decodeURIComponent(atob(`JTIzJTIzJTIzJTIzJTIzJTIzJTIzJTIzJTIzJTIzJTIzJTIzJTIzJTIzJTIzJTIzJTIzJTIzJTIzJTIzJTIzJTIzJTIzJTIzJTIzJTIzJTIzJTIzJTIzJTIzJTIzJTIzJTIzJTIzJTIzJTIzJTBBdGVsZWdyYW0lRUYlQkMlOUElNDB0ZyVFNyU5QiU5NyVFNSU5QyVBMyUwQSUyMyUyMyUyMyUyMyUyMyUyMyUyMyUyMyUyMyUyMyUyMyUyMyUyMyUyMyUyMyUyMyUyMyUyMyUyMyUyMyUyMyUyMyUyMyUyMyUyMyUyMyUyMyUyMyUyMyUyMyUyMyUyMyUyMyUyMyUyMyUyMw==`))}
+`;
     } else {
-        if (typeof fetch !== _0x95ea41(0x213)) {
-            return _0x95ea41(0x23a) + '\x63\x68\x20\x69\x73\x20\x6e\x6f\x74\x20' + _0x95ea41(0x11f) + _0x95ea41(0x11e) + _0x95ea41(0x239);
+        if (typeof fetch !== 'function') {
+            return 'Error: fetch is not available in this environment.';
         }
-        if (_0xb6caaf[_0x95ea41(0x21b)](_0x95ea41(0x114) + '\x65\x76')) {
-            fakeHostName = fakeHostName + ('\x2e\x77\x6f\x72\x6b\x65\x72\x73\x2e\x64' + '\x65\x76');
+
+        // 如果是使用默认域名，则改成一个workers的域名，订阅器会加上代理
+        if (hostName.includes(".workers.dev")) {
+            fakeHostName = `${fakeHostName}.workers.dev`;
         } else {
-            fakeHostName = fakeHostName + _0x95ea41(0x2a3);
+            fakeHostName = `${fakeHostName}.xyz`;
         }
-        let _0x1fa520 = _0x95ea41(0x1b6) + _0x2bebe7 + _0x95ea41(0x2aa) + fakeHostName + _0x95ea41(0x148) + fakeUserID + _0x95ea41(0x297) + (fakeUserID + atob(_0x95ea41(0x1a9) + _0x95ea41(0x1ae) + _0x95ea41(0x17b) + '\x3d\x3d') + _0x2fc85e) + _0x95ea41(0x1ba) + encodeURIComponent(path);
-        let _0xc95bde = !![];
-        let _0x588b08 = [];
-        let _0x4728f0 = [];
-        if (!_0x2bebe7 || _0x2bebe7 === '') {
-            if (_0xb6caaf[_0x95ea41(0x21b)](_0x95ea41(0x184) + '\x76')) {
-                if (proxyhostsURL && (!proxyhosts || proxyhosts[_0x95ea41(0x256)] === 0x0)) {
+
+        let url = `https://${sub}/sub?host=${fakeHostName}&pw=${fakeUserID}&password=${fakeUserID + atob('JmVwZWl1cz1jbWxpdSZwcm94eWlwPQ==') + RproxyIP}&path=${encodeURIComponent(path)}`;
+        let isBase64 = true;
+        let newAddressesapi = [];
+        let newAddressescsv = [];
+
+        if (!sub || sub === "") {
+            if (hostName.includes('workers.dev')) {
+                if (proxyhostsURL && (!proxyhosts || proxyhosts.length === 0)) {
                     try {
-                        const _0x904377 = await fetch(proxyhostsURL);
-                        if (!_0x904377['\x6f\x6b']) {
-                            console['\x65\x72\x72\x6f\x72'](_0x95ea41(0x181), _0x904377['\x73\x74\x61\x74\x75\x73'], _0x904377[_0x95ea41(0x1a6)]);
-                            return;
+                        const response = await fetch(proxyhostsURL);
+
+                        if (!response.ok) {
+                            console.error('获取地址时出错:', response.status, response.statusText);
+                            return; // 如果有错误，直接返回
                         }
-                        const _0x3aeafc = await _0x904377[_0x95ea41(0x210)]();
-                        const _0x39b972 = _0x3aeafc['\x73\x70\x6c\x69\x74']('\x0a');
-                        const _0x3afe4d = _0x39b972[_0x95ea41(0x248)](_0xdcec61 => _0xdcec61[_0x95ea41(0x233)]() !== '');
-                        proxyhosts = proxyhosts[_0x95ea41(0x162)](_0x3afe4d);
-                    } catch (_0x172a95) {
-                        console[_0x95ea41(0x10a)](_0x95ea41(0x181), _0x172a95);
+
+                        const text = await response.text();
+                        const lines = text.split('\n');
+                        // 过滤掉空行或只包含空白字符的行
+                        const nonEmptyLines = lines.filter(line => line.trim() !== '');
+
+                        proxyhosts = proxyhosts.concat(nonEmptyLines);
+                    } catch (error) {
+                        console.error('获取地址时出错:', error);
                     }
                 }
+                // 使用Set对象去重
                 proxyhosts = [...new Set(proxyhosts)];
             }
-            _0x588b08 = await getAddressesapi(addressesapi);
-            _0x4728f0 = await getAddressescsv('\x54\x52\x55\x45');
-            _0x1fa520 = _0x95ea41(0x1b6) + _0xb6caaf + '\x2f' + (fakeUserID + _0x504c54['\x73\x65\x61\x72\x63\x68']);
+
+            newAddressesapi = await getAddressesapi(addressesapi);
+            newAddressescsv = await getAddressescsv('TRUE');
+            url = `https://${hostName}/${fakeUserID + _url.search}`;
         }
-        if (!_0x32f8a4[_0x95ea41(0x21b)]((_0x95ea41(0x14c) + _0x95ea41(0x1a5))[_0x95ea41(0x227) + '\x65']())) {
-            if (_0x32f8a4[_0x95ea41(0x21b)](_0x95ea41(0x132)) && !_0x32f8a4[_0x95ea41(0x21b)]('\x6e\x65\x6b\x6f\x62\x6f\x78') || _0x504c54['\x73\x65\x61\x72\x63\x68\x50\x61\x72\x61' + '\x6d\x73'][_0x95ea41(0x1e5)](_0x95ea41(0x132))) {
-                _0x1fa520 = subProtocol + _0x95ea41(0x247) + subConverter + (_0x95ea41(0x154) + '\x74\x3d\x63\x6c\x61\x73\x68\x26\x75\x72' + '\x6c\x3d') + encodeURIComponent(_0x1fa520) + (_0x95ea41(0x178) + _0x95ea41(0x1c2) + '\x3d') + encodeURIComponent(subConfig) + _0x95ea41(0x169) + subEmoji + (_0x95ea41(0x151) + _0x95ea41(0x212) + _0x95ea41(0x180) + _0x95ea41(0x285) + _0x95ea41(0x2a8) + _0x95ea41(0x1a8) + _0x95ea41(0x22f));
-                _0xc95bde = ![];
-            } else if (_0x32f8a4['\x69\x6e\x63\x6c\x75\x64\x65\x73'](_0x95ea41(0x29c)) || _0x32f8a4['\x69\x6e\x63\x6c\x75\x64\x65\x73'](_0x95ea41(0xf4)) || _0x504c54['\x73\x65\x61\x72\x63\x68\x50\x61\x72\x61' + '\x6d\x73'][_0x95ea41(0x1e5)]('\x73\x69\x6e\x67\x62\x6f\x78') || _0x504c54[_0x95ea41(0x131) + '\x6d\x73'][_0x95ea41(0x1e5)]('\x73\x62')) {
-                _0x1fa520 = subProtocol + _0x95ea41(0x247) + subConverter + ('\x2f\x73\x75\x62\x3f\x74\x61\x72\x67\x65' + '\x74\x3d\x73\x69\x6e\x67\x62\x6f\x78\x26' + _0x95ea41(0x1e8)) + encodeURIComponent(_0x1fa520) + (_0x95ea41(0x178) + _0x95ea41(0x1c2) + '\x3d') + encodeURIComponent(subConfig) + _0x95ea41(0x169) + subEmoji + (_0x95ea41(0x151) + '\x65\x26\x74\x66\x6f\x3d\x66\x61\x6c\x73' + '\x65\x26\x73\x63\x76\x3d\x74\x72\x75\x65' + _0x95ea41(0x285) + '\x26\x73\x6f\x72\x74\x3d\x66\x61\x6c\x73' + _0x95ea41(0x1a8) + _0x95ea41(0x22f));
-                _0xc95bde = ![];
-            } else if (_0x32f8a4[_0x95ea41(0x21b)](_0x95ea41(0x235)) || _0x504c54[_0x95ea41(0x131) + '\x6d\x73'][_0x95ea41(0x1e5)](_0x95ea41(0x235))) {
-                _0x1fa520 = subProtocol + '\x3a\x2f\x2f' + subConverter + (_0x95ea41(0x154) + '\x74\x3d\x73\x75\x72\x67\x65\x26\x76\x65' + _0x95ea41(0x1e3)) + encodeURIComponent(_0x1fa520) + (_0x95ea41(0x178) + _0x95ea41(0x1c2) + '\x3d') + encodeURIComponent(subConfig) + _0x95ea41(0x169) + subEmoji + (_0x95ea41(0x151) + _0x95ea41(0x217) + _0x95ea41(0x1cc) + _0x95ea41(0x189) + '\x73\x65\x26\x65\x78\x70\x61\x6e\x64\x3d' + _0x95ea41(0x109) + '\x72\x75\x65\x26\x66\x64\x6e\x3d\x66\x61' + _0x95ea41(0x12d));
-                _0xc95bde = ![];
+
+        if (!userAgent.includes(('CF-Workers-SUB').toLowerCase())) {
+            if ((userAgent.includes('clash') && !userAgent.includes('nekobox')) || (_url.searchParams.has('clash'))) {
+                url = `${subProtocol}://${subConverter}/sub?target=clash&url=${encodeURIComponent(url)}&insert=false&config=${encodeURIComponent(subConfig)}&emoji=${subEmoji}&list=false&tfo=false&scv=true&fdn=false&sort=false&new_name=true`;
+                isBase64 = false;
+            } else if (userAgent.includes('sing-box') || userAgent.includes('singbox') || _url.searchParams.has('singbox') || _url.searchParams.has('sb')) {
+                url = `${subProtocol}://${subConverter}/sub?target=singbox&url=${encodeURIComponent(url)}&insert=false&config=${encodeURIComponent(subConfig)}&emoji=${subEmoji}&list=false&tfo=false&scv=true&fdn=false&sort=false&new_name=true`;
+                isBase64 = false;
+            } else if (userAgent.includes('surge') || _url.searchParams.has('surge')) {
+                url = `${subProtocol}://${subConverter}/sub?target=surge&ver=4&url=${encodeURIComponent(url)}&insert=false&config=${encodeURIComponent(subConfig)}&emoji=${subEmoji}&list=false&xudp=false&udp=false&tfo=false&expand=true&scv=true&fdn=false`;
+                isBase64 = false;
             }
         }
+
         try {
-            let _0x470ac7;
-            if ((!_0x2bebe7 || _0x2bebe7 === '') && _0xc95bde === !![]) {
-                _0x470ac7 = await subAddresses(fakeHostName, fakeUserID, _0x32f8a4, _0x588b08, _0x4728f0);
+            let content;
+            if ((!sub || sub === "") && isBase64 === true) {
+                content = await subAddresses(fakeHostName, fakeUserID, userAgent, newAddressesapi, newAddressescsv);
             } else {
-                const _0x12e782 = await fetch(_0x1fa520, { '\x68\x65\x61\x64\x65\x72\x73': { '\x55\x73\x65\x72\x2d\x41\x67\x65\x6e\x74': atob(_0x95ea41(0x1d6) + '\x56\x79\x63\x79\x31\x6c\x63\x47\x56\x70' + _0x95ea41(0x2a2) + '\x55\x3d') } });
-                _0x470ac7 = await _0x12e782[_0x95ea41(0x210)]();
+                const response = await fetch(url, {
+                    headers: {
+                        'User-Agent': atob('Q0YtV29ya2Vycy1lcGVpdXMvY21saXU='),
+                    }
+                });
+                content = await response.text();
             }
-            if (_0x504c54[_0x95ea41(0x218)] === '\x2f' + fakeUserID)
-                return _0x470ac7;
-            _0x470ac7 = revertFakeInfo(_0x470ac7, _0x4cb59d, _0xb6caaf, _0xc95bde);
-            if (_0x32f8a4[_0x95ea41(0x21b)]('\x73\x75\x72\x67\x65') || _0x504c54[_0x95ea41(0x131) + '\x6d\x73'][_0x95ea41(0x1e5)](_0x95ea41(0x235)))
-                _0x470ac7 = surge(_0x470ac7, _0x95ea41(0x1b6) + _0xb6caaf + '\x2f' + _0x4cb59d + _0x95ea41(0xf9));
-            return _0x470ac7;
-        } catch (_0x1d6ed6) {
-            console[_0x95ea41(0x10a)]('\x45\x72\x72\x6f\x72\x20\x66\x65\x74\x63' + '\x68\x69\x6e\x67\x20\x63\x6f\x6e\x74\x65' + _0x95ea41(0x17c), _0x1d6ed6);
-            return '\x45\x72\x72\x6f\x72\x20\x66\x65\x74\x63' + _0x95ea41(0x1f0) + _0x95ea41(0x195) + _0x1d6ed6[_0x95ea41(0x142)];
+
+            if (_url.pathname === `/${fakeUserID}`) return content;
+
+            content = revertFakeInfo(content, password, hostName, isBase64);
+            if (userAgent.includes('surge') || _url.searchParams.has('surge')) content = surge(content, `https://${hostName}/${password}?surge`);
+            return content;
+        } catch (error) {
+            console.error('Error fetching content:', error);
+            return `Error fetching content: ${error.message}`;
         }
     }
 }
-async function sendMessage(_0x5e0e28, _0x51f727, _0x2e4cc6 = '') {
-    const _0x34ed3f = _0x2b3298;
+
+async function sendMessage(type, ip, add_data = "") {
     if (BotToken !== '' && ChatID !== '') {
-        let _0x17b17e = '';
+        let msg = "";
         try {
-            const _0x1240e0 = await fetch('\x68\x74\x74\x70\x3a\x2f\x2f\x69\x70\x2d' + _0x34ed3f(0x138) + '\x6f\x6e\x2f' + _0x51f727 + (_0x34ed3f(0x231) + '\x4e'));
-            if (_0x1240e0[_0x34ed3f(0x2a4)] === 0xc8) {
-                const _0x41da41 = await _0x1240e0[_0x34ed3f(0x222)]();
-                _0x17b17e = _0x5e0e28 + '\x0a\x49\x50\x3a\x20' + _0x51f727 + _0x34ed3f(0x293) + _0x41da41[_0x34ed3f(0x270)] + (_0x34ed3f(0x264) + _0x34ed3f(0x27b)) + _0x41da41['\x63\x69\x74\x79'] + _0x34ed3f(0x11a) + _0x41da41[_0x34ed3f(0x26d)] + _0x34ed3f(0x291) + _0x41da41['\x61\x73'] + '\x0a' + _0x2e4cc6;
+            const response = await fetch(`http://ip-api.com/json/${ip}?lang=zh-CN`);
+            if (response.status === 200) {
+                const ipInfo = await response.json();
+                msg = `${type}\nIP: ${ip}\n国家: ${ipInfo.country}\n<tg-spoiler>城市: ${ipInfo.city}\n组织: ${ipInfo.org}\nASN: ${ipInfo.as}\n${add_data}`;
             } else {
-                _0x17b17e = _0x5e0e28 + _0x34ed3f(0x19f) + _0x51f727 + ('\x0a\x3c\x74\x67\x2d\x73\x70\x6f\x69\x6c' + _0x34ed3f(0x21d)) + _0x2e4cc6;
+                msg = `${type}\nIP: ${ip}\n<tg-spoiler>${add_data}`;
             }
-        } catch (_0x9da4da) {
-            console[_0x34ed3f(0x10a)]('\u83b7\u53d6\x49\x50\u4fe1\u606f\u65f6\u51fa\u9519\x3a', _0x9da4da);
-            _0x17b17e = _0x5e0e28 + '\x0a\x49\x50\x3a\x20' + _0x51f727 + (_0x34ed3f(0x264) + _0x34ed3f(0x21d)) + _0x2e4cc6;
+        } catch (error) {
+            console.error('获取IP信息时出错:', error);
+            msg = `${type}\nIP: ${ip}\n<tg-spoiler>${add_data}`;
         }
-        const _0x3c1364 = _0x34ed3f(0x242) + _0x34ed3f(0x238) + '\x2e\x6f\x72\x67\x2f\x62\x6f\x74' + BotToken + (_0x34ed3f(0x185) + _0x34ed3f(0x133) + '\x3d') + ChatID + (_0x34ed3f(0x1c0) + _0x34ed3f(0x13b) + '\x74\x3d') + encodeURIComponent(_0x17b17e);
-        return fetch(_0x3c1364, {
-            '\x6d\x65\x74\x68\x6f\x64': _0x34ed3f(0x220),
-            '\x68\x65\x61\x64\x65\x72\x73': {
-                '\x41\x63\x63\x65\x70\x74': '\x74\x65\x78\x74\x2f\x68\x74\x6d\x6c\x2c' + _0x34ed3f(0x251) + _0x34ed3f(0x216) + '\x6c\x2c\x61\x70\x70\x6c\x69\x63\x61\x74' + '\x69\x6f\x6e\x2f\x78\x6d\x6c\x3b',
-                '\x41\x63\x63\x65\x70\x74\x2d\x45\x6e\x63\x6f\x64\x69\x6e\x67': _0x34ed3f(0x1c5) + _0x34ed3f(0x18e),
-                '\x55\x73\x65\x72\x2d\x41\x67\x65\x6e\x74': _0x34ed3f(0x28b) + _0x34ed3f(0x2a9) + _0x34ed3f(0x196) + '\x32'
+
+        const url = `https://api.telegram.org/bot${BotToken}/sendMessage?chat_id=${ChatID}&parse_mode=HTML&text=${encodeURIComponent(msg)}`;
+        return fetch(url, {
+            method: 'GET',
+            headers: {
+                'Accept': 'text/html,application/xhtml+xml,application/xml;',
+                'Accept-Encoding': 'gzip, deflate, br',
+                'User-Agent': 'Mozilla/5.0 Chrome/90.0.4430.72'
             }
         });
     }
 }
-function _0x5553() {
-    const _0xfbc1b6 = [
-        '\x65\x20\x69\x73\x20\x63\x6c\x6f\x73\x65',
-        '\x61\x6c\x6c\x20\x69\x6e',
-        '\x55\x70\x67\x72\x61\x64\x65',
-        '\u5b9a\u81ea\u5b9a\u4e49\u57df',
-        '\x55\x41\x3a\x20',
-        '\x69\x6e\x76\x61\x6c\x69\x64\x20\x70\x61',
-        '\x2f\x31\x34',
-        '\x39\x39\x39\x37\x38\x33\x53\x52\x66\x66\x73\x49',
-        '\x75\x65\x20\x74\x6f\x20',
-        '\x2d\x2d\x2d\x2d\x2d\x2d\x2d\x2d\x2d\x2d',
-        '\x2f\x73\x6f\x63\x6b\x73\x35\x3a\x2f\x2f',
-        '\x39\x25\x33\x41\x25\x32\x30',
-        '\x73\x6c\x69\x63\x65',
-        '\x6c\x61\x79\x3d\x66\x61\x6c\x73\x65',
-        '\uff09\x3a\x20\u65e0\u6cd5\u8bbf\u95ee\x2c\x20\u9700',
-        '\x73\x75\x62\x63\x6f\x6e\x76\x65\x72\x74',
-        '\x74\x65\x78\x74',
-        '\x74\x68\x20\x73\x6f\x63\x6b\x73\x20\x73',
-        '\x65\x26\x74\x66\x6f\x3d\x66\x61\x6c\x73',
-        '\x66\x75\x6e\x63\x74\x69\x6f\x6e',
-        '\x59\x57\x78\x73\x49\x47\x6c\x75',
-        '\x23\x23\x23\x23\x23\x23\x23\x23\x23\x0a',
-        '\x6e\x2f\x78\x68\x74\x6d\x6c\x2b\x78\x6d',
-        '\x65\x26\x78\x75\x64\x70\x3d\x66\x61\x6c',
-        '\x70\x61\x74\x68\x6e\x61\x6d\x65',
-        '\x65\x76\x65\x72\x79',
-        '\x70\x72\x6f\x74\x6f\x63\x6f\x6c',
-        '\x69\x6e\x63\x6c\x75\x64\x65\x73',
-        '\x69\x73\x20\x61\x6c\x6c\x6f\x77\x65\x64',
-        '\x65\x72\x3e',
-        '\x6c\x69\x6e\x65\x5f\x4d\x69\x6e\x69\x5f',
-        '\x43\x46\x2d\x43\x6f\x6e\x6e\x65\x63\x74',
-        '\x47\x45\x54',
-        '\x73\x74\x61\x63\x6b',
-        '\x6a\x73\x6f\x6e',
-        '\x74\x68\x65\x6e',
-        '\x61\x62\x6f\x72\x74',
-        '\x3f\x73\x65\x63\x75\x72\x69\x74\x79\x3d',
-        '\x2a\x74\x74\x76\x6e\x77\x2e\x6e\x65\x74',
-        '\x74\x6f\x4c\x6f\x77\x65\x72\x43\x61\x73',
-        '\x52\x55\x59\x6c\x51\x6b\x4d\x6c\x4f\x55',
-        '\x20\x65\x72\x72\x6f\x72',
-        '\x2f\x3f\x65\x64\x3d\x32\x35\x36\x30\x26',
-        '\x4d\x75\x6c\x74\x69\x4d\x6f\x64\x65\x2e',
-        '\x26\x73\x6e\x69\x3d',
-        '\x63\x6f\x6e\x6e\x65\x63\x74\x69\x6f\x6e',
-        '\x6e\x67\x62\x6f\x78\u8ba2\u9605\u5730\u5740\x3a',
-        '\x3d\x74\x72\x75\x65',
-        '\u670d\u52a1\uff0c\u8bf7\u5c3d\u5feb\u7ed1\u5b9a\u81ea\u5b9a',
-        '\x3f\x6c\x61\x6e\x67\x3d\x7a\x68\x2d\x43',
-        '\x74\x6c\x73\x26\x73\x6e\x69\x3d',
-        '\x74\x72\x69\x6d',
-        '\x73\x6f\x63\x6b\x73',
-        '\x73\x75\x72\x67\x65',
-        '\x20\x67\x72\x65\x65\x74\x69\x6e\x67',
-        '\x76\x61\x6c\x75\x65',
-        '\x69\x2e\x74\x65\x6c\x65\x67\x72\x61\x6d',
-        '\x76\x69\x72\x6f\x6e\x6d\x65\x6e\x74\x2e',
-        '\x45\x72\x72\x6f\x72\x3a\x20\x66\x65\x74',
-        '\x73\x6f\x63\x6b\x73\x35\x3d',
-        '\x2c\x20\x73\x65\x72\x76\x65\x72\x3a\x20',
-        '\x53\x55\x42\x41\x50\x49',
-        '\x6f\x72\x3a',
-        '\x73\x65\x64',
-        '\x67\x65\x74',
-        '\x72\x72\x6f\x72',
-        '\x68\x74\x74\x70\x73\x3a\x2f\x2f\x61\x70',
-        '\x0a\x53\x55\x42\x43\x4f\x4e\x46\x49\x47',
-        '\x78\x79\x49\x50\x0a',
-        '\x53\x4f\x43\x4b\x53\x35\x25\x45\x46\x25',
-        '\x68\x6f\x73\x74\x6e\x61\x6d\x65',
-        '\x3a\x2f\x2f',
-        '\x66\x69\x6c\x74\x65\x72',
-        '\x73\x75\x62\x74\x6c\x65',
-        '\x2f\x70\x72\x6f\x78\x79\x69\x70\x3d',
-        '\x23\x23\x23\x23\x23\x0a\x53\x75\x62\x73',
-        '\x74\x72\x75\x65',
-        '\x0a\x68\x74\x74\x70\x73\x3a\x2f\x2f',
-        '\x73\x75\x62',
-        '\x25\x45\x36\x25\x38\x39\x25\x38\x30\x25',
-        '\x63\x68\x61\x72\x43\x6f\x64\x65\x41\x74',
-        '\x61\x70\x70\x6c\x69\x63\x61\x74\x69\x6f',
-        '\x62\x79\x74\x65\x4c\x65\x6e\x67\x74\x68',
-        '\u83b7\u53d6\x43\x53\x56\u5730\u5740\u65f6\u51fa\u9519',
-        '\x3b\x20\x65\x78\x70\x69\x72\x65\x3d',
-        '\x73\x2f\x41\x44\x44\x2a\x20\u53c2\u6570\u53d8',
-        '\x6c\x65\x6e\x67\x74\x68',
-        '\x70\x6f\x77',
-        '\x72\x65\x61\x64\x61\x62\x6c\x65',
-        '\x2d\x2d\x2d\x2d\x0a\x23\x23\x23\x23\x23',
-        '\x6d\x6f\x7a\x69\x6c\x6c\x61',
-        '\u8981\u60a8\u8bbe\u7f6e\x20\x70\x72\x6f\x78\x79',
-        '\x74\x20\x28\x6d\x69\x73\x73\x69\x6e\x67',
-        '\x20\x69\x6e\x74\x65\x72\x76\x61\x6c\x3d',
-        '\x3b\x20\x74\x6f\x74\x61\x6c\x3d',
-        '\x55\x52\x4c\x33\x30\x32',
-        '\x65\x61\x6d\x20\x69\x73\x20\x61\x62\x6f',
-        '\x0a\u60a8\u7684\u8ba2\u9605\u5185\u5bb9\u7531\x20\u5185',
-        '\x61\x64\x64\x45\x76\x65\x6e\x74\x4c\x69',
-        '\x50\x52\x4f\x58\x59\x49\x50',
-        '\x0a\x3c\x74\x67\x2d\x73\x70\x6f\x69\x6c',
-        '\x48\x6f\x73\x74',
-        '\x63\x68\x61\x72\x41\x74',
-        '\x65\x72\x20\x6e\x65\x65\x64\x73\x20\x61',
-        '\x48\x4f\x53\x54\x3a\x20',
-        '\x55\x73\x65\x72\x2d\x41\x67\x65\x6e\x74',
-        '\x69\x6e\x64\x65\x78',
-        '\x72\x73\x3d\x48\x6f\x73\x74\x3a\x22',
-        '\x32\x38\x39\x34\x38\x35\x30\x55\x75\x6a\x7a\x6a\x67',
-        '\x6f\x72\x67',
-        '\x20\x74\x63\x70',
-        '\x74\x66\x2d\x38',
-        '\x63\x6f\x75\x6e\x74\x72\x79',
-        '\x7d\x7d\x7d',
-        '\x34\x30\x38\x59\x6e\x47\x78\x48\x4e',
-        '\x65\x6e\x71\x75\x65\x75\x65',
-        '\x6e\x6f\x77',
-        '\x2c\x20\x77\x73\x2d\x68\x65\x61\x64\x65',
-        '\x62\x36\x34',
-        '\x0a\x53\x48\x41\x32\x32\x34\x3a\x20',
-        '\x62\x6c\x65\x20\x6d\x65\x74\x68\x6f\x64',
-        '\x73\x73\x77\x6f\x72\x64',
-        '\x3c\x2f\x74\x67\x2d\x73\x70\x6f\x69\x6c',
-        '\x65\x72\x3e\u57ce\u5e02\x3a\x20',
-        '\x6d\x61\x73\x74\x65\x72\x2f\x43\x6c\x61',
-        '\x69\x6e\x76\x61\x6c\x69\x64\x20\x64\x61',
-        '\x73\x65\x2c\x20\x75\x64\x70\x2d\x72\x65',
-        '\x64\x65\x63\x6f\x64\x65',
-        '\x32\x30\x38\x33',
-        '\x4d\x44\x35',
-        '\x70\x61\x64\x53\x74\x61\x72\x74',
-        '\x6f\x74\x65',
-        '\x67\x65\x74\x54\x69\x6d\x65',
-        '\x26\x66\x64\x6e\x3d\x66\x61\x6c\x73\x65',
-        '\x52\x50\x52\x4f\x58\x59\x49\x50',
-        '\x0a\x55\x41\x3a\x20',
-        '\x26\x61\x6c\x6c\x6f\x77\x49\x6e\x73\x65',
-        '\x72\x65\x70\x6c\x61\x63\x65',
-        '\u751f\u6548\uff1f',
-        '\x4d\x6f\x7a\x69\x6c\x6c\x61\x2f\x35\x2e',
-        '\x70\x72\x6f\x78\x79\x69\x70\x2e',
-        '\x73\x65\x63\x2d\x77\x65\x62\x73\x6f\x63',
-        '\x2c\x20\x73\x6e\x69\x3a\x20',
-        '\x20\uff01\uff01\uff01\x0a',
-        '\x23\x43\x46\u968f\u673a\u8282\u70b9',
-        '\x0a\x41\x53\x4e\x3a\x20',
-        '\x2d\x2d\x2d\x2d\x2d\x2d\x2d\x2d\x2d\x0a',
-        '\x0a\u56fd\u5bb6\x3a\x20',
-        '\x43\x4b\x53\x20\x61\x64\x64\x72\x65\x73',
-        '\x32\x30\x35\x33',
-        '\x23\x21\x4d\x41\x4e\x41\x47\x45\x44\x2d',
-        '\x26\x70\x61\x73\x73\x77\x6f\x72\x64\x3d',
-        '\x3f\x63\x6c\x61\x73\x68\x0a\x0a\x73\x69',
-        '\x25\x38\x44\x25\x45\x35\x25\x38\x44\x25',
-        '\x34\x38\x35\x39\x32\x35\x77\x57\x42\x4b\x6e\x57',
-        '\x26\x68\x6f\x73\x74\x3d',
-        '\x73\x69\x6e\x67\x2d\x62\x6f\x78',
-        '\x73\x6b\x69\x70\x2d\x63\x65\x72\x74\x2d',
-        '\x4a\x54\x49\x7a\x4a\x54\x49\x7a\x4a\x54',
-        '\x65\x62\x53\x6f\x63\x6b\x65\x74\x20\x65',
-        '\x57\x4f\x52\x44\u5c31\u662f\u9519\u7684\uff01\uff01',
-        '\x54\x52\x55\x45',
-        '\x64\x58\x4d\x76\x59\x32\x31\x73\x61\x58',
-        '\x2e\x78\x79\x7a',
-        '\x73\x74\x61\x74\x75\x73',
-        '\x64\x69\x67\x65\x73\x74',
-        '\x31\x37\x32\x2e\x36\x34\x2e\x30\x2e\x30',
-        '\x53\x55\x42',
-        '\x26\x73\x6f\x72\x74\x3d\x66\x61\x6c\x73',
-        '\x30\x20\x43\x68\x72\x6f\x6d\x65\x2f\x39',
-        '\x2f\x73\x75\x62\x3f\x68\x6f\x73\x74\x3d',
-        '\x77\x65\x62\x53\x6f\x63\x6b\x65\x74\x20',
-        '\x72\x74\x65\x64',
-        '\uff08\u8ba2\u9605\u8f6c\u6362\u914d\u7f6e\u6587\u4ef6\uff09',
-        '\x66\x6c\x6f\x6f\x72',
-        '\x20\u914d\u7f6e\u4fe1\u606f\x0a\x2d\x2d\x2d\x2d',
-        '\x74\x65\x73\x74',
-        '\x69\x7a\x65\x64\x26\x74\x79\x70\x65\x3d',
-        '\x73\x69\x6e\x67\x62\x6f\x78',
-        '\x3b\x20\x64\x6f\x77\x6e\x6c\x6f\x61\x64',
-        '\x47\x4f\x32\x53\x4f\x43\x4b\x53\x35',
-        '\x55\x52\x4c',
-        '\x65\x2c\x20\x77\x73\x3d\x74\x72\x75\x65',
-        '\x3f\x73\x75\x72\x67\x65',
-        '\x70\x6c\x65\x61\x73\x65\x20\x70\x72\x6f',
-        '\x6e\x2f\x6a\x73\x6f\x6e',
-        '\x6d\x61\x74\x63\x68',
-        '\x39\x35\x25\x45\x46\x25\x42\x43\x25\x38',
-        '\x74\x65\x78\x74\x2f\x70\x6c\x61\x69\x6e',
-        '\x66\x6c\x61\x74\x4d\x61\x70',
-        '\x33\x35\x37\x32\x39\x36\x38\x5a\x7a\x67\x6e\x4c\x57',
-        '\x56\x73\x5a\x57\x64\x79\x59\x57\x30\x6c',
-        '\x65\x20\x61\x62\x6f\x72\x74',
-        '\x72\x65\x61\x64\x79\x53\x74\x61\x74\x65',
-        '\x66\x72\x6f\x6d\x43\x68\x61\x72\x43\x6f',
-        '\x65\x74\x54\x6f\x57\x53\x20\x65\x72\x72',
-        '\x6c\x6f\x67',
-        '\x76\x69\x64\x65\x20\x75\x73\x65\x72\x6e',
-        '\x2c\x20\x70\x6f\x72\x74\x3a\x20',
-        '\x74\x72\x75\x65\x26\x73\x63\x76\x3d\x74',
-        '\x65\x72\x72\x6f\x72',
-        '\x6d\x61\x70',
-        '\uff09\x3a\x20\x53\x6f\x63\x6b\x73\x35\x0a',
-        '\x43\x46\x50\x4f\x52\x54\x53',
-        '\x20\x65\x72\x72\x6f\x72\x3a\x20',
-        '\x53\x55\x42\x43\x4f\x4e\x46\x49\x47',
-        '\u683c\u5f0f\x0a\x2d\x2d\x2d\x2d\x2d\x2d\x2d',
-        '\x65\x61\x6d\x20\x70\x69\x70\x65\x54\x6f',
-        '\x73\x65\x2c\x20\x63\x6c\x69\x65\x6e\x74',
-        '\x69\x6e\x76\x61\x6c\x69\x64\x20\x53\x4f',
-        '\x2e\x77\x6f\x72\x6b\x65\x72\x73\x2e\x64',
-        '\x63\x6f\x6e\x6e\x65\x63\x74\x65\x64\x20',
-        '\x2f\x73\x6f\x63\x6b\x73\x35\x3d',
-        '\x53\x55\x42\x41\x50\x49\x2e\x66\x78\x78',
-        '\x67\x65\x74\x52\x65\x61\x64\x65\x72',
-        '\x6a\x6f\x69\x6e',
-        '\x0a\u7ec4\u7ec7\x3a\x20',
-        '\x77\x65\x62\x73\x6f\x63\x6b\x65\x74',
-        '\x4e\x79\x55\x35\x51\x69\x55\x35\x4e\x79',
-        '\x69\x6e\x67\x2d\x62\x6f\x78\x20\u8ba2\u9605',
-        '\x69\x6e\x20\x74\x68\x69\x73\x20\x65\x6e',
-        '\x61\x76\x61\x69\x6c\x61\x62\x6c\x65\x20',
-        '\x55\x79\x4d\x79\x55\x79\x4d\x79\x55\x79',
-        '\x0a\x20\x20',
-        '\x67\x65\x74\x55\x69\x6e\x74\x31\x36',
-        '\x65\x72\x3e\u5165\u53e3\x3a\x20',
-        '\x63\x65\x69\x6c',
-        '\x68\x65\x61\x64\x65\x72\x73',
-        '\u9002\u5e94\u8ba2\u9605\u5730\u5740\x3a\x0a\x68\x74',
-        '\x31\x30\x34\x2e\x32\x34\x2e\x30\x2e\x30',
-        '\x76\x32\x72\x61\x79\x0a\x2d\x2d\x2d\x2d',
-        '\x63\x6c\x6f\x73\x65',
-        '\u8bf7\u8bbe\u7f6e\u4f60\u7684\x50\x41\x53\x53\x57',
-        '\x32\x30\x39\x36',
-        '\x35\x32\x30\x34\x35\x72\x49\x56\x63\x75\x6e',
-        '\x6c\x73\x65',
-        '\x67\x65\x74\x57\x72\x69\x74\x65\x72',
-        '\x69\x6e\x76\x61\x6c\x69\x64\x20\x68\x65',
-        '\x63\x74\x3d\x66\x61\x6c\x73\x65',
-        '\x73\x65\x61\x72\x63\x68\x50\x61\x72\x61',
-        '\x63\x6c\x61\x73\x68',
-        '\x67\x65\x3f\x63\x68\x61\x74\x5f\x69\x64',
-        '\u65e0\u6cd5\u6253\u5f00\x73\x6f\x63\x6b\x73\u8fde',
-        '\x73\x6f\x63\x6b\x73\u8fde\u63a5\u5df2\u6253\u5f00',
-        '\x66\x72\x6f\x6d',
-        '\x42\x43\x25\x38\x38\x25\x45\x37\x25\x39',
-        '\x61\x70\x69\x2e\x63\x6f\x6d\x2f\x6a\x73',
-        '\x68\x74\x74\x70\x73\x3a\x2f\x2f\x72\x61',
-        '\x3f\x73\x62\x0a\x68\x74\x74\x70\x73\x3a',
-        '\x65\x3d\x48\x54\x4d\x4c\x26\x74\x65\x78',
-        '\x72\x65\x6a\x65\x63\x74',
-        '\x2f\x73\x6f\x63\x6b\x73\x3a\x2f\x2f',
-        '\x61\x6c\x6c\x53\x65\x74\x74\x6c\x65\x64',
-        '\u4f18\u9009\u57df\u540d\x26\x49\x50\x20\u7684\x20',
-        '\x3f\x62\x36\x34\x0a\x68\x74\x74\x70\x73',
-        '\x62\x53\x6f\x63\x6b\x65\x74\x53\x74\x72',
-        '\x6d\x65\x73\x73\x61\x67\x65',
-        '\x74\x6c\x73',
-        '\x20\x6f\x6e\x6c\x79\x20\x54\x43\x50\x20',
-        '\x2a\x2e\x6c\x6f\x61\x64\x73\x68\x61\x72',
-        '\x70\x73\x77\x64',
-        '\x20\uff09\x3a\x20\x0a\x20\x20',
-        '\x26\x70\x77\x3d',
-        '\x3a\x34\x34\x33',
-        '\x77\x72\x69\x74\x61\x62\x6c\x65',
-        '\x33\x36\x4c\x57\x4f\x4c\x79\x77',
-        '\x43\x46\x2d\x57\x6f\x72\x6b\x65\x72\x73',
-        '\x73\x54\x79\x70\x65\x3a\x20',
-        '\x72\x65\x6d\x6f\x74\x65\x53\x6f\x63\x6b',
-        '\x73\x6f\x63\x6b\x73\x35',
-        '\u4e49\u57df\uff01',
-        '\x26\x6c\x69\x73\x74\x3d\x66\x61\x6c\x73',
-        '\x73\x74\x72\x69\x6e\x67\x69\x66\x79',
-        '\x69\x6e\x64\x65\x78\x4f\x66',
-        '\x2f\x73\x75\x62\x3f\x74\x61\x72\x67\x65',
-        '\uff09\x3a\x20\x50\x72\x6f\x78\x79\x49\x50',
-        '\x62\x20\u8ba2\u9605\u5730\u5740\x2c\x20\u652f\u6301',
-        '\x2e\x30\x2f\x32\x31',
-        '\x70\x72\x6f\x78\x79\x69\x70',
-        '\x3a\x20\x7b\x48\x6f\x73\x74\x3a\x20',
-        '\x74\x65\x78\x74\x2f\x68\x74\x6d\x6c\x2c',
-        '\x74\x6f\x55\x70\x70\x65\x72\x43\x61\x73',
-        '\x75\x6e\x73\x75\x70\x70\x6f\x72\x74\x65',
-        '\x0a\x46\x41\x4b\x45\x50\x41\x53\x53\x3a',
-        '\x53\x55\x42\x45\x4d\x4f\x4a\x49',
-        '\x73\x74\x65\x6e\x65\x72',
-        '\x31\x30\x33\x2e\x32\x31\x2e\x32\x34\x34',
-        '\x3a\x20\x74\x72\x75\x65\x2c\x20\x6e\x65',
-        '\x63\x6f\x6e\x63\x61\x74',
-        '\x20\x69\x73\x20\x6e\x6f\x74\x20\x6f\x70',
-        '\x2c\x20\x70\x61\x73\x73\x77\x6f\x72\x64',
-        '\x53\x75\x72\x67\x65\u8ba2\u9605\u5fc5\u987b\u7ed1',
-        '\x73\x65\x6e\x64',
-        '\x45\x4d\x4f\x4a\x49',
-        '\x0a\x23\x23\x23\x23\x23\x23\x23\x23\x23',
-        '\x26\x65\x6d\x6f\x6a\x69\x3d',
-        '\x65\x72\x63\x6f\x6e\x74\x65\x6e\x74\x2e',
-        '\x65\x72\x76\x65\x72',
-        '\x3f\x73\x69\x6e\x67\x62\x6f\x78\x0a\x0a',
-        '\x64\x48\x4a\x76\x61\x6d\x46\x75',
-        '\x65\x72\x74\x2d\x76\x65\x72\x69\x66\x79',
-        '\x2d\x2d\x2d\x2d\x2d\x2d\x0a\u5feb\u901f\u81ea',
-        '\x4a\x54\x49\x7a\x4a\x54\x42\x42\x64\x47',
-        '\x65\x72\x76\x65\x72\x20\x65\x72\x72\x6f',
-        '\x2c\x20\x77\x73\x2d\x6f\x70\x74\x73\x3a',
-        '\x52\x2f\x41\x43\x4c\x34\x53\x53\x52\x2f',
-        '\x73\x69\x67\x6e\x61\x6c',
-        '\x25\x38\x37\x25\x38\x46',
-        '\x39\x25\x42\x44\x25\x45\x35\x25\x39\x30',
-        '\x66\x61\x6c\x73\x65',
-        '\x26\x69\x6e\x73\x65\x72\x74\x3d\x66\x61',
-        '\x72\x65\x61\x64\x61\x62\x6c\x65\x57\x65',
-        '\x26\x61\x6c\x70\x6e\x3d\x68\x33\x26\x66',
-        '\x63\x6d\x39\x34\x65\x57\x6c\x77\x50\x51',
-        '\x6e\x74\x3a',
-        '\x61\x63\x63\x65\x70\x74',
-        '\x56\x79\x63\x79\x31\x6c\x63\x47\x56\x70',
-        '\x41\x44\x44\x41\x50\x49',
-        '\x65\x26\x73\x63\x76\x3d\x74\x72\x75\x65',
-        '\u83b7\u53d6\u5730\u5740\u65f6\u51fa\u9519\x3a',
-        '\x61\x64\x65\x72\x20\x66\x6f\x72\x6d\x61',
-        '\x61\x64\x64\x72\x65\x73\x73\x54\x79\x70',
-        '\x77\x6f\x72\x6b\x65\x72\x73\x2e\x64\x65',
-        '\x2f\x73\x65\x6e\x64\x4d\x65\x73\x73\x61',
-        '\x77\x73\x26\x68\x6f\x73\x74\x3d',
-        '\uff09\x3a\x20\u81ea\u52a8\u83b7\u53d6\x50\x72\x6f',
-        '\x6e\x74\x2e\x6e\x65\x74',
-        '\x73\x65\x26\x74\x66\x6f\x3d\x66\x61\x6c',
-        '\x76\x65\x72\x69\x66\x79\x3d\x74\x72\x75',
-        '\x58\x2d\x4e\x65\x77\x2d\x55\x52\x4c',
-        '\x63\x72\x69\x62\x65\x20\x2f\x20\x73\x75',
-        '\x68\x74\x74\x70\x3a\x2f\x2f',
-        '\x61\x74\x65\x2c\x20\x62\x72',
-        '\x2d\x2d\x2d\x2d\x0a',
-        '\x26\x70\x72\x6f\x78\x79\x69\x70\x3d',
-        '\u65e0\u6548\u7684\x20\x61\x64\x64\x72\x65\x73',
-        '\x41\x50\x49\uff09\x3a\x20\x0a\x20\x20',
-        '\x0a\x53\x55\x42\x41\x50\x49\uff08\u8ba2\u9605',
-        '\x66\x61\x69\x6c\x20\x74\x6f\x20\x61\x75',
-        '\x6e\x74\x3a\x20',
-        '\x30\x2e\x30\x2e\x34\x34\x33\x30\x2e\x37',
-        '\x70\x6f\x70',
-        '\x4d\x79\x55\x79\x4d\x79\x55\x79\x4d\x79',
-        '\x63\x75\x72\x65\x3d\x31\x26\x74\x79\x70',
-        '\x77\x72\x69\x74\x65',
-        '\x49\x7a\x4a\x54\x49\x7a\x4a\x54\x49\x7a',
-        '\u8bd5\u90e8\u7f72\uff0c\u68c0\u67e5\u53d8\u91cf\u662f\u5426',
-        '\x37\x31\x31\x34\x36\x34\x79\x50\x71\x4b\x71\x6c',
-        '\x41\x44\x44',
-        '\x0a\x49\x50\x3a\x20',
-        '\x2c\x20\x75\x64\x70\x3a\x20\x66\x61\x6c',
-        '\x64\x72\x65\x73\x73\x54\x79\x70\x65\x20',
-        '\x6c\x61\x73\x68\u8ba2\u9605\u5730\u5740\x3a\x0a',
-        '\x73\x75\x62\x73\x74\x72\x69\x6e\x67',
-        '\x4d\x79\x55\x77\x51\x53\x55\x79\x4d\x79',
-        '\x2d\x53\x55\x42',
-        '\x73\x74\x61\x74\x75\x73\x54\x65\x78\x74',
-        '\x65\x64\x20\x65\x72\x72\x6f\x72',
-        '\x65\x26\x6e\x65\x77\x5f\x6e\x61\x6d\x65',
-        '\x4a\x6d\x56\x77\x5a\x57\x6c\x31\x63\x7a',
-        '\x65\x72\x20\x76\x65\x72\x73\x69\x6f\x6e',
-        '\x69\x73\x20',
-        '\x61\x73\x68\x2d\x6d\x65\x74\x61\u3001\x73',
-        '\x6d\x69\x6e\x67\x44\x61\x74\x61\x3a\x20',
-        '\x31\x6a\x62\x57\x78\x70\x64\x53\x5a\x77',
-        '\u6210\u5668\uff09\x3a\x20',
-        '\x72\x65\x74\x72\x79',
-        '\x41\x43\x4c\x34\x53\x53\x52\x5f\x4f\x6e',
-        '\x72\x65\x6c\x65\x61\x73\x65\x4c\x6f\x63',
-        '\x50\x53\x42\x30\x63\x6d\x39\x71\x59\x57',
-        '\x73\x65\x74\x48\x6f\x75\x72\x73',
-        '\x74\x70\x73\x3a\x2f\x2f',
-        '\x68\x74\x74\x70\x73\x3a\x2f\x2f',
-        '\x64\x61\x74\x61',
-        '\u8f6c\u6362\u540e\u7aef\uff09\x3a\x20',
-        '\x72\x65\x64\x69\x72\x65\x63\x74',
-        '\x26\x70\x61\x74\x68\x3d',
-        '\x65\x74\x2e\x72\x65\x61\x64\x61\x62\x6c',
-        '\x0a\x2d\x2d\x2d\x2d\x2d\x2d\x2d\x2d\x2d',
-        '\x20\x42\x61\x73\x65\x36\x34\u3001\x63\x6c',
-        '\x65\x6e\x63\x6f\x64\x65',
-        '\x64\x6e\x2e\x63\x6f\x6d',
-        '\x26\x70\x61\x72\x73\x65\x5f\x6d\x6f\x64',
-        '\x72\x61\x6e\x64\x6f\x6d',
-        '\x6c\x73\x65\x26\x63\x6f\x6e\x66\x69\x67',
-        '\x49\x50\x2f\x50\x52\x4f\x58\x59\x49\x50',
-        '\x2f\x70\x72\x6f\x78\x79\x69\x70\x2e',
-        '\x67\x7a\x69\x70\x2c\x20\x64\x65\x66\x6c',
-        '\x68\x74\x74\x70\x73',
-        '\x69\x6f\x6e\x2f\x78\x6d\x6c\x3b',
-        '\x68\x74\x74\x70',
-        '\x28\x43\x4f\x4e\x4e\x45\x43\x54\x29\x20',
-        '\x20\x65\x78\x70\x65\x63\x74\x65\x64\x3a',
-        '\x72\x65\x61\x64',
-        '\x73\x65\x26\x75\x64\x70\x3d\x66\x61\x6c',
-        '\x44\x4c\x53',
-        '\x34\x34\x33',
-        '\x3f\x73\x75\x62\x0a\x0a\x42\x61\x73\x65',
-        '\x64\x20\x63\x6f\x6d\x6d\x61\x6e\x64\x2c',
-        '\x45\x6c\x4e\x44\x42\x30\x5a\x79\x56\x46',
-        '\x61\x64\x64\x72\x65\x73\x73',
-        '\x4f\x52\x44\u53d8\u91cf\uff0c\u6216\u5c1d\u8bd5\u91cd',
-        '\x73\x65\x61\x72\x63\x68',
-        '\x2d\x20\x7b\x6e\x61\x6d\x65\x3a\x20',
-        '\x51\x30\x59\x74\x56\x32\x39\x79\x61\x32',
-        '\x74\x6f\x53\x74\x72\x69\x6e\x67',
-        '\x26\x66\x70\x3d\x72\x61\x6e\x64\x6f\x6d',
-        '\x6f\x63\x6b\x65\x74\x20\x63\x6c\x6f\x73',
-        '\x2d\x66\x69\x6e\x67\x65\x72\x70\x72\x69',
-        '\x20\u9650\u901f\x20',
-        '\x65\x2e\x6f\x72\x67',
-        '\x63\x6f\x6d\x2f\x41\x43\x4c\x34\x53\x53',
-        '\x72\x65\x76\x65\x72\x73\x65',
-        '\x33\x5d\x2c\x20\x73\x6b\x69\x70\x2d\x63',
-        '\x70\x72\x6f\x78\x79\x69\x70\x3d\x74\x72',
-        '\x49\x6e\x76\x61\x6c\x69\x64\x20\x53\x4f',
-        '\x73\x65\x6e\x74\x20\x73\x6f\x63\x6b\x73',
-        '\x72\x3d\x34\x26\x75\x72\x6c\x3d',
-        '\x69\x6e\x76\x61\x6c\x69\x64\x20\x61\x64',
-        '\x68\x61\x73',
-        '\x73\x20\x66\x6f\x72\x6d\x61\x74',
-        '\x70\x69\x70\x65\x54\x6f',
-        '\x75\x72\x6c\x3d',
-        '\x6b\x65\x74\x2d\x70\x72\x6f\x74\x6f\x63',
-        '\x61\x64\x64\x72\x65\x73\x73\x52\x65\x6d',
-        '\x2a\x3d\x75\x74\x66\x2d\x38\x27\x27',
-        '\x67\x65\x74\x55\x69\x6e\x74\x38',
-        '\x70\x6f\x72\x74\x52\x65\x6d\x6f\x74\x65',
-        '\x38\x34\x34\x33',
-        '\x23\x23\x23\x23\x23\x23\x23\x23\x23\x23',
-        '\x68\x69\x6e\x67\x20\x63\x6f\x6e\x74\x65',
-        '\x75\x70\x6c\x6f\x61\x64\x3d',
-        '\x70\x75\x73\x68',
-        '\x63\x61\x74\x63\x68',
-        '\x53\x4f\x43\x4b\x53\x35',
-        '\x0a\x53\x55\x42\uff08\u4f18\u9009\u8ba2\u9605\u751f',
-        '\x62\x6f\x64\x79',
-        '\x31\x30\x39\x37\x38\x37\x36\x72\x62\x6f\x7a\x6c\x63',
-        '\x4b\x67\x3d\x3d',
-        '\x32\x30\x38\x37',
-        '\x41\x44\x44\x43\x53\x56\uff08\x49\x50\x54',
-        '\x43\x46\x43\x44\x4e\uff08\u8bbf\u95ee\u65b9\u5f0f',
-        '\x65\x6e\x74\x72\x69\x65\x73',
-        '\x3b\x63\x68\x61\x72\x73\x65\x74\x3d\x75',
-        '\x73\x70\x6c\x69\x74',
-        '\x6e\x75\x6c\x6c'
-    ];
-    _0x5553 = function () {
-        return _0xfbc1b6;
-    };
-    return _0x5553();
-}
-async function socks5Connect(_0x441678, _0x1f1311, _0x5a3493, _0x6196d6) {
-    const _0x1fce8d = _0x2b3298;
-    const {
-        username: _0x34b92a,
-        password: _0x1bf70a,
-        hostname: _0xee7889,
-        port: _0x417d06
-    } = parsedSocks5Address;
-    const _0x4a37a0 = connect({
-        '\x68\x6f\x73\x74\x6e\x61\x6d\x65': _0xee7889,
-        '\x70\x6f\x72\x74': _0x417d06
+
+/**
+ * 
+ * @param {number} addressType - 地址类型 (1: IPv4, 3: Domain name, 4: IPv6)
+ * @param {string} addressRemote - 远程地址
+ * @param {number} portRemote - 远程端口
+ * @param {function} log - 日志记录函数
+ */
+async function socks5Connect(addressType, addressRemote, portRemote, log) {
+    const { username, password, hostname, port } = parsedSocks5Address;
+    // 连接到SOCKS服务器
+    const socket = connect({
+        hostname,
+        port,
     });
-    const _0x358282 = new Uint8Array([
-        0x5,
-        0x2,
-        0x0,
-        0x2
-    ]);
-    const _0x3d154e = _0x4a37a0[_0x1fce8d(0x14a)][_0x1fce8d(0x12e)]();
-    await _0x3d154e[_0x1fce8d(0x19a)](_0x358282);
-    _0x6196d6('\x73\x65\x6e\x74\x20\x73\x6f\x63\x6b\x73' + _0x1fce8d(0x236));
-    const _0x28dd93 = _0x4a37a0[_0x1fce8d(0x258)][_0x1fce8d(0x118)]();
-    const _0x455ebb = new TextEncoder();
-    let _0x492365 = (await _0x28dd93['\x72\x65\x61\x64']())[_0x1fce8d(0x237)];
-    if (_0x492365[0x0] !== 0x5) {
-        _0x6196d6('\x73\x6f\x63\x6b\x73\x20\x73\x65\x72\x76' + _0x1fce8d(0x1aa) + _0x1fce8d(0x10e) + _0x492365[0x0] + (_0x1fce8d(0x1ca) + '\x20\x35'));
+
+    // SOCKS5握手请求头格式 (Worker -> Socks Server):
+    // +----+----------+----------+
+    // |VER | NMETHODS | METHODS  |
+    // +----+----------+----------+
+    // | 1  |	1	 | 1 to 255 |
+    // +----+----------+----------+
+
+    // 方法:
+    // 0x00 NO AUTHENTICATION REQUIRED
+    // 0x02 USERNAME/PASSWORD https://datatracker.ietf.org/doc/html/rfc1929
+    const socksGreeting = new Uint8Array([5, 2, 0, 2]);
+
+    const writer = socket.writable.getWriter();
+
+    await writer.write(socksGreeting);
+    log('sent socks greeting');
+
+    const reader = socket.readable.getReader();
+    const encoder = new TextEncoder();
+    let res = (await reader.read()).value;
+
+    // SOCKS5握手响应格式 (Socks Server -> Worker):
+    // +----+--------+
+    // |VER | METHOD |
+    // +----+--------+
+    // | 1  |   1	|
+    // +----+--------+
+    if (res[0] !== 0x05) {
+        log(`socks server version error: ${res[0]} expected: 5`);
         return;
     }
-    if (_0x492365[0x1] === 0xff) {
-        _0x6196d6('\x6e\x6f\x20\x61\x63\x63\x65\x70\x74\x61' + _0x1fce8d(0x278) + '\x73');
+    if (res[1] === 0xff) {
+        log("no acceptable methods");
         return;
     }
-    if (_0x492365[0x1] === 0x2) {
-        _0x6196d6('\x73\x6f\x63\x6b\x73\x20\x73\x65\x72\x76' + _0x1fce8d(0x267) + '\x75\x74\x68');
-        if (!_0x34b92a || !_0x1bf70a) {
-            _0x6196d6(_0x1fce8d(0xfa) + _0x1fce8d(0x107) + '\x61\x6d\x65\x2f\x70\x61\x73\x73\x77\x6f' + '\x72\x64');
+
+    // 如果返回 0x0502
+    if (res[1] === 0x02) {
+        log("socks server needs auth");
+        if (!username || !password) {
+            log("please provide username/password");
             return;
         }
-        const _0x62b390 = new Uint8Array([
-            0x1,
-            _0x34b92a[_0x1fce8d(0x256)],
-            ..._0x455ebb['\x65\x6e\x63\x6f\x64\x65'](_0x34b92a),
-            _0x1bf70a[_0x1fce8d(0x256)],
-            ..._0x455ebb['\x65\x6e\x63\x6f\x64\x65'](_0x1bf70a)
+        // 认证请求格式:
+        // +----+------+----------+------+----------+
+        // |VER | ULEN |  UNAME   | PLEN |  PASSWD  |
+        // +----+------+----------+------+----------+
+        // | 1  |  1   | 1 to 255 |  1   | 1 to 255 |
+        // +----+------+----------+------+----------+
+        const authRequest = new Uint8Array([
+            1,
+            username.length,
+            ...encoder.encode(username),
+            password.length,
+            ...encoder.encode(password)
         ]);
-        await _0x3d154e[_0x1fce8d(0x19a)](_0x62b390);
-        _0x492365 = (await _0x28dd93[_0x1fce8d(0x1cb)]())[_0x1fce8d(0x237)];
-        if (_0x492365[0x0] !== 0x1 || _0x492365[0x1] !== 0x0) {
-            _0x6196d6(_0x1fce8d(0x194) + _0x1fce8d(0x211) + _0x1fce8d(0x16b));
+        await writer.write(authRequest);
+        res = (await reader.read()).value;
+        // 预期 0x0100
+        if (res[0] !== 0x01 || res[1] !== 0x00) {
+            log("fail to auth socks server");
             return;
         }
     }
-    let _0xa69dcb;
-    switch (_0x441678) {
-    case 0x1:
-        _0xa69dcb = new Uint8Array([
-            0x1,
-            ..._0x1f1311[_0x1fce8d(0x1fe)]('\x2e')['\x6d\x61\x70'](Number)
-        ]);
-        break;
-    case 0x3:
-        _0xa69dcb = new Uint8Array([
-            0x3,
-            _0x1f1311['\x6c\x65\x6e\x67\x74\x68'],
-            ..._0x455ebb['\x65\x6e\x63\x6f\x64\x65'](_0x1f1311)
-        ]);
-        break;
-    case 0x4:
-        _0xa69dcb = new Uint8Array([
-            0x4,
-            ..._0x1f1311[_0x1fce8d(0x1fe)]('\x3a')['\x66\x6c\x61\x74\x4d\x61\x70'](_0x31ed15 => [
-                parseInt(_0x31ed15[_0x1fce8d(0x20c)](0x0, 0x2), 0x10),
-                parseInt(_0x31ed15[_0x1fce8d(0x20c)](0x2), 0x10)
-            ])
-        ]);
-        break;
-    default:
-        _0x6196d6(_0x1fce8d(0x191) + _0x1fce8d(0x14d) + _0x441678);
-        return;
+
+    // 请求数据格式 (Worker -> Socks Server):
+    // +----+-----+-------+------+----------+----------+
+    // |VER | CMD |  RSV  | ATYP | DST.ADDR | DST.PORT |
+    // +----+-----+-------+------+----------+----------+
+    // | 1  |  1  | X'00' |  1   | Variable |	2	 |
+    // +----+-----+-------+------+----------+----------+
+    // ATYP: 地址类型
+    // 0x01: IPv4 地址
+    // 0x03: 域名
+    // 0x04: IPv6 地址
+    // DST.ADDR: 目标地址
+    // DST.PORT: 目标端口（网络字节顺序）
+
+    // addressType
+    // 0x01: IPv4 地址
+    // 0x03: 域名
+    // 0x04: IPv6 地址
+    let DSTADDR; // DSTADDR = ATYP + DST.ADDR
+    switch (addressType) {
+        case 1:
+            DSTADDR = new Uint8Array(
+                [1, ...addressRemote.split('.').map(Number)]
+            );
+            break;
+        case 3:
+            DSTADDR = new Uint8Array(
+                [3, addressRemote.length, ...encoder.encode(addressRemote)]
+            );
+            break;
+        case 4:
+            DSTADDR = new Uint8Array(
+                [4, ...addressRemote.split(':').flatMap(x => [parseInt(x.slice(0, 2), 16), parseInt(x.slice(2), 16)])]
+            );
+            break;
+        default:
+            log(`无效的 addressType: ${addressType}`);
+            return;
     }
-    const _0x223199 = new Uint8Array([
-        0x5,
-        0x1,
-        0x0,
-        ..._0xa69dcb,
-        _0x5a3493 >> 0x8,
-        _0x5a3493 & 0xff
-    ]);
-    await _0x3d154e[_0x1fce8d(0x19a)](_0x223199);
-    _0x6196d6(_0x1fce8d(0x1e2) + '\x20\x72\x65\x71\x75\x65\x73\x74');
-    _0x492365 = (await _0x28dd93[_0x1fce8d(0x1cb)]())[_0x1fce8d(0x237)];
-    if (_0x492365[0x1] === 0x0) {
-        _0x6196d6(_0x1fce8d(0x135));
+    const socksRequest = new Uint8Array([5, 1, 0, ...DSTADDR, portRemote >> 8, portRemote & 0xff]);
+    await writer.write(socksRequest);
+    log('sent socks request');
+
+    res = (await reader.read()).value;
+    // 响应格式 (Socks Server -> Worker):
+    //  +----+-----+-------+------+----------+----------+
+    // |VER | REP |  RSV  | ATYP | BND.ADDR | BND.PORT |
+    // +----+-----+-------+------+----------+----------+
+    // | 1  |  1  | X'00' |  1   | Variable |	2	 |
+    // +----+-----+-------+------+----------+----------+
+    if (res[1] === 0x00) {
+        log("socks连接已打开");
     } else {
-        _0x6196d6(_0x1fce8d(0x134) + '\u63a5');
+        log("无法打开socks连接");
         return;
     }
-    _0x3d154e[_0x1fce8d(0x1b2) + '\x6b']();
-    _0x28dd93[_0x1fce8d(0x1b2) + '\x6b']();
-    return _0x4a37a0;
+    writer.releaseLock();
+    reader.releaseLock();
+    return socket;
 }
-function socks5AddressParser(_0xc751e8) {
-    const _0x5d3d7e = _0x2b3298;
-    let [_0x1d4924, _0x2ad740] = _0xc751e8['\x73\x70\x6c\x69\x74']('\x40')[_0x5d3d7e(0x1de)]();
-    let _0x39a9d7, _0x74e77a, _0x3916c6, _0x363321;
-    if (_0x2ad740) {
-        const _0x6abcdd = _0x2ad740[_0x5d3d7e(0x1fe)]('\x3a');
-        if (_0x6abcdd[_0x5d3d7e(0x256)] !== 0x2) {
-            throw new Error(_0x5d3d7e(0x1e1) + _0x5d3d7e(0x294) + _0x5d3d7e(0x1e6));
+
+/**
+ * 解析SOCKS5地址
+ * @param {string} address - SOCKS5地址字符串
+ */
+function socks5AddressParser(address) {
+    let [latter, former] = address.split("@").reverse();
+    let username, password, hostname, port;
+    if (former) {
+        const formers = former.split(":");
+        if (formers.length !== 2) {
+            throw new Error('Invalid SOCKS address format');
         }
-        [_0x39a9d7, _0x74e77a] = _0x6abcdd;
+        [username, password] = formers;
     }
-    const _0x21fe8e = _0x1d4924[_0x5d3d7e(0x1fe)]('\x3a');
-    _0x363321 = Number(_0x21fe8e[_0x5d3d7e(0x197)]());
-    if (isNaN(_0x363321)) {
-        throw new Error(_0x5d3d7e(0x1e1) + _0x5d3d7e(0x294) + _0x5d3d7e(0x1e6));
+    const latters = latter.split(":");
+    port = Number(latters.pop());
+    if (isNaN(port)) {
+        throw new Error('Invalid SOCKS address format');
     }
-    _0x3916c6 = _0x21fe8e[_0x5d3d7e(0x119)]('\x3a');
-    const _0x42c39b = /^\[.*\]$/;
-    if (_0x3916c6[_0x5d3d7e(0x21b)]('\x3a') && !_0x42c39b['\x74\x65\x73\x74'](_0x3916c6)) {
-        throw new Error('\x49\x6e\x76\x61\x6c\x69\x64\x20\x53\x4f' + _0x5d3d7e(0x294) + _0x5d3d7e(0x1e6));
+    hostname = latters.join(":");
+    const regex = /^\[.*\]$/;
+    if (hostname.includes(":") && !regex.test(hostname)) {
+        throw new Error('Invalid SOCKS address format');
     }
     return {
-        '\x75\x73\x65\x72\x6e\x61\x6d\x65': _0x39a9d7,
-        '\x70\x61\x73\x73\x77\x6f\x72\x64': _0x74e77a,
-        '\x68\x6f\x73\x74\x6e\x61\x6d\x65': _0x3916c6,
-        '\x70\x6f\x72\x74': _0x363321
+        username,
+        password,
+        hostname,
+        port,
     };
 }
-function isValidIPv4(_0x507a9d) {
-    const _0x5b2d18 = _0x2b3298;
-    const _0x2ea261 = /^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/;
-    return _0x2ea261[_0x5b2d18(0x2b0)](_0x507a9d);
+
+/**
+ * 检查是否为有效的IPv4地址
+ * @param {string} address - 地址字符串
+ * @returns {boolean} 是否为有效的IPv4地址
+ */
+function isValidIPv4(address) {
+    const ipv4Regex = /^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/;
+    return ipv4Regex.test(address);
 }
-function subAddresses(_0x3ce3fe, _0x5283ad, _0x4c5eac, _0xdd14ea, _0xd4cd34) {
-    const _0x54a96a = _0x2b3298;
-    let _0x5f4fd1 = [];
-    _0x5f4fd1 = _0x5f4fd1[_0x54a96a(0x162)](_0xdd14ea);
-    _0x5f4fd1 = _0x5f4fd1[_0x54a96a(0x162)](_0xd4cd34);
-    const _0x40c3cf = [...new Set(_0x5f4fd1)];
-    const _0x27d07d = [
-        _0x54a96a(0x295),
-        _0x54a96a(0x280),
-        _0x54a96a(0x1f9),
-        '\x32\x30\x39\x36',
-        _0x54a96a(0x1ee)
-    ];
-    const _0xdaf7d2 = _0x40c3cf['\x6d\x61\x70'](_0x54ac9a => {
-        const _0x510f0d = _0x54a96a;
-        let _0x4ea0ac = '\x2d\x31';
-        let _0x2522b9 = _0x54ac9a;
-        const _0xb6082c = _0x54ac9a['\x6d\x61\x74\x63\x68'](/^(.+):(\d+)#(.+)$/);
-        if (!_0xb6082c) {
-            if (_0x54ac9a['\x69\x6e\x63\x6c\x75\x64\x65\x73']('\x3a') && _0x54ac9a[_0x510f0d(0x21b)]('\x23')) {
-                const _0x4a5e7b = _0x54ac9a['\x73\x70\x6c\x69\x74']('\x3a');
-                _0x54ac9a = _0x4a5e7b[0x0];
-                const _0x3c5073 = _0x4a5e7b[0x1][_0x510f0d(0x1fe)]('\x23');
-                _0x4ea0ac = _0x3c5073[0x0];
-                _0x2522b9 = _0x3c5073[0x1];
-            } else if (_0x54ac9a[_0x510f0d(0x21b)]('\x3a')) {
-                const _0x1b5bb3 = _0x54ac9a[_0x510f0d(0x1fe)]('\x3a');
-                _0x54ac9a = _0x1b5bb3[0x0];
-                _0x4ea0ac = _0x1b5bb3[0x1];
-            } else if (_0x54ac9a[_0x510f0d(0x21b)]('\x23')) {
-                const _0x5b0742 = _0x54ac9a[_0x510f0d(0x1fe)]('\x23');
-                _0x54ac9a = _0x5b0742[0x0];
-                _0x2522b9 = _0x5b0742[0x1];
+
+/**
+ * 处理子地址
+ * @param {string} host - 主机名
+ * @param {string} pw - 密码
+ * @param {string} userAgent - 用户代理
+ * @param {Array<string>} newAddressesapi - 新的API地址数组
+ * @param {Array<string>} newAddressescsv - 新的CSV地址数组
+ * @returns {string} 处理后的Base64编码字符串
+ */
+function subAddresses(host, pw, userAgent, newAddressesapi, newAddressescsv) {
+    let addresses = [];
+    addresses = addresses.concat(newAddressesapi);
+    addresses = addresses.concat(newAddressescsv);
+
+    // 使用Set对象去重
+    const uniqueAddresses = [...new Set(addresses)];
+
+    const httpsPorts = ["2053", "2083", "2087", "2096", "8443"];
+
+    const responseBody = uniqueAddresses.map(address => {
+        let port = "-1";
+        let addressid = address;
+
+        const match = address.match(/^(.+):(\d+)#(.+)$/);
+        if (!match) {
+            if (address.includes(':') && address.includes('#')) {
+                const parts = address.split(':');
+                address = parts[0];
+                const subParts = parts[1].split('#');
+                port = subParts[0];
+                addressid = subParts[1];
+            } else if (address.includes(':')) {
+                const parts = address.split(':');
+                address = parts[0];
+                port = parts[1];
+            } else if (address.includes('#')) {
+                const parts = address.split('#');
+                address = parts[0];
+                addressid = parts[1];
             }
-            if (_0x2522b9[_0x510f0d(0x21b)]('\x3a')) {
-                _0x2522b9 = _0x2522b9[_0x510f0d(0x1fe)]('\x3a')[0x0];
+
+            if (addressid.includes(':')) {
+                addressid = addressid.split(':')[0];
             }
         } else {
-            _0x54ac9a = _0xb6082c[0x1];
-            _0x4ea0ac = _0xb6082c[0x2] || _0x4ea0ac;
-            _0x2522b9 = _0xb6082c[0x3] || _0x54ac9a;
+            address = match[1];
+            port = match[2] || port;
+            addressid = match[3] || address;
         }
-        if (!isValidIPv4(_0x54ac9a) && _0x4ea0ac == '\x2d\x31') {
-            for (let _0x2e2ac8 of _0x27d07d) {
-                if (_0x54ac9a['\x69\x6e\x63\x6c\x75\x64\x65\x73'](_0x2e2ac8)) {
-                    _0x4ea0ac = _0x2e2ac8;
+
+        if (!isValidIPv4(address) && port == "-1") {
+            for (let httpsPort of httpsPorts) {
+                if (address.includes(httpsPort)) {
+                    port = httpsPort;
                     break;
                 }
             }
         }
-        if (_0x4ea0ac == '\x2d\x31')
-            _0x4ea0ac = '\x34\x34\x33';
-        let _0x223c91 = _0x3ce3fe;
-        let _0x1f42ba = path;
-        let _0x2f5bc1 = '';
-        if (proxyhosts['\x6c\x65\x6e\x67\x74\x68'] > 0x0 && _0x223c91[_0x510f0d(0x21b)]('\x2e\x77\x6f\x72\x6b\x65\x72\x73\x2e\x64' + '\x65\x76')) {
-            _0x1f42ba = '\x2f' + _0x223c91 + _0x1f42ba;
-            _0x223c91 = proxyhosts[Math[_0x510f0d(0x2ae)](Math[_0x510f0d(0x1c1)]() * proxyhosts['\x6c\x65\x6e\x67\x74\x68'])];
-            _0x2f5bc1 = '\x20\u5df2\u542f\u7528\u4e34\u65f6\u57df\u540d\u4e2d\u8f6c' + _0x510f0d(0x230) + _0x510f0d(0x150);
+        if (port == "-1") port = "443";
+
+        let 伪装域名 = host;
+        let 最终路径 = path;
+        let 节点备注 = '';
+
+        if (proxyhosts.length > 0 && (伪装域名.includes('.workers.dev'))) {
+            最终路径 = `/${伪装域名}${最终路径}`;
+            伪装域名 = proxyhosts[Math.floor(Math.random() * proxyhosts.length)];
+            节点备注 = ` 已启用临时域名中转服务，请尽快绑定自定义域！`;
         }
-        const _0xc2cf3c = proxyIPPool['\x66\x69\x6e\x64'](_0x4dfaae => _0x4dfaae[_0x510f0d(0x21b)](_0x54ac9a));
-        if (_0xc2cf3c)
-            _0x1f42ba += _0x510f0d(0x190) + _0xc2cf3c;
-        let _0x2e167d = _0x5283ad;
-        if (!_0x4c5eac['\x69\x6e\x63\x6c\x75\x64\x65\x73'](_0x510f0d(0x20f) + '\x65\x72'))
-            _0x2e167d = encodeURIComponent(_0x5283ad);
-        const _0x16097a = atob(_0x510f0d(0x16d));
-        const _0x290bed = _0x16097a + _0x510f0d(0x247) + _0x2e167d + '\x40' + _0x54ac9a + '\x3a' + _0x4ea0ac + (_0x510f0d(0x225) + _0x510f0d(0x232)) + _0x223c91 + (_0x510f0d(0x1d8) + _0x510f0d(0x2b1) + _0x510f0d(0x186)) + _0x223c91 + '\x26\x70\x61\x74\x68\x3d' + encodeURIComponent(_0x1f42ba) + '\x23' + encodeURIComponent(_0x2522b9 + _0x2f5bc1);
-        return _0x290bed;
-    })[_0x54a96a(0x119)]('\x0a');
-    const _0x41ade0 = btoa(_0xdaf7d2);
-    return _0x41ade0;
+
+        const matchingProxyIP = proxyIPPool.find(proxyIP => proxyIP.includes(address));
+        if (matchingProxyIP) 最终路径 += `&proxyip=${matchingProxyIP}`;
+
+        let 密码 = pw;
+        if (!userAgent.includes('subconverter')) 密码 = encodeURIComponent(pw);
+
+        const 协议类型 = atob('dHJvamFu'); // 'trojan'
+        const 特洛伊Link = `${协议类型}://${密码}@${address}:${port}?security=tls&sni=${伪装域名}&fp=randomized&type=ws&host=${伪装域名}&path=${encodeURIComponent(最终路径)}#${encodeURIComponent(addressid + 节点备注)}`;
+
+        return 特洛伊Link;
+    }).join('\n');
+
+    const base64Response = btoa(responseBody); // 重新进行 Base64 编码
+
+    return base64Response;
 }
-function _0x1cdd(_0x206139, _0x5def29) {
-    const _0x555382 = _0x5553();
-    _0x1cdd = function (_0x1cdd0b, _0x279915) {
-        _0x1cdd0b = _0x1cdd0b - 0xf4;
-        let _0x341937 = _0x555382[_0x1cdd0b];
-        return _0x341937;
-    };
-    return _0x1cdd(_0x206139, _0x5def29);
-}
-async function getAddressesapi(_0xff5b17) {
-    const _0x11e9f7 = _0x2b3298;
-    if (!_0xff5b17 || _0xff5b17[_0x11e9f7(0x256)] === 0x0)
-        return [];
-    let _0x1f8b18 = '';
-    const _0x85018d = new AbortController();
-    const _0x168225 = setTimeout(() => {
-        const _0xec438e = _0x11e9f7;
-        _0x85018d[_0xec438e(0x224)]();
-    }, 0x7d0);
+
+/**
+ * 从API获取地址
+ * @param {Array<string>} api - API地址数组
+ * @returns {Promise<Array<string>>} 处理后的地址数组
+ */
+async function getAddressesapi(api) {
+    if (!api || api.length === 0) return [];
+
+    let newapi = "";
+
+    // 创建一个AbortController对象，用于控制fetch请求的取消
+    const controller = new AbortController();
+
+    const timeout = setTimeout(() => {
+        controller.abort(); // 取消所有请求
+    }, 2000); // 2秒后触发
+
     try {
-        const _0x418b1c = await Promise[_0x11e9f7(0x13e)](_0xff5b17[_0x11e9f7(0x10b)](_0x4a1dc5 => fetch(_0x4a1dc5, {
-            '\x6d\x65\x74\x68\x6f\x64': '\x47\x45\x54',
-            '\x68\x65\x61\x64\x65\x72\x73': {
-                '\x41\x63\x63\x65\x70\x74': _0x11e9f7(0x15a) + _0x11e9f7(0x251) + _0x11e9f7(0x216) + '\x6c\x2c\x61\x70\x70\x6c\x69\x63\x61\x74' + _0x11e9f7(0x1c7),
-                '\x55\x73\x65\x72\x2d\x41\x67\x65\x6e\x74': atob(_0x11e9f7(0x1d6) + _0x11e9f7(0x17e) + _0x11e9f7(0x2a2) + '\x55\x3d')
+        // 使用Promise.allSettled等待所有API请求完成，无论成功或失败
+        const responses = await Promise.allSettled(api.map(apiUrl => fetch(apiUrl, {
+            method: 'GET',
+            headers: {
+                'Accept': 'text/html,application/xhtml+xml,application/xml;',
+                'User-Agent': atob('Q0YtV29ya2Vycy1lcGVpdXMvY21saXU=') // 'CF-Workers-epeius/cmlu'
             },
-            '\x73\x69\x67\x6e\x61\x6c': _0x85018d[_0x11e9f7(0x174)]
-        })[_0x11e9f7(0x223)](_0xa7e561 => _0xa7e561['\x6f\x6b'] ? _0xa7e561[_0x11e9f7(0x210)]() : Promise[_0x11e9f7(0x13c)]())));
-        for (const [_0x193840, _0x5b6358] of _0x418b1c[_0x11e9f7(0x1fc)]()) {
-            if (_0x5b6358[_0x11e9f7(0x2a4)] === '\x66\x75\x6c\x66\x69\x6c\x6c\x65\x64') {
-                const _0x5561b3 = _0x5b6358[_0x11e9f7(0x237)];
-                const _0x314340 = _0x5561b3[_0x11e9f7(0x1fe)](/\r?\n/);
-                let _0x41fbb5 = '';
-                let _0x385093 = _0x11e9f7(0x1ce);
-                if (_0x314340[0x0][_0x11e9f7(0x1fe)]('\x2c')[_0x11e9f7(0x256)] > 0x3) {
-                    const _0x3f9dcf = _0xff5b17[_0x193840]['\x6d\x61\x74\x63\x68'](/id=([^&]*)/);
-                    if (_0x3f9dcf)
-                        _0x41fbb5 = _0x3f9dcf[0x1];
-                    const _0xda9bb5 = _0xff5b17[_0x193840][_0x11e9f7(0xfc)](/port=([^&]*)/);
-                    if (_0xda9bb5)
-                        _0x385093 = _0xda9bb5[0x1];
-                    for (let _0x20a93e = 0x1; _0x20a93e < _0x314340['\x6c\x65\x6e\x67\x74\x68']; _0x20a93e++) {
-                        const _0x27fb76 = _0x314340[_0x20a93e][_0x11e9f7(0x1fe)]('\x2c')[0x0];
-                        if (_0x27fb76) {
-                            _0x1f8b18 += _0x27fb76 + '\x3a' + _0x385093 + (_0x41fbb5 ? '\x23' + _0x41fbb5 : '') + '\x0a';
-                            if (_0xff5b17[_0x193840]['\x69\x6e\x63\x6c\x75\x64\x65\x73'](_0x11e9f7(0x1e0) + '\x75\x65'))
-                                proxyIPPool[_0x11e9f7(0x1f2)](_0x27fb76 + '\x3a' + 测속端口);
+            signal: controller.signal // 将AbortController的信号量添加到fetch请求中
+        }).then(response => response.ok ? response.text() : Promise.reject())));
+
+        for (const [index, response] of responses.entries()) {
+            if (response.status === 'fulfilled') {
+                const content = response.value;
+                const lines = content.split(/\r?\n/);
+                let 节点备注 = '';
+                let 测速端口 = '443';
+
+                if (lines[0].split(',').length > 3) {
+                    const idMatch = api[index].match(/id=([^&]*)/);
+                    if (idMatch) 节点备注 = idMatch[1];
+                    const portMatch = api[index].match(/port=([^&]*)/);
+                    if (portMatch) 测速端口 = portMatch[1];
+
+                    for (let i = 1; i < lines.length; i++) {
+                        const columns = lines[i].split(',')[0];
+                        if (columns) {
+                            newapi += `${columns}:${测速端口}${节点备注 ? `#${节点备注}` : ''}\n`;
+                            if (api[index].includes('proxyip=true')) proxyIPPool.push(`${columns}:${测속端口}`);
                         }
                     }
                 } else {
-                    if (_0xff5b17[_0x193840][_0x11e9f7(0x21b)]('\x70\x72\x6f\x78\x79\x69\x70\x3d\x74\x72' + '\x75\x65')) {
-                        proxyIPPool = proxyIPPool[_0x11e9f7(0x162)]((await ADD(_0x5561b3))[_0x11e9f7(0x10b)](_0x5e2065 => {
-                            const _0x8f83b6 = _0x11e9f7;
-                            const _0x5479a4 = _0x5e2065[_0x8f83b6(0x1fe)]('\x23')[0x0] || _0x5e2065;
-                            if (_0x5479a4[_0x8f83b6(0x21b)]('\x3a')) {
-                                const _0x48d76f = _0x5479a4['\x73\x70\x6c\x69\x74']('\x3a')[0x1];
-                                if (!httpsPorts[_0x8f83b6(0x21b)](_0x48d76f)) {
-                                    return _0x5479a4;
+                    if (api[index].includes('proxyip=true')) {
+                        proxyIPPool = proxyIPPool.concat((await ADD(content)).map(item => {
+                            const baseItem = item.split('#')[0] || item;
+                            if (baseItem.includes(':')) {
+                                const port = baseItem.split(':')[1];
+                                if (!httpsPorts.includes(port)) {
+                                    return baseItem;
                                 }
                             } else {
-                                return _0x5479a4 + _0x8f83b6(0x149);
+                                return `${baseItem}:443`;
                             }
-                            return null;
-                        })[_0x11e9f7(0x248)](Boolean));
+                            return null; // 不符合条件时返回 null
+                        }).filter(Boolean)); // 过滤掉 null 值
                     }
-                    _0x1f8b18 += _0x5561b3 + '\x0a';
+                    newapi += content + '\n';
                 }
             }
         }
-    } catch (_0x3a7510) {
-        console[_0x11e9f7(0x10a)](_0x3a7510);
+    } catch (error) {
+        console.error(error);
     } finally {
-        clearTimeout(_0x168225);
+        clearTimeout(timeout);
     }
-    const _0x32f9f3 = await ADD(_0x1f8b18);
-    return _0x32f9f3;
+
+    const newAddressesapi = await ADD(newapi);
+
+    return newAddressesapi;
 }
-async function getAddressescsv(_0x89c993) {
-    const _0x6b9ed0 = _0x2b3298;
-    if (!addressescsv || addressescsv[_0x6b9ed0(0x256)] === 0x0) {
+
+/**
+ * 从CSV文件获取地址
+ * @param {string} tls - TLS值
+ * @returns {Promise<Array<string>>} 处理后的地址数组
+ */
+async function getAddressescsv(tls) {
+    if (!addressescsv || addressescsv.length === 0) {
         return [];
     }
-    let _0x554df3 = [];
-    for (const _0x440c96 of addressescsv) {
+
+    let newAddressescsv = [];
+
+    for (const csvUrl of addressescsv) {
         try {
-            const _0x355e45 = await fetch(_0x440c96);
-            if (!_0x355e45['\x6f\x6b']) {
-                console[_0x6b9ed0(0x10a)](_0x6b9ed0(0x253) + '\x3a', _0x355e45[_0x6b9ed0(0x2a4)], _0x355e45[_0x6b9ed0(0x1a6)]);
+            const response = await fetch(csvUrl);
+
+            if (!response.ok) {
+                console.error('获取CSV地址时出错:', response.status, response.statusText);
                 continue;
             }
-            const _0x21d804 = await _0x355e45[_0x6b9ed0(0x210)]();
-            let _0xbc9974;
-            if (_0x21d804[_0x6b9ed0(0x21b)]('\x0d\x0a')) {
-                _0xbc9974 = _0x21d804[_0x6b9ed0(0x1fe)]('\x0d\x0a');
+
+            const text = await response.text();
+            let lines;
+            if (text.includes('\r\n')) {
+                lines = text.split('\r\n');
             } else {
-                _0xbc9974 = _0x21d804[_0x6b9ed0(0x1fe)]('\x0a');
+                lines = text.split('\n');
             }
-            const _0x5edc32 = _0xbc9974[0x0][_0x6b9ed0(0x1fe)]('\x2c');
-            const _0x223fb0 = _0x5edc32[_0x6b9ed0(0x153)]('\x54\x4c\x53');
-            const _0x4ca4ec = 0x0;
-            const _0x4a1eb9 = 0x1;
-            const _0x341f71 = 0x2;
-            const _0x265029 = _0x223fb0 + _0x341f71;
-            if (_0x223fb0 === -0x1) {
-                console[_0x6b9ed0(0x10a)]('\x43\x53\x56\u6587\u4ef6\u7f3a\u5c11\u5fc5\u9700\u7684' + '\u5b57\u6bb5');
+
+            const header = lines[0].split(',');
+            const tlsIndex = header.indexOf('TLS');
+            const ipAddressIndex = 0; // IP地址在 CSV 头部的位置
+            const portIndex = 1; // 端口在 CSV 头部的位置
+            const remarkIndex = 2; // 备注字段索引（假设备注是第三个字段）
+            const dataCenterIndex = tlsIndex + remarkIndex; // 数据中心是 TLS 的后一个字段
+
+            if (tlsIndex === -1) {
+                console.error('CSV文件缺少必需的字段');
                 continue;
             }
-            for (let _0xa0c51c = 0x1; _0xa0c51c < _0xbc9974[_0x6b9ed0(0x256)]; _0xa0c51c++) {
-                const _0xeeb5bc = _0xbc9974[_0xa0c51c]['\x73\x70\x6c\x69\x74']('\x2c');
-                const _0x330c34 = _0xeeb5bc['\x6c\x65\x6e\x67\x74\x68'] - 0x1;
-                if (_0xeeb5bc[_0x223fb0]['\x74\x6f\x55\x70\x70\x65\x72\x43\x61\x73' + '\x65']() === _0x89c993 && parseFloat(_0xeeb5bc[_0x330c34]) > DLS) {
-                    const _0x58a86f = _0xeeb5bc[_0x4ca4ec];
-                    const _0x46b2b5 = _0xeeb5bc[_0x4a1eb9];
-                    const _0x1773e0 = _0xeeb5bc[_0x265029];
-                    const _0xd93a4c = _0x58a86f + '\x3a' + _0x46b2b5 + '\x23' + _0x1773e0;
-                    _0x554df3['\x70\x75\x73\x68'](_0xd93a4c);
-                    if (_0x440c96[_0x6b9ed0(0x21b)](_0x6b9ed0(0x1e0) + '\x75\x65') && _0xeeb5bc[_0x223fb0][_0x6b9ed0(0x15b) + '\x65']() === _0x6b9ed0(0x2a1) && !httpsPorts[_0x6b9ed0(0x21b)](_0x46b2b5)) {
-                        proxyIPPool[_0x6b9ed0(0x1f2)](_0x58a86f + '\x3a' + _0x46b2b5);
+
+            for (let i = 1; i < lines.length; i++) {
+                const columns = lines[i].split(',');
+                const speedIndex = columns.length - 1; // 最后一个字段
+
+                if (columns[tlsIndex].toUpperCase() === tls && parseFloat(columns[speedIndex]) > DLS) {
+                    const ipAddress = columns[ipAddressIndex];
+                    const port = columns[portIndex];
+                    const dataCenter = columns[dataCenterIndex];
+
+                    const formattedAddress = `${ipAddress}:${port}#${dataCenter}`;
+                    newAddressescsv.push(formattedAddress);
+
+                    if (csvUrl.includes('proxyip=true') && columns[tlsIndex].toUpperCase() === 'TRUE' && !httpsPorts.includes(port)) {
+                        proxyIPPool.push(`${ipAddress}:${port}`);
                     }
                 }
             }
-        } catch (_0x519b8b) {
-            console['\x65\x72\x72\x6f\x72'](_0x6b9ed0(0x253) + '\x3a', _0x519b8b);
+        } catch (error) {
+            console.error('获取CSV地址时出错:', error);
             continue;
         }
     }
-    return _0x554df3;
+
+    return newAddressescsv;
 }
-function surge(_0x45a420, _0x3c6152) {
-    const _0x3bae46 = _0x2b3298;
-    let _0x18956e;
-    if (_0x45a420[_0x3bae46(0x21b)]('\x0d\x0a')) {
-        _0x18956e = _0x45a420[_0x3bae46(0x1fe)]('\x0d\x0a');
+
+/**
+ * 处理Surge配置
+ * @param {string} content - 内容字符串
+ * @param {string} url - URL字符串
+ * @returns {string} 处理后的Surge配置字符串
+ */
+function surge(content, url) {
+    let 每行内容;
+    if (content.includes('\r\n')) {
+        每行内容 = content.split('\r\n');
     } else {
-        _0x18956e = _0x45a420[_0x3bae46(0x1fe)]('\x0a');
+        每行内容 = content.split('\n');
     }
-    let _0x4813b7 = '';
-    for (let _0x4b268a of _0x18956e) {
-        if (_0x4b268a[_0x3bae46(0x21b)](atob(_0x3bae46(0x1b3) + '\x34\x73'))) {
-            const _0x4eea87 = _0x4b268a[_0x3bae46(0x1fe)]('\x73\x6e\x69\x3d')[0x1][_0x3bae46(0x1fe)]('\x2c')[0x0];
-            const _0x1b26ed = _0x3bae46(0x29d) + _0x3bae46(0x18a) + '\x65\x2c\x20\x74\x66\x6f\x3d\x66\x61\x6c' + _0x3bae46(0x27e) + _0x3bae46(0x20d);
-            const _0x5599cd = _0x3bae46(0x29d) + '\x76\x65\x72\x69\x66\x79\x3d\x74\x72\x75' + _0x3bae46(0xf8) + '\x2c\x20\x77\x73\x2d\x70\x61\x74\x68\x3d' + path + (_0x3bae46(0x275) + _0x3bae46(0x26b)) + _0x4eea87 + ('\x22\x2c\x20\x74\x66\x6f\x3d\x66\x61\x6c' + _0x3bae46(0x27e) + _0x3bae46(0x20d));
-            _0x4813b7 += _0x4b268a[_0x3bae46(0x289)](new RegExp(_0x1b26ed, '\x67'), _0x5599cd)['\x72\x65\x70\x6c\x61\x63\x65']('\x5b', '')[_0x3bae46(0x289)]('\x5d', '') + '\x0a';
+
+    let 输出内容 = "";
+    for (let x of 每行内容) {
+        if (x.includes(atob('PSB0cm9qYW4s'))) {
+            const host = x.split("sni=")[1].split(",")[0];
+            const 备改内容 = `skip-cert-verify=true, tfo=false, udp-relay=false`;
+            const 正确内容 = `skip-cert-verify=true, ws=true, ws-path=${path}, ws-headers=Host:"${host}", tfo=false, udp-relay=false`;
+            输出内容 += x.replace(new RegExp(备改内容, 'g'), 正确内容).replace("[", "").replace("]", "") + '\n';
         } else {
-            _0x4813b7 += _0x4b268a + '\x0a';
+            输出内容 += x + '\n';
         }
     }
-    _0x4813b7 = _0x3bae46(0x296) + '\x43\x4f\x4e\x46\x49\x47\x20' + _0x3c6152 + (_0x3bae46(0x25d) + '\x38\x36\x34\x30\x30\x20\x73\x74\x72\x69' + _0x3bae46(0x130)) + _0x4813b7[_0x3bae46(0x1a3)](_0x4813b7[_0x3bae46(0x153)]('\x0a'));
-    return _0x4813b7;
+
+    输出内容 = `#!MANAGED-CONFIG ${url} interval=86400 strict=false` + 输出内容.substring(输出内容.indexOf('\n'));
+    return 输出内容;
 }
-function sha224(_0x22032e) {
-    const _0x4d68d1 = _0x2b3298;
-    const _0x332981 = [
-        0x428a2f98,
-        0x71374491,
-        0xb5c0fbcf,
-        0xe9b5dba5,
-        0x3956c25b,
-        0x59f111f1,
-        0x923f82a4,
-        0xab1c5ed5,
-        0xd807aa98,
-        0x12835b01,
-        0x243185be,
-        0x550c7dc3,
-        0x72be5d74,
-        0x80deb1fe,
-        0x9bdc06a7,
-        0xc19bf174,
-        0xe49b69c1,
-        0xefbe4786,
-        0xfc19dc6,
-        0x240ca1cc,
-        0x2de92c6f,
-        0x4a7484aa,
-        0x5cb0a9dc,
-        0x76f988da,
-        0x983e5152,
-        0xa831c66d,
-        0xb00327c8,
-        0xbf597fc7,
-        0xc6e00bf3,
-        0xd5a79147,
-        0x6ca6351,
-        0x14292967,
-        0x27b70a85,
-        0x2e1b2138,
-        0x4d2c6dfc,
-        0x53380d13,
-        0x650a7354,
-        0x766a0abb,
-        0x81c2c92e,
-        0x92722c85,
-        0xa2bfe8a1,
-        0xa81a664b,
-        0xc24b8b70,
-        0xc76c51a3,
-        0xd192e819,
-        0xd6990624,
-        0xf40e3585,
-        0x106aa070,
-        0x19a4c116,
-        0x1e376c08,
-        0x2748774c,
-        0x34b0bcb5,
-        0x391c0cb3,
-        0x4ed8aa4a,
-        0x5b9cca4f,
-        0x682e6ff3,
-        0x748f82ee,
-        0x78a5636f,
-        0x84c87814,
-        0x8cc70208,
-        0x90befffa,
-        0xa4506ceb,
-        0xbef9a3f7,
-        0xc67178f2
+
+/**
+ * [js-sha256]{@link https://github.com/emn178/js-sha256}
+ * 
+ * @version 0.11.0 (modified by cmliu)
+ * @description 本代码基于 js-sha256 项目改编，添加了 SHA-224 哈希算法的实现。
+ * @modifications 重写并实现了 sha224 函数，引用请注明出处。
+ */
+function sha224(输入字符串) {
+    // 内部常量K
+    const K = [
+        0x428a2f98, 0x71374491, 0xb5c0fbcf, 0xe9b5dba5, 0x3956c25b, 0x59f111f1, 0x923f82a4, 0xab1c5ed5,
+        0xd807aa98, 0x12835b01, 0x243185be, 0x550c7dc3, 0x72be5d74, 0x80deb1fe, 0x9bdc06a7, 0xc19bf174,
+        0xe49b69c1, 0xefbe4786, 0x0fc19dc6, 0x240ca1cc, 0x2de92c6f, 0x4a7484aa, 0x5cb0a9dc, 0x76f988da,
+        0x983e5152, 0xa831c66d, 0xb00327c8, 0xbf597fc7, 0xc6e00bf3, 0xd5a79147, 0x06ca6351, 0x14292967,
+        0x27b70a85, 0x2e1b2138, 0x4d2c6dfc, 0x53380d13, 0x650a7354, 0x766a0abb, 0x81c2c92e, 0x92722c85,
+        0xa2bfe8a1, 0xa81a664b, 0xc24b8b70, 0xc76c51a3, 0xd192e819, 0xd6990624, 0xf40e3585, 0x106aa070,
+        0x19a4c116, 0x1e376c08, 0x2748774c, 0x34b0bcb5, 0x391c0cb3, 0x4ed8aa4a, 0x5b9cca4f, 0x682e6ff3,
+        0x748f82ee, 0x78a5636f, 0x84c87814, 0x8cc70208, 0x90befffa, 0xa4506ceb, 0xbef9a3f7, 0xc67178f2
     ];
-    function _0x4bee88(_0x48d0fb) {
-        return unescape(encodeURIComponent(_0x48d0fb));
+
+    /**
+     * 将字符串转换为UTF-8编码的字符串
+     * @param {string} 字符串 - 输入字符串
+     * @returns {string} UTF-8编码的字符串
+     */
+    function utf8编码(字符串) {
+        return unescape(encodeURIComponent(字符串));
     }
-    function _0x22f340(_0x3a2026) {
-        const _0xfe7b33 = _0x1cdd;
-        let _0x557822 = '';
-        for (let _0x205f7e = 0x0; _0x205f7e < _0x3a2026['\x6c\x65\x6e\x67\x74\x68']; _0x205f7e++) {
-            _0x557822 += (_0x3a2026[_0x205f7e] >>> 0x4 & 0xf)[_0xfe7b33(0x1d7)](0x10);
-            _0x557822 += (_0x3a2026[_0x205f7e] & 0xf)[_0xfe7b33(0x1d7)](0x10);
+
+    /**
+     * 将字节数组转换为十六进制字符串
+     * @param {Array<number>} 字节数组 - 字节数组
+     * @returns {string} 十六进制字符串
+     */
+    function 字节转十六进制(字节数组) {
+        let 十六进制 = '';
+        for (let i = 0; i < 字节数组.length; i++) {
+            十六进制 += ((字节数组[i] >>> 4) & 0x0F).toString(16).padStart(2, '0');
+            十六进制 += (字节数组[i] & 0x0F).toString(16).padStart(2, '0');
         }
-        return _0x557822;
+        return 十六进制;
     }
-    function _0x318fb2(_0x38a3dc) {
-        const _0x34ff8a = _0x1cdd;
-        let _0x1bdcd4 = [
-            0xc1059ed8,
-            0x367cd507,
-            0x3070dd17,
-            0xf70e5939,
-            0xffc00b31,
-            0x68581511,
-            0x64f98fa7,
-            0xbefa4fa4
+
+    /**
+     * 计算SHA-224哈希值的核心逻辑
+     * @param {string} 输入字符串 - 输入字符串
+     * @returns {Array<number>} SHA-224哈希值数组
+     */
+    function sha224核心(输入字符串) {
+        // SHA-224的初始哈希值
+        let H = [
+            0xc1059ed8, 0x367cd507, 0x3070dd17, 0xf70e5939,
+            0xffc00b31, 0x68581511, 0x64f98fa7, 0xbefa4fa4
         ];
-        const _0x3be5b6 = _0x38a3dc[_0x34ff8a(0x256)] * 0x8;
-        _0x38a3dc += String['\x66\x72\x6f\x6d\x43\x68\x61\x72\x43\x6f' + '\x64\x65'](0x80);
-        while (_0x38a3dc['\x6c\x65\x6e\x67\x74\x68'] * 0x8 % 0x200 !== 0x1c0) {
-            _0x38a3dc += String['\x66\x72\x6f\x6d\x43\x68\x61\x72\x43\x6f' + '\x64\x65'](0x0);
+
+        // 预处理
+        const 消息长度 = 输入字符串.length * 8;
+        输入字符串 += String.fromCharCode(0x80);
+        while ((输入字符串.length * 8) % 512 !== 448) {
+            输入字符串 += String.fromCharCode(0);
         }
-        const _0x4796b6 = Math[_0x34ff8a(0x2ae)](_0x3be5b6 / 0x100000000);
-        const _0x3fc89d = _0x3be5b6 & 0xffffffff;
-        _0x38a3dc += String[_0x34ff8a(0x104) + '\x64\x65'](_0x4796b6 >>> 0x18 & 0xff, _0x4796b6 >>> 0x10 & 0xff, _0x4796b6 >>> 0x8 & 0xff, _0x4796b6 & 0xff, _0x3fc89d >>> 0x18 & 0xff, _0x3fc89d >>> 0x10 & 0xff, _0x3fc89d >>> 0x8 & 0xff, _0x3fc89d & 0xff);
-        const _0x1da425 = [];
-        for (let _0x33360f = 0x0; _0x33360f < _0x38a3dc[_0x34ff8a(0x256)]; _0x33360f += 0x4) {
-            _0x1da425[_0x34ff8a(0x1f2)](_0x38a3dc[_0x34ff8a(0x250)](_0x33360f) << 0x18 | _0x38a3dc[_0x34ff8a(0x250)](_0x33360f + 0x1) << 0x10 | _0x38a3dc[_0x34ff8a(0x250)](_0x33360f + 0x2) << 0x8 | _0x38a3dc[_0x34ff8a(0x250)](_0x33360f + 0x3));
+
+        // 添加64位消息长度
+        const 消息长度高位 = Math.floor(消息长度 / 0x100000000);
+        const 消息长度低位 = 消息长度 & 0xFFFFFFFF;
+        输入字符串 += String.fromCharCode(
+            (消息长度高位 >>> 24) & 0xFF, (消息长度高位 >>> 16) & 0xFF,
+            (消息长度高位 >>> 8) & 0xFF, 消息长度高位 & 0xFF,
+            (消息长度低位 >>> 24) & 0xFF, (消息长度低位 >>> 16) & 0xFF,
+            (消息长度低位 >>> 8) & 0xFF, 消息长度低位 & 0xFF
+        );
+
+        const 字数组 = [];
+        for (let i = 0; i < 输入字符串.length; i += 4) {
+            字数组.push(
+                (输入字符串.charCodeAt(i) << 24) |
+                (输入字符串.charCodeAt(i + 1) << 16) |
+                (输入字符串.charCodeAt(i + 2) << 8) |
+                输入字符串.charCodeAt(i + 3)
+            );
         }
-        for (let _0x2588c4 = 0x0; _0x2588c4 < _0x1da425[_0x34ff8a(0x256)]; _0x2588c4 += 0x10) {
-            const _0x171be4 = new Array(0x40)['\x66\x69\x6c\x6c'](0x0);
-            for (let _0x2652ab = 0x0; _0x2652ab < 0x10; _0x2652ab++) {
-                _0x171be4[_0x2652ab] = _0x1da425[_0x2588c4 + _0x2652ab];
+
+        // 主要压缩循环
+        for (let i = 0; i < 字数组.length; i += 16) {
+            const w = new Array(64).fill(0);
+            for (let j = 0; j < 16; j++) {
+                w[j] = 字数组[i + j];
             }
-            for (let _0x38fc2 = 0x10; _0x38fc2 < 0x40; _0x38fc2++) {
-                const _0x24b38d = _0x4514c2(_0x171be4[_0x38fc2 - 0xf], 0x7) ^ _0x4514c2(_0x171be4[_0x38fc2 - 0xf], 0x12) ^ _0x171be4[_0x38fc2 - 0xf] >>> 0x3;
-                const _0x1f4758 = _0x4514c2(_0x171be4[_0x38fc2 - 0x2], 0x11) ^ _0x4514c2(_0x171be4[_0x38fc2 - 0x2], 0x13) ^ _0x171be4[_0x38fc2 - 0x2] >>> 0xa;
-                _0x171be4[_0x38fc2] = _0x171be4[_0x38fc2 - 0x10] + _0x24b38d + _0x171be4[_0x38fc2 - 0x7] + _0x1f4758 >>> 0x0;
+
+            for (let j = 16; j < 64; j++) {
+                const s0 = 右旋转(w[j - 15], 7) ^ 右旋转(w[j - 15], 18) ^ (w[j - 15] >>> 3);
+                const s1 = 右旋转(w[j - 2], 17) ^ 右旋转(w[j - 2], 19) ^ (w[j - 2] >>> 10);
+                w[j] = (w[j - 16] + s0 + w[j - 7] + s1) >>> 0;
             }
-            let [_0x6cac7a, _0x3ff35f, _0x49dca3, _0x5353cc, _0x2d6eb2, _0x1ec960, _0x23641c, _0x105bd7] = _0x1bdcd4;
-            for (let _0x349122 = 0x0; _0x349122 < 0x40; _0x349122++) {
-                const _0xc3ea9c = _0x4514c2(_0x2d6eb2, 0x6) ^ _0x4514c2(_0x2d6eb2, 0xb) ^ _0x4514c2(_0x2d6eb2, 0x19);
-                const _0x51eee8 = _0x2d6eb2 & _0x1ec960 ^ ~_0x2d6eb2 & _0x23641c;
-                const _0x2e2a36 = _0x105bd7 + _0xc3ea9c + _0x51eee8 + _0x332981[_0x349122] + _0x171be4[_0x349122] >>> 0x0;
-                const _0x42e45b = _0x4514c2(_0x6cac7a, 0x2) ^ _0x4514c2(_0x6cac7a, 0xd) ^ _0x4514c2(_0x6cac7a, 0x16);
-                const _0x2ec359 = _0x6cac7a & _0x3ff35f ^ _0x6cac7a & _0x49dca3 ^ _0x3ff35f & _0x49dca3;
-                const _0x47498b = _0x42e45b + _0x2ec359 >>> 0x0;
-                _0x105bd7 = _0x23641c;
-                _0x23641c = _0x1ec960;
-                _0x1ec960 = _0x2d6eb2;
-                _0x2d6eb2 = _0x5353cc + _0x2e2a36 >>> 0x0;
-                _0x5353cc = _0x49dca3;
-                _0x49dca3 = _0x3ff35f;
-                _0x3ff35f = _0x6cac7a;
-                _0x6cac7a = _0x2e2a36 + _0x47498b >>> 0x0;
+
+            let [a, b, c, d, e, f, g, h] = H;
+
+            for (let j = 0; j < 64; j++) {
+                const S1 = 右旋转(e, 6) ^ 右旋转(e, 11) ^ 右旋转(e, 25);
+                const ch = (e & f) ^ (~e & g);
+                const temp1 = (h + S1 + ch + K[j] + w[j]) >>> 0;
+                const S0 = 右旋转(a, 2) ^ 右旋转(a, 13) ^ 右旋转(a, 22);
+                const maj = (a & b) ^ (a & c) ^ (b & c);
+                const temp2 = (S0 + maj) >>> 0;
+
+                h = g;
+                g = f;
+                f = e;
+                e = (d + temp1) >>> 0;
+                d = c;
+                c = b;
+                b = a;
+                a = (temp1 + temp2) >>> 0;
             }
-            _0x1bdcd4[0x0] = _0x1bdcd4[0x0] + _0x6cac7a >>> 0x0;
-            _0x1bdcd4[0x1] = _0x1bdcd4[0x1] + _0x3ff35f >>> 0x0;
-            _0x1bdcd4[0x2] = _0x1bdcd4[0x2] + _0x49dca3 >>> 0x0;
-            _0x1bdcd4[0x3] = _0x1bdcd4[0x3] + _0x5353cc >>> 0x0;
-            _0x1bdcd4[0x4] = _0x1bdcd4[0x4] + _0x2d6eb2 >>> 0x0;
-            _0x1bdcd4[0x5] = _0x1bdcd4[0x5] + _0x1ec960 >>> 0x0;
-            _0x1bdcd4[0x6] = _0x1bdcd4[0x6] + _0x23641c >>> 0x0;
-            _0x1bdcd4[0x7] = _0x1bdcd4[0x7] + _0x105bd7 >>> 0x0;
+
+            H[0] = (H[0] + a) >>> 0;
+            H[1] = (H[1] + b) >>> 0;
+            H[2] = (H[2] + c) >>> 0;
+            H[3] = (H[3] + d) >>> 0;
+            H[4] = (H[4] + e) >>> 0;
+            H[5] = (H[5] + f) >>> 0;
+            H[6] = (H[6] + g) >>> 0;
+            H[7] = (H[7] + h) >>> 0;
         }
-        return _0x1bdcd4[_0x34ff8a(0x20c)](0x0, 0x7);
+
+        // 截断到224位
+        return H.slice(0, 7);
     }
-    function _0x4514c2(_0x575f1b, _0x4d8475) {
-        return (_0x575f1b >>> _0x4d8475 | _0x575f1b << 0x20 - _0x4d8475) >>> 0x0;
+
+    /**
+     * 右旋转操作
+     * @param {number} 数值 - 输入数值
+     * @param {number} 位数 - 旋转位数
+     * @returns {number} 右旋后的数值
+     */
+    function 右旋转(数值, 位数) {
+        return ((数值 >>> 位数) | (数值 << (32 - 位数))) >>> 0;
     }
-    const _0x4382d7 = _0x4bee88(_0x22032e);
-    const _0x513053 = _0x318fb2(_0x4382d7);
-    return _0x22f340(_0x513053[_0x4d68d1(0xff)](_0x5626f4 => [
-        _0x5626f4 >>> 0x18 & 0xff,
-        _0x5626f4 >>> 0x10 & 0xff,
-        _0x5626f4 >>> 0x8 & 0xff,
-        _0x5626f4 & 0xff
-    ]));
+
+    // 主函数逻辑
+    const 编码输入 = utf8编码(输入字符串);
+    const 哈希结果 = sha224核心(编码输入);
+
+    // 转换为十六进制字符串
+    return 字节转十六进制(
+        哈希结果.flatMap(h => [
+            (h >>> 24) & 0xFF,
+            (h >>> 16) & 0xFF,
+            (h >>> 8) & 0xFF,
+            h & 0xFF
+        ])
+    );
 }
