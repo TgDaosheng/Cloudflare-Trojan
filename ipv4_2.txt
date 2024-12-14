@@ -1,7 +1,7 @@
 104.18.36.122:2053#🇭🇰香港-1
 172.67.68.204:2053#🇭🇰香港-2
-1.1.1.91:2083#🇯🇵日本-1-(CloudFlare数据中心)
-1.1.1.75:2083#🇯🇵日本-2-(CloudFlare数据中心)
+1.1.1.70:2083#🇯🇵日本-1-(CloudFlare数据中心)
+1.1.1.204:2083#🇯🇵日本-2-(CloudFlare数据中心)
 hk.tgds.eu.org:2096#hk.tgds.eu.org-🇭🇰
 jp.tgds.eu.org:2096#jp.tgds.eu.org-🇯🇵
 us.tgds.eu.org:2096#us.tgds.eu.org-🇺🇸
